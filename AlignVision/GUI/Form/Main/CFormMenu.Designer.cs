@@ -35,17 +35,17 @@
             this.btnConfig = new Sunny.UI.UISymbolButton();
             this.btnSetup = new Sunny.UI.UISymbolButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnReport = new Sunny.UI.UISymbolButton();
-            this.btnLanguage = new Sunny.UI.UISymbolButton();
             this.btnIOTest = new Sunny.UI.UISymbolButton();
+            this.btnLanguage = new Sunny.UI.UISymbolButton();
+            this.btnReport = new Sunny.UI.UISymbolButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelResourceInfo
             // 
-            this.panelResourceInfo.Location = new System.Drawing.Point(12, 5);
+            this.panelResourceInfo.Location = new System.Drawing.Point(3, 5);
             this.panelResourceInfo.Name = "panelResourceInfo";
-            this.panelResourceInfo.Size = new System.Drawing.Size(256, 151);
+            this.panelResourceInfo.Size = new System.Drawing.Size(256, 200);
             this.panelResourceInfo.TabIndex = 90;
             // 
             // btnStop
@@ -56,7 +56,7 @@
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnStop.ForeColor = System.Drawing.Color.Black;
             this.btnStop.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnStop.Location = new System.Drawing.Point(12, 929);
+            this.btnStop.Location = new System.Drawing.Point(3, 929);
             this.btnStop.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnStop.Name = "btnStop";
             this.btnStop.RectColor = System.Drawing.Color.Black;
@@ -79,7 +79,7 @@
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnStart.ForeColor = System.Drawing.Color.Black;
             this.btnStart.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnStart.Location = new System.Drawing.Point(12, 884);
+            this.btnStart.Location = new System.Drawing.Point(3, 884);
             this.btnStart.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnStart.Name = "btnStart";
             this.btnStart.RectColor = System.Drawing.Color.Black;
@@ -172,7 +172,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnMain, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSetup, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnConfig, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 161);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 206);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -183,52 +183,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 288);
             this.tableLayoutPanel1.TabIndex = 96;
-            // 
-            // btnReport
-            // 
-            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReport.FillColor = System.Drawing.SystemColors.Control;
-            this.btnReport.FillHoverColor = System.Drawing.SystemColors.Control;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnReport.ForeColor = System.Drawing.Color.Black;
-            this.btnReport.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnReport.Location = new System.Drawing.Point(3, 147);
-            this.btnReport.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.RectColor = System.Drawing.Color.Black;
-            this.btnReport.RectHoverColor = System.Drawing.Color.Black;
-            this.btnReport.Size = new System.Drawing.Size(250, 42);
-            this.btnReport.Symbol = 57580;
-            this.btnReport.SymbolColor = System.Drawing.Color.Black;
-            this.btnReport.SymbolHoverColor = System.Drawing.Color.DimGray;
-            this.btnReport.SymbolOffset = new System.Drawing.Point(-39, 0);
-            this.btnReport.TabIndex = 96;
-            this.btnReport.Text = "REPORT";
-            this.btnReport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLanguage.FillColor = System.Drawing.SystemColors.Control;
-            this.btnLanguage.FillHoverColor = System.Drawing.SystemColors.Control;
-            this.btnLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnLanguage.ForeColor = System.Drawing.Color.Black;
-            this.btnLanguage.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnLanguage.Location = new System.Drawing.Point(3, 195);
-            this.btnLanguage.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.RectColor = System.Drawing.Color.Black;
-            this.btnLanguage.RectHoverColor = System.Drawing.Color.Black;
-            this.btnLanguage.Size = new System.Drawing.Size(250, 42);
-            this.btnLanguage.Symbol = 559540;
-            this.btnLanguage.SymbolColor = System.Drawing.Color.Black;
-            this.btnLanguage.SymbolHoverColor = System.Drawing.Color.DimGray;
-            this.btnLanguage.SymbolOffset = new System.Drawing.Point(-27, 0);
-            this.btnLanguage.TabIndex = 97;
-            this.btnLanguage.Text = "LANGUAGE";
-            this.btnLanguage.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             // 
             // btnIOTest
             // 
@@ -253,11 +207,57 @@
             this.btnIOTest.Text = "IO Test";
             this.btnIOTest.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             // 
+            // btnLanguage
+            // 
+            this.btnLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLanguage.FillColor = System.Drawing.SystemColors.Control;
+            this.btnLanguage.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnLanguage.ForeColor = System.Drawing.Color.Black;
+            this.btnLanguage.ForeHoverColor = System.Drawing.Color.DimGray;
+            this.btnLanguage.Location = new System.Drawing.Point(3, 195);
+            this.btnLanguage.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.RectColor = System.Drawing.Color.Black;
+            this.btnLanguage.RectHoverColor = System.Drawing.Color.Black;
+            this.btnLanguage.Size = new System.Drawing.Size(250, 42);
+            this.btnLanguage.Symbol = 559540;
+            this.btnLanguage.SymbolColor = System.Drawing.Color.Black;
+            this.btnLanguage.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnLanguage.SymbolOffset = new System.Drawing.Point(-27, 0);
+            this.btnLanguage.TabIndex = 97;
+            this.btnLanguage.Text = "LANGUAGE";
+            this.btnLanguage.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReport.FillColor = System.Drawing.SystemColors.Control;
+            this.btnReport.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReport.ForeColor = System.Drawing.Color.Black;
+            this.btnReport.ForeHoverColor = System.Drawing.Color.DimGray;
+            this.btnReport.Location = new System.Drawing.Point(3, 147);
+            this.btnReport.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.RectColor = System.Drawing.Color.Black;
+            this.btnReport.RectHoverColor = System.Drawing.Color.Black;
+            this.btnReport.Size = new System.Drawing.Size(250, 42);
+            this.btnReport.Symbol = 57580;
+            this.btnReport.SymbolColor = System.Drawing.Color.Black;
+            this.btnReport.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnReport.SymbolOffset = new System.Drawing.Point(-39, 0);
+            this.btnReport.TabIndex = 96;
+            this.btnReport.Text = "REPORT";
+            this.btnReport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            // 
             // CFormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 980);
+            this.ClientSize = new System.Drawing.Size(262, 980);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);

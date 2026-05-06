@@ -38,15 +38,15 @@
             this.pnlView.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlView.Location = new System.Drawing.Point(0, 100);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(1670, 980);
+            this.pnlView.Size = new System.Drawing.Size(1656, 980);
             this.pnlView.TabIndex = 5;
             // 
             // pnlMenu
             // 
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlMenu.Location = new System.Drawing.Point(1640, 100);
+            this.pnlMenu.Location = new System.Drawing.Point(1658, 100);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(280, 980);
+            this.pnlMenu.Size = new System.Drawing.Size(262, 980);
             this.pnlMenu.TabIndex = 4;
             // 
             // pnlTitle

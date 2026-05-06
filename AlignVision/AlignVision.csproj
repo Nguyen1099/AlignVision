@@ -80,7 +80,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CDefine.cs" />
+    <Compile Include="Data\mmf\manager\CMMFManagerVisionData.cs" />
+    <Compile Include="Data\mmf\pages\CMMFPagesVisionData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_BoolData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_ByteData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_DoubleData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_FloatData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_IntData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_ShortData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMData_StringData.cs" />
+    <Compile Include="Data\mmf\visiondefine\MMVisionData_PageBase.cs" />
     <Compile Include="GUI\CFormInterface.cs" />
+    <Compile Include="GUI\Form\Main\CFormCommon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormCommon.Designer.cs">
+      <DependentUpon>CFormCommon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form\Main\CFormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +109,12 @@
     </Compile>
     <Compile Include="GUI\Form\Main\CFormTitle.Designer.cs">
       <DependentUpon>CFormTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormView.Designer.cs">
+      <DependentUpon>CFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form\Main\CMainFrame.cs">
       <SubType>Form</SubType>
@@ -111,6 +134,12 @@
     <Compile Include="GUI\SubView\FormKeyPad.designer.cs">
       <DependentUpon>FormKeyPad.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SubView\FormStatusPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SubView\FormStatusPC.Designer.cs">
+      <DependentUpon>FormStatusPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Form\Main\CFormMenu.resx">
@@ -118,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CFormTitle.resx">
       <DependentUpon>CFormTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Main\CFormView.resx">
+      <DependentUpon>CFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CMainFrame.resx">
       <DependentUpon>CMainFrame.cs</DependentUpon>
@@ -127,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SubView\FormKeyPad.resx">
       <DependentUpon>FormKeyPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SubView\FormStatusPC.resx">
+      <DependentUpon>FormStatusPC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -152,7 +187,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Device\" />
     <Folder Include="GUI\Dialog\" />
     <Folder Include="GUI\Form\Config\" />
