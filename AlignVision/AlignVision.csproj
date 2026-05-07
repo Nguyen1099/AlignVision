@@ -92,6 +92,18 @@
     <Compile Include="Data\mmf\visiondefine\MMData_StringData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMVisionData_PageBase.cs" />
     <Compile Include="GUI\CFormInterface.cs" />
+    <Compile Include="GUI\Form\Config\CFormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Config\CFormConfig.Designer.cs">
+      <DependentUpon>CFormConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Config\CFormConfigOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Config\CFormConfigOption.Designer.cs">
+      <DependentUpon>CFormConfigOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form\Main\CFormCommon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,30 @@
     <Compile Include="GUI\Form\Main\CMainFrame.Designer.cs">
       <DependentUpon>CMainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetup.Designer.cs">
+      <DependentUpon>CFormSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupCalibration.Designer.cs">
+      <DependentUpon>CFormSetupCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupSettingCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupSettingCamera.Designer.cs">
+      <DependentUpon>CFormSetupSettingCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupTeach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Setup\CFormSetupTeach.Designer.cs">
+      <DependentUpon>CFormSetupTeach.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SubView\FormKeyBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +178,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Form\Config\CFormConfig.resx">
+      <DependentUpon>CFormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Config\CFormConfigOption.resx">
+      <DependentUpon>CFormConfigOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CFormMenu.resx">
       <DependentUpon>CFormMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +195,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CMainFrame.resx">
       <DependentUpon>CMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Setup\CFormSetup.resx">
+      <DependentUpon>CFormSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Setup\CFormSetupCalibration.resx">
+      <DependentUpon>CFormSetupCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Setup\CFormSetupSettingCamera.resx">
+      <DependentUpon>CFormSetupSettingCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Setup\CFormSetupTeach.resx">
+      <DependentUpon>CFormSetupTeach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SubView\FormKeyBoard.resx">
       <DependentUpon>FormKeyBoard.cs</DependentUpon>
@@ -189,8 +243,6 @@
   <ItemGroup>
     <Folder Include="Device\" />
     <Folder Include="GUI\Dialog\" />
-    <Folder Include="GUI\Form\Config\" />
-    <Folder Include="GUI\Form\Setup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

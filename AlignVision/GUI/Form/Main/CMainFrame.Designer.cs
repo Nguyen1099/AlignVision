@@ -36,17 +36,17 @@
             // pnlView
             // 
             this.pnlView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlView.Location = new System.Drawing.Point(0, 100);
+            this.pnlView.Location = new System.Drawing.Point(0, 57);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(1656, 980);
+            this.pnlView.Size = new System.Drawing.Size(1656, 1023);
             this.pnlView.TabIndex = 5;
             // 
             // pnlMenu
             // 
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlMenu.Location = new System.Drawing.Point(1658, 100);
+            this.pnlMenu.Location = new System.Drawing.Point(1658, 57);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(262, 980);
+            this.pnlMenu.Size = new System.Drawing.Size(262, 1023);
             this.pnlMenu.TabIndex = 4;
             // 
             // pnlTitle
@@ -54,7 +54,7 @@
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1920, 100);
+            this.pnlTitle.Size = new System.Drawing.Size(1920, 57);
             this.pnlTitle.TabIndex = 3;
             // 
             // CMainFrame
