@@ -92,6 +92,18 @@
     <Compile Include="Data\mmf\visiondefine\MMData_StringData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMVisionData_PageBase.cs" />
     <Compile Include="GUI\CFormInterface.cs" />
+    <Compile Include="GUI\Dialog\CDialogChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogChangePassword.Designer.cs">
+      <DependentUpon>CDialogChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogLogin.Designer.cs">
+      <DependentUpon>CDialogLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form\Config\CFormConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Dialog\CDialogChangePassword.resx">
+      <DependentUpon>CDialogChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CDialogLogin.resx">
+      <DependentUpon>CDialogLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Config\CFormConfig.resx">
       <DependentUpon>CFormConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,7 +260,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Device\" />
-    <Folder Include="GUI\Dialog\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
