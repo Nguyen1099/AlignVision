@@ -1,5 +1,4 @@
-﻿using AlignVision.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +10,14 @@ using System.Windows.Forms;
 
 namespace AlignVision
 {
-    public partial class CFormTitle : CFormCommon, CFormInterface
+    public partial class CFormMain : CFormCommon, CFormInterface
     {
-        public CFormTitle(CDocument objDocument)
+        private CDocument m_objDocument;
+        public CFormMain(CDocument objDocument)
         {
+            m_objDocument = objDocument;
             InitializeComponent();
         }
-
         public bool SetChangeLanguage()
         {
             return true;
@@ -27,13 +27,7 @@ namespace AlignVision
         }
         public void SetVisible(bool bVisible)
         {
-            this.Visible = bVisible;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-            Application.ExitThread();
-        }
     }
 }

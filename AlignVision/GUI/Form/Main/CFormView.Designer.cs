@@ -28,22 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelView = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panelView
+            // 
+            this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelView.Location = new System.Drawing.Point(0, 0);
+            this.panelView.Name = "panelView";
+            this.panelView.Size = new System.Drawing.Size(356, 277);
+            this.panelView.TabIndex = 0;
             // 
             // CFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 277);
+            this.Controls.Add(this.panelView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CFormView";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "CFormView";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CFormView_FormClosed);
+            this.Load += new System.EventHandler(this.CFormView_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelView;
     }
 }

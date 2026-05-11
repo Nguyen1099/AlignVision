@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CDefine.cs" />
+    <Compile Include="Data\CDocument.cs" />
+    <Compile Include="Data\ClassINI.cs" />
     <Compile Include="Data\mmf\manager\CMMFManagerVisionData.cs" />
     <Compile Include="Data\mmf\pages\CMMFPagesVisionData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMData_BoolData.cs" />
@@ -98,11 +100,23 @@
     <Compile Include="GUI\Dialog\CDialogChangePassword.Designer.cs">
       <DependentUpon>CDialogChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Dialog\CDialogInitProgramIntro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogInitProgramIntro.Designer.cs">
+      <DependentUpon>CDialogInitProgramIntro.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Dialog\CDialogLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Dialog\CDialogLogin.Designer.cs">
       <DependentUpon>CDialogLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CDialogMessage.Designer.cs">
+      <DependentUpon>CDialogMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form\Config\CFormConfig.cs">
       <SubType>Form</SubType>
@@ -127,6 +141,12 @@
     </Compile>
     <Compile Include="GUI\Form\Main\CFormMenu.Designer.cs">
       <DependentUpon>CFormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormMain.Designer.cs">
+      <DependentUpon>CFormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form\Main\CFormTitle.cs">
       <SubType>Form</SubType>
@@ -193,8 +213,14 @@
     <EmbeddedResource Include="GUI\Dialog\CDialogChangePassword.resx">
       <DependentUpon>CDialogChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CDialogInitProgramIntro.resx">
+      <DependentUpon>CDialogInitProgramIntro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dialog\CDialogLogin.resx">
       <DependentUpon>CDialogLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CDialogMessage.resx">
+      <DependentUpon>CDialogMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Config\CFormConfig.resx">
       <DependentUpon>CFormConfig.cs</DependentUpon>
@@ -204,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CFormMenu.resx">
       <DependentUpon>CFormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Main\CFormMain.resx">
+      <DependentUpon>CFormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CFormTitle.resx">
       <DependentUpon>CFormTitle.cs</DependentUpon>

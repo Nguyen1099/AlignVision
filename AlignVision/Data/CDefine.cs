@@ -17,5 +17,39 @@ namespace AlignVision.Data
 
         public const string DEF_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.fff";
 
+        public enum FormView
+        {
+            FORM_VIEW_MAIN = 0, 
+            FORM_VIEW_SETUP, 
+            FORM_VIEW_CONFIG, 
+            //FORM_VIEW_IO, 
+            //FORM_VIEW_REPORT, 
+            //FORM_VIEW_RESET, 
+            FORM_VIEW_FINAL
+        };
+
+        public enum FormViewMain
+        {
+            FORM_VIEW_MAIN = 0, 
+            FORM_VIEW_MAIN_FINAL
+        };
+
+        public enum FormViewSetup
+        {
+            FORM_VIEW_SETUP_SETTING_CAMERA = 0, 
+            FORM_VIEW_SETUP_CALIBRATION, 
+            FORM_VIEW_SETUP_TEACH, 
+            //FORM_VIEW_SIMULATION, 
+            FORM_VIEW_SETUP_FINAL
+        };
+
+        public enum FormViewConfig
+        {
+            FORM_VIEW_CONFIG_OPTION = 0, 
+            FORM_VIEW_CONFIG_FINAL
+        };
+
+
+
     }
 }

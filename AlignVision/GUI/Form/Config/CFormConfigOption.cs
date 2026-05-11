@@ -10,11 +10,27 @@ using System.Windows.Forms;
 
 namespace AlignVision
 {
-    public partial class CFormConfigOption : Form
+    public partial class CFormConfigOption : CFormCommon, CFormInterface
     {
-        public CFormConfigOption()
+        private CDocument m_objDocument;
+
+        public CFormConfigOption(CDocument objDocument)
         {
+            m_objDocument = objDocument;
             InitializeComponent();
         }
+
+        public bool SetChangeLanguage()
+        {
+            return true;
+        }
+        public void SetTimer(bool bTimer)
+        {
+        }
+        public void SetVisible(bool bVisible)
+        {
+            this.Visible = bVisible;
+        }
+
     }
 }

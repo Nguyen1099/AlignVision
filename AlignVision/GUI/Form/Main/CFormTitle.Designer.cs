@@ -103,6 +103,7 @@
             this.btnExit.SymbolSize = 40;
             this.btnExit.TabIndex = 5;
             this.btnExit.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnVersionInfor
             // 

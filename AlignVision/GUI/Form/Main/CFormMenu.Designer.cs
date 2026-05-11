@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelResourceInfo = new System.Windows.Forms.Panel();
             this.btnStop = new Sunny.UI.UISymbolButton();
             this.btnStart = new Sunny.UI.UISymbolButton();
@@ -38,6 +39,7 @@
             this.btnIOTest = new Sunny.UI.UISymbolButton();
             this.btnLanguage = new Sunny.UI.UISymbolButton();
             this.btnReport = new Sunny.UI.UISymbolButton();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnStop.ForeColor = System.Drawing.Color.Black;
             this.btnStop.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnStop.Location = new System.Drawing.Point(3, 929);
+            this.btnStop.Location = new System.Drawing.Point(3, 981);
             this.btnStop.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnStop.Name = "btnStop";
             this.btnStop.RectColor = System.Drawing.Color.Black;
@@ -70,6 +72,7 @@
             this.btnStop.TabIndex = 91;
             this.btnStop.Text = "STOP";
             this.btnStop.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStart
             // 
@@ -79,7 +82,7 @@
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnStart.ForeColor = System.Drawing.Color.Black;
             this.btnStart.ForeHoverColor = System.Drawing.Color.DimGray;
-            this.btnStart.Location = new System.Drawing.Point(3, 884);
+            this.btnStart.Location = new System.Drawing.Point(3, 936);
             this.btnStart.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnStart.Name = "btnStart";
             this.btnStart.RectColor = System.Drawing.Color.Black;
@@ -92,6 +95,7 @@
             this.btnStart.TabIndex = 92;
             this.btnStart.Text = "START";
             this.btnStart.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnMain
             // 
@@ -115,6 +119,7 @@
             this.btnMain.TabIndex = 93;
             this.btnMain.Text = "MAIN";
             this.btnMain.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
             // btnConfig
             // 
@@ -138,6 +143,7 @@
             this.btnConfig.TabIndex = 94;
             this.btnConfig.Text = "CONFIG";
             this.btnConfig.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btnSetup
             // 
@@ -161,6 +167,7 @@
             this.btnSetup.TabIndex = 95;
             this.btnSetup.Text = "SETUP";
             this.btnSetup.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -172,7 +179,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnMain, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSetup, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnConfig, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 206);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 205);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -206,6 +213,7 @@
             this.btnIOTest.TabIndex = 98;
             this.btnIOTest.Text = "IO Test";
             this.btnIOTest.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnIOTest.Click += new System.EventHandler(this.btnIOTest_Click);
             // 
             // btnLanguage
             // 
@@ -229,6 +237,7 @@
             this.btnLanguage.TabIndex = 97;
             this.btnLanguage.Text = "LANGUAGE";
             this.btnLanguage.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 
             // btnReport
             // 
@@ -252,12 +261,13 @@
             this.btnReport.TabIndex = 96;
             this.btnReport.Text = "REPORT";
             this.btnReport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // CFormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 980);
+            this.ClientSize = new System.Drawing.Size(262, 1023);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -285,5 +295,6 @@
         private Sunny.UI.UISymbolButton btnLanguage;
         private Sunny.UI.UISymbolButton btnReport;
         private Sunny.UI.UISymbolButton btnIOTest;
+        private System.Windows.Forms.Timer timer;
     }
 }
