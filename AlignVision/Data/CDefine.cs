@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlignVision.Data
+namespace AlignVision
 {
     public class CDefine
     {
@@ -17,6 +17,7 @@ namespace AlignVision.Data
 
         public const string DEF_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.fff";
 
+        #region Form
         public enum FormView
         {
             FORM_VIEW_MAIN = 0, 
@@ -45,11 +46,24 @@ namespace AlignVision.Data
 
         public enum FormViewConfig
         {
-            FORM_VIEW_CONFIG_OPTION = 0, 
+            FORM_VIEW_CONFIG_OPTION = 0,
             FORM_VIEW_CONFIG_FINAL
         };
 
+        #endregion
+        #region Camera Parameter
+        public enum enumCamera
+        {
+            CAMERA_ALIGN_1 = 0,
+            CAMERA_ALIGN_2
+        }
+        public enum enumStage
+        {
+            STAGE_MAIN_ALIGN_1,
+            STAGE_MAIN_ALIGN_2
+        }
 
+        #endregion
 
     }
 }

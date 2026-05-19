@@ -42,24 +42,24 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTitleSystemConfig = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblImagePath = new System.Windows.Forms.Label();
+            this.lblRecipePath = new System.Windows.Forms.Label();
+            this.lblBaudrateLight2 = new System.Windows.Forms.Label();
+            this.lblPortLight2 = new System.Windows.Forms.Label();
+            this.lblBaudrateLight1 = new System.Windows.Forms.Label();
+            this.lblPortLight1 = new System.Windows.Forms.Label();
+            this.lblPortControl = new System.Windows.Forms.Label();
+            this.lblIPControl = new System.Windows.Forms.Label();
+            this.lblCamera3 = new System.Windows.Forms.Label();
+            this.lblCamera2 = new System.Windows.Forms.Label();
+            this.lblCamera4 = new System.Windows.Forms.Label();
+            this.lblCamera1 = new System.Windows.Forms.Label();
             this.btnTitleLightController2 = new System.Windows.Forms.Button();
             this.BtnTitleImagePath = new System.Windows.Forms.Button();
             this.BtnTitleRecipePath = new System.Windows.Forms.Button();
             this.btnTitleLightController1 = new System.Windows.Forms.Button();
             this.btnTitleCamera = new System.Windows.Forms.Button();
             this.btnTitlePLCAddress = new System.Windows.Forms.Button();
-            this.lblCamera1 = new System.Windows.Forms.Label();
-            this.lblCamera4 = new System.Windows.Forms.Label();
-            this.lblCamera2 = new System.Windows.Forms.Label();
-            this.lblCamera3 = new System.Windows.Forms.Label();
-            this.lblIPControl = new System.Windows.Forms.Label();
-            this.lblPortControl = new System.Windows.Forms.Label();
-            this.lblBaudrateLight1 = new System.Windows.Forms.Label();
-            this.lblPortLight1 = new System.Windows.Forms.Label();
-            this.lblBaudrateLight2 = new System.Windows.Forms.Label();
-            this.lblPortLight2 = new System.Windows.Forms.Label();
-            this.lblRecipePath = new System.Windows.Forms.Label();
-            this.lblImagePath = new System.Windows.Forms.Label();
             this.groupBoxImageSaveDrive = new System.Windows.Forms.GroupBox();
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblTItleDriveImageSavePeriod = new System.Windows.Forms.Label();
@@ -87,6 +87,9 @@
             this.lblTitleReportSavePeriod = new System.Windows.Forms.Label();
             this.numericAutoBackupDay = new System.Windows.Forms.NumericUpDown();
             this.numericReportSavePeriod = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLoad = new Sunny.UI.UISymbolButton();
+            this.btnSave = new Sunny.UI.UISymbolButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewRecipeList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericReportSavePeriod)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSelectedPPID
@@ -318,6 +322,150 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hardware info";
             // 
+            // lblImagePath
+            // 
+            this.lblImagePath.BackColor = System.Drawing.SystemColors.Control;
+            this.lblImagePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblImagePath.Location = new System.Drawing.Point(3, 389);
+            this.lblImagePath.Margin = new System.Windows.Forms.Padding(3);
+            this.lblImagePath.Name = "lblImagePath";
+            this.lblImagePath.Size = new System.Drawing.Size(472, 23);
+            this.lblImagePath.TabIndex = 2219;
+            this.lblImagePath.Text = "PATH";
+            this.lblImagePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRecipePath
+            // 
+            this.lblRecipePath.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRecipePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblRecipePath.Location = new System.Drawing.Point(3, 324);
+            this.lblRecipePath.Margin = new System.Windows.Forms.Padding(3);
+            this.lblRecipePath.Name = "lblRecipePath";
+            this.lblRecipePath.Size = new System.Drawing.Size(472, 23);
+            this.lblRecipePath.TabIndex = 2218;
+            this.lblRecipePath.Text = "PATH";
+            this.lblRecipePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBaudrateLight2
+            // 
+            this.lblBaudrateLight2.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBaudrateLight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblBaudrateLight2.Location = new System.Drawing.Point(238, 264);
+            this.lblBaudrateLight2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblBaudrateLight2.Name = "lblBaudrateLight2";
+            this.lblBaudrateLight2.Size = new System.Drawing.Size(200, 23);
+            this.lblBaudrateLight2.TabIndex = 2222;
+            this.lblBaudrateLight2.Text = "Baudrate:";
+            this.lblBaudrateLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPortLight2
+            // 
+            this.lblPortLight2.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPortLight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPortLight2.Location = new System.Drawing.Point(3, 264);
+            this.lblPortLight2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPortLight2.Name = "lblPortLight2";
+            this.lblPortLight2.Size = new System.Drawing.Size(200, 23);
+            this.lblPortLight2.TabIndex = 2221;
+            this.lblPortLight2.Text = "Port:";
+            this.lblPortLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBaudrateLight1
+            // 
+            this.lblBaudrateLight1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBaudrateLight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblBaudrateLight1.Location = new System.Drawing.Point(241, 204);
+            this.lblBaudrateLight1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblBaudrateLight1.Name = "lblBaudrateLight1";
+            this.lblBaudrateLight1.Size = new System.Drawing.Size(200, 23);
+            this.lblBaudrateLight1.TabIndex = 2220;
+            this.lblBaudrateLight1.Text = "Baudrate:";
+            this.lblBaudrateLight1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPortLight1
+            // 
+            this.lblPortLight1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPortLight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPortLight1.Location = new System.Drawing.Point(3, 204);
+            this.lblPortLight1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPortLight1.Name = "lblPortLight1";
+            this.lblPortLight1.Size = new System.Drawing.Size(200, 23);
+            this.lblPortLight1.TabIndex = 2219;
+            this.lblPortLight1.Text = "Port:";
+            this.lblPortLight1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPortControl
+            // 
+            this.lblPortControl.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPortControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPortControl.Location = new System.Drawing.Point(241, 144);
+            this.lblPortControl.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPortControl.Name = "lblPortControl";
+            this.lblPortControl.Size = new System.Drawing.Size(200, 23);
+            this.lblPortControl.TabIndex = 2218;
+            this.lblPortControl.Text = "Port: 10000";
+            this.lblPortControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblIPControl
+            // 
+            this.lblIPControl.BackColor = System.Drawing.SystemColors.Control;
+            this.lblIPControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblIPControl.Location = new System.Drawing.Point(3, 144);
+            this.lblIPControl.Margin = new System.Windows.Forms.Padding(3);
+            this.lblIPControl.Name = "lblIPControl";
+            this.lblIPControl.Size = new System.Drawing.Size(200, 23);
+            this.lblIPControl.TabIndex = 197;
+            this.lblIPControl.Text = "IP: 192.168.10.10";
+            this.lblIPControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCamera3
+            // 
+            this.lblCamera3.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCamera3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCamera3.Location = new System.Drawing.Point(241, 57);
+            this.lblCamera3.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCamera3.Name = "lblCamera3";
+            this.lblCamera3.Size = new System.Drawing.Size(200, 23);
+            this.lblCamera3.TabIndex = 196;
+            this.lblCamera3.Text = "Camera 3:";
+            this.lblCamera3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCamera2
+            // 
+            this.lblCamera2.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCamera2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCamera2.Location = new System.Drawing.Point(3, 84);
+            this.lblCamera2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCamera2.Name = "lblCamera2";
+            this.lblCamera2.Size = new System.Drawing.Size(200, 23);
+            this.lblCamera2.TabIndex = 195;
+            this.lblCamera2.Text = "Camera 2:";
+            this.lblCamera2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCamera4
+            // 
+            this.lblCamera4.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCamera4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCamera4.Location = new System.Drawing.Point(241, 84);
+            this.lblCamera4.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCamera4.Name = "lblCamera4";
+            this.lblCamera4.Size = new System.Drawing.Size(200, 23);
+            this.lblCamera4.TabIndex = 194;
+            this.lblCamera4.Text = "Camera 4:";
+            this.lblCamera4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCamera1
+            // 
+            this.lblCamera1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCamera1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCamera1.Location = new System.Drawing.Point(3, 57);
+            this.lblCamera1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCamera1.Name = "lblCamera1";
+            this.lblCamera1.Size = new System.Drawing.Size(200, 23);
+            this.lblCamera1.TabIndex = 192;
+            this.lblCamera1.Text = "Camera 1: 200.200.100.100";
+            this.lblCamera1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnTitleLightController2
             // 
             this.btnTitleLightController2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -390,150 +538,6 @@
             this.btnTitlePLCAddress.TabIndex = 190;
             this.btnTitlePLCAddress.Text = "PLC ADDRESS";
             this.btnTitlePLCAddress.UseVisualStyleBackColor = true;
-            // 
-            // lblCamera1
-            // 
-            this.lblCamera1.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCamera1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCamera1.Location = new System.Drawing.Point(3, 57);
-            this.lblCamera1.Margin = new System.Windows.Forms.Padding(3);
-            this.lblCamera1.Name = "lblCamera1";
-            this.lblCamera1.Size = new System.Drawing.Size(200, 23);
-            this.lblCamera1.TabIndex = 192;
-            this.lblCamera1.Text = "Camera 1: 200.200.100.100";
-            this.lblCamera1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCamera4
-            // 
-            this.lblCamera4.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCamera4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCamera4.Location = new System.Drawing.Point(241, 84);
-            this.lblCamera4.Margin = new System.Windows.Forms.Padding(3);
-            this.lblCamera4.Name = "lblCamera4";
-            this.lblCamera4.Size = new System.Drawing.Size(200, 23);
-            this.lblCamera4.TabIndex = 194;
-            this.lblCamera4.Text = "Camera 4:";
-            this.lblCamera4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCamera2
-            // 
-            this.lblCamera2.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCamera2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCamera2.Location = new System.Drawing.Point(3, 84);
-            this.lblCamera2.Margin = new System.Windows.Forms.Padding(3);
-            this.lblCamera2.Name = "lblCamera2";
-            this.lblCamera2.Size = new System.Drawing.Size(200, 23);
-            this.lblCamera2.TabIndex = 195;
-            this.lblCamera2.Text = "Camera 2:";
-            this.lblCamera2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCamera3
-            // 
-            this.lblCamera3.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCamera3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCamera3.Location = new System.Drawing.Point(241, 57);
-            this.lblCamera3.Margin = new System.Windows.Forms.Padding(3);
-            this.lblCamera3.Name = "lblCamera3";
-            this.lblCamera3.Size = new System.Drawing.Size(200, 23);
-            this.lblCamera3.TabIndex = 196;
-            this.lblCamera3.Text = "Camera 3:";
-            this.lblCamera3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblIPControl
-            // 
-            this.lblIPControl.BackColor = System.Drawing.SystemColors.Control;
-            this.lblIPControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblIPControl.Location = new System.Drawing.Point(3, 144);
-            this.lblIPControl.Margin = new System.Windows.Forms.Padding(3);
-            this.lblIPControl.Name = "lblIPControl";
-            this.lblIPControl.Size = new System.Drawing.Size(200, 23);
-            this.lblIPControl.TabIndex = 197;
-            this.lblIPControl.Text = "IP: 192.168.10.10";
-            this.lblIPControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPortControl
-            // 
-            this.lblPortControl.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPortControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPortControl.Location = new System.Drawing.Point(241, 144);
-            this.lblPortControl.Margin = new System.Windows.Forms.Padding(3);
-            this.lblPortControl.Name = "lblPortControl";
-            this.lblPortControl.Size = new System.Drawing.Size(200, 23);
-            this.lblPortControl.TabIndex = 2218;
-            this.lblPortControl.Text = "Port: 10000";
-            this.lblPortControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblBaudrateLight1
-            // 
-            this.lblBaudrateLight1.BackColor = System.Drawing.SystemColors.Control;
-            this.lblBaudrateLight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblBaudrateLight1.Location = new System.Drawing.Point(241, 204);
-            this.lblBaudrateLight1.Margin = new System.Windows.Forms.Padding(3);
-            this.lblBaudrateLight1.Name = "lblBaudrateLight1";
-            this.lblBaudrateLight1.Size = new System.Drawing.Size(200, 23);
-            this.lblBaudrateLight1.TabIndex = 2220;
-            this.lblBaudrateLight1.Text = "Baudrate:";
-            this.lblBaudrateLight1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPortLight1
-            // 
-            this.lblPortLight1.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPortLight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPortLight1.Location = new System.Drawing.Point(3, 204);
-            this.lblPortLight1.Margin = new System.Windows.Forms.Padding(3);
-            this.lblPortLight1.Name = "lblPortLight1";
-            this.lblPortLight1.Size = new System.Drawing.Size(200, 23);
-            this.lblPortLight1.TabIndex = 2219;
-            this.lblPortLight1.Text = "Port:";
-            this.lblPortLight1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblBaudrateLight2
-            // 
-            this.lblBaudrateLight2.BackColor = System.Drawing.SystemColors.Control;
-            this.lblBaudrateLight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblBaudrateLight2.Location = new System.Drawing.Point(238, 264);
-            this.lblBaudrateLight2.Margin = new System.Windows.Forms.Padding(3);
-            this.lblBaudrateLight2.Name = "lblBaudrateLight2";
-            this.lblBaudrateLight2.Size = new System.Drawing.Size(200, 23);
-            this.lblBaudrateLight2.TabIndex = 2222;
-            this.lblBaudrateLight2.Text = "Baudrate:";
-            this.lblBaudrateLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPortLight2
-            // 
-            this.lblPortLight2.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPortLight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPortLight2.Location = new System.Drawing.Point(3, 264);
-            this.lblPortLight2.Margin = new System.Windows.Forms.Padding(3);
-            this.lblPortLight2.Name = "lblPortLight2";
-            this.lblPortLight2.Size = new System.Drawing.Size(200, 23);
-            this.lblPortLight2.TabIndex = 2221;
-            this.lblPortLight2.Text = "Port:";
-            this.lblPortLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblRecipePath
-            // 
-            this.lblRecipePath.BackColor = System.Drawing.SystemColors.Control;
-            this.lblRecipePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblRecipePath.Location = new System.Drawing.Point(3, 324);
-            this.lblRecipePath.Margin = new System.Windows.Forms.Padding(3);
-            this.lblRecipePath.Name = "lblRecipePath";
-            this.lblRecipePath.Size = new System.Drawing.Size(472, 23);
-            this.lblRecipePath.TabIndex = 2218;
-            this.lblRecipePath.Text = "PATH";
-            this.lblRecipePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblImagePath
-            // 
-            this.lblImagePath.BackColor = System.Drawing.SystemColors.Control;
-            this.lblImagePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblImagePath.Location = new System.Drawing.Point(3, 389);
-            this.lblImagePath.Margin = new System.Windows.Forms.Padding(3);
-            this.lblImagePath.Name = "lblImagePath";
-            this.lblImagePath.Size = new System.Drawing.Size(472, 23);
-            this.lblImagePath.TabIndex = 2219;
-            this.lblImagePath.Text = "PATH";
-            this.lblImagePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBoxImageSaveDrive
             // 
@@ -946,11 +950,66 @@
             0,
             0});
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLoad, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1328, 897);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(322, 85);
+            this.tableLayoutPanel2.TabIndex = 2221;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoad.FillColor = System.Drawing.SystemColors.Control;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnLoad.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnLoad.Location = new System.Drawing.Point(3, 3);
+            this.btnLoad.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Radius = 0;
+            this.btnLoad.RectSize = 2;
+            this.btnLoad.Size = new System.Drawing.Size(155, 79);
+            this.btnLoad.Symbol = 361587;
+            this.btnLoad.SymbolColor = System.Drawing.Color.RoyalBlue;
+            this.btnLoad.SymbolSize = 50;
+            this.btnLoad.TabIndex = 1;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FillColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.Location = new System.Drawing.Point(164, 3);
+            this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Radius = 0;
+            this.btnSave.RectSize = 2;
+            this.btnSave.Size = new System.Drawing.Size(155, 79);
+            this.btnSave.Symbol = 361465;
+            this.btnSave.SymbolColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.SymbolSize = 50;
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            // 
             // CFormConfigOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1656, 983);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBoxOperation);
             this.Controls.Add(this.groupBoxImageSave);
             this.Controls.Add(this.groupBoxImageSaveDrive);
@@ -976,6 +1035,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupDay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericReportSavePeriod)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1041,5 +1101,8 @@
         private System.Windows.Forms.Label lblTitleReportSavePeriod;
         private System.Windows.Forms.NumericUpDown numericAutoBackupDay;
         private System.Windows.Forms.NumericUpDown numericReportSavePeriod;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Sunny.UI.UISymbolButton btnLoad;
+        private Sunny.UI.UISymbolButton btnSave;
     }
 }

@@ -50,7 +50,7 @@
             this.btnBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBase.Location = new System.Drawing.Point(12, 6);
             this.btnBase.Name = "btnBase";
-            this.btnBase.Size = new System.Drawing.Size(70, 28);
+            this.btnBase.Size = new System.Drawing.Size(142, 28);
             this.btnBase.TabIndex = 0;
             this.btnBase.Text = "Base";
             this.btnBase.UseVisualStyleBackColor = true;

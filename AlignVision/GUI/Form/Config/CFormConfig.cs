@@ -1,5 +1,4 @@
-﻿using AlignVision.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,7 +64,22 @@ namespace AlignVision
         {
             bool result = false;
             int iMenuCount = (int)CDefine.FormViewConfig.FORM_VIEW_CONFIG_FINAL;
+            if (InitializeButton(iMenuCount) == true)
+            {
+                result = true;
+            }
 
+            m_stForm = new structureForm[iMenuCount];
+            SetChangeForm(CDefine.FormViewConfig.FORM_VIEW_CONFIG_OPTION);
+
+            result = true;
+            return result;
+        }
+
+        private bool InitializeButton(int iMenuCount)
+        {
+            bool result = false;
+            btnBase.Visible = false;
             // Button margin & width settings
             int iWhiteSpace = 2;
             int iButtonWidth = (this.panelFormMenu.Width / iMenuCount);
@@ -89,13 +103,8 @@ namespace AlignVision
             {
                 m_btnMenu[iLoopMenu].Name = string.Format("BtnMainMenu[{0}]", iLoopMenu);
             }
-            m_stForm = new structureForm[iMenuCount];
-            SetChangeForm(CDefine.FormViewConfig.FORM_VIEW_CONFIG_OPTION);
-
-            result = true;
             return result;
         }
-        
         public void DeInitialize()
         {
         }

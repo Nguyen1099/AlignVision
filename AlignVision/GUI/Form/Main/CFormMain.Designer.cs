@@ -31,37 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelFormView = new System.Windows.Forms.Panel();
-            this.panelFormMenu = new System.Windows.Forms.Panel();
-            this.btnBase = new System.Windows.Forms.Button();
-            this.panelFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFormView
             // 
             this.panelFormView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormView.Location = new System.Drawing.Point(0, 40);
+            this.panelFormView.Location = new System.Drawing.Point(0, 0);
             this.panelFormView.Name = "panelFormView";
-            this.panelFormView.Size = new System.Drawing.Size(1656, 983);
+            this.panelFormView.Size = new System.Drawing.Size(1656, 1023);
             this.panelFormView.TabIndex = 1;
-            // 
-            // panelFormMenu
-            // 
-            this.panelFormMenu.Controls.Add(this.btnBase);
-            this.panelFormMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFormMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelFormMenu.Name = "panelFormMenu";
-            this.panelFormMenu.Size = new System.Drawing.Size(1656, 40);
-            this.panelFormMenu.TabIndex = 0;
-            // 
-            // btnBase
-            // 
-            this.btnBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBase.Location = new System.Drawing.Point(12, 6);
-            this.btnBase.Name = "btnBase";
-            this.btnBase.Size = new System.Drawing.Size(70, 28);
-            this.btnBase.TabIndex = 0;
-            this.btnBase.Text = "Base";
-            this.btnBase.UseVisualStyleBackColor = true;
             // 
             // CFormMain
             // 
@@ -69,21 +47,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1656, 1023);
             this.Controls.Add(this.panelFormView);
-            this.Controls.Add(this.panelFormMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CFormMain";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "CFormConfig";
-            this.panelFormMenu.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CFormMain_FormClosed);
+            this.Load += new System.EventHandler(this.CFormMain_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelFormMenu;
-        private System.Windows.Forms.Button btnBase;
         private System.Windows.Forms.Panel panelFormView;
         private System.Windows.Forms.Timer timer;
     }

@@ -1,5 +1,4 @@
-﻿using AlignVision.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,12 +40,23 @@ namespace AlignVision
 
             CMainFrame cMainFrame = Owner as CMainFrame;
             m_objView = cMainFrame.GetFormView() as CFormView;
+            SetFormDockStyle(new FormStatusPC(), panelResourceInfo);
 
             timer.Interval = 100;
             timer.Enabled = true;
             result = true;
             return result;
         }
+        public void SetFormDockStyle(Form objForm, Panel panel)
+        {
+            objForm.Owner = this;
+            objForm.TopLevel = false;
+            objForm.Visible = true;
+            objForm.FormBorderStyle = FormBorderStyle.None;
+            objForm.Dock = DockStyle.Fill;
+            panel.Controls.Add(objForm);
+        }
+
 
         private void btnMain_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,4 @@
-﻿using AlignVision.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,11 +30,11 @@ namespace AlignVision
         public bool Initialize()
         {
             bool result = false;
-            //m_objDocument = new CDocument();
-            //if (false == m_objDocument.Initialize())
-            //{
-            //    throw new ArgumentException("Fail to Initialize Document Class");
-            //}
+            m_objDocument = new CDocument();
+            if (false == m_objDocument.Initialize())
+            {
+                throw new ArgumentException("Fail to Initialize Document Class");
+            }
 
 
             if (true == InitializeForm())

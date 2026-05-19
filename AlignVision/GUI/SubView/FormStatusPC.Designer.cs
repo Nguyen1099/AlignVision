@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiProcessBar_CPU = new Sunny.UI.UIProcessBar();
             this.uiProcessBar_RAM = new Sunny.UI.UIProcessBar();
             this.uiProcessBar_DiskD = new Sunny.UI.UIProcessBar();
@@ -35,12 +36,13 @@
             this.uiProcessBar_DiskE = new Sunny.UI.UIProcessBar();
             this.uiProcessBar_DiskF = new Sunny.UI.UIProcessBar();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +122,7 @@
             this.uiProcessBar_DiskE.MinimumSize = new System.Drawing.Size(3, 3);
             this.uiProcessBar_DiskE.Name = "uiProcessBar_DiskE";
             this.uiProcessBar_DiskE.ProcessColor = System.Drawing.Color.BlueViolet;
+            this.uiProcessBar_DiskE.Radius = 3;
             this.uiProcessBar_DiskE.RectColor = System.Drawing.SystemColors.ControlDarkDark;
             this.uiProcessBar_DiskE.Size = new System.Drawing.Size(189, 27);
             this.uiProcessBar_DiskE.Style = Sunny.UI.UIStyle.Custom;
@@ -128,7 +131,6 @@
             // 
             // uiProcessBar_DiskF
             // 
-            this.uiProcessBar_DiskF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiProcessBar_DiskF.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiProcessBar_DiskF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.uiProcessBar_DiskF.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -159,7 +161,6 @@
             this.tableLayoutPanel1.Controls.Add(this.uiProcessBar_DiskD, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.uiProcessBar_DiskC, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -172,49 +173,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 200);
             this.tableLayoutPanel1.TabIndex = 63;
             // 
-            // button1
+            // button6
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 27);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "CPU";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 27);
-            this.button2.TabIndex = 64;
-            this.button2.Text = "RAM";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 69);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 27);
-            this.button3.TabIndex = 65;
-            this.button3.Text = "C:\\";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(3, 102);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 27);
-            this.button4.TabIndex = 66;
-            this.button4.Text = "D:\\";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(3, 168);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(55, 27);
+            this.button6.TabIndex = 68;
+            this.button6.Text = "F:\\";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -227,16 +195,53 @@
             this.button5.Text = "E:\\";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // button4
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(3, 168);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(55, 27);
-            this.button6.TabIndex = 68;
-            this.button6.Text = "F:\\";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(3, 102);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(55, 27);
+            this.button4.TabIndex = 66;
+            this.button4.Text = "D:\\";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(3, 69);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(55, 27);
+            this.button3.TabIndex = 65;
+            this.button3.Text = "C:\\";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 36);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(55, 27);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "RAM";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 27);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "CPU";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // FormStatusPC
             // 
@@ -252,7 +257,6 @@
             this.Load += new System.EventHandler(this.FormStatusPC_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -269,5 +273,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer;
     }
 }

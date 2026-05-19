@@ -44,8 +44,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>..\..\.outputEXE\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -53,12 +53,23 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cognex.VisionPro, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.Core, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.CorePlus, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.Display.Controls, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.Interop.Core, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Interop.DisplayCtl, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="SunnyUI, Version=3.9.6.0, Culture=neutral, PublicKeyToken=3f4ebed4237db5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.3.9.6\lib\net472\SunnyUI.dll</HintPath>
     </Reference>
@@ -66,8 +77,12 @@
       <HintPath>..\packages\SunnyUI.Common.3.9.6\lib\net472\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=10.0.0.8, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.10.0.8\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -136,6 +151,12 @@
     <Compile Include="GUI\Form\Main\CFormCommon.Designer.cs">
       <DependentUpon>CFormCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Form\Main\CFormMainTwoCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\Main\CFormMainTwoCam.Designer.cs">
+      <DependentUpon>CFormMainTwoCam.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form\Main\CFormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +211,18 @@
     <Compile Include="GUI\Form\Setup\CFormSetupTeach.Designer.cs">
       <DependentUpon>CFormSetupTeach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SubView\CFormDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SubView\CFormDisplay.Designer.cs">
+      <DependentUpon>CFormDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SubView\CFormViewCameraExpand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SubView\CFormViewCameraExpand.Designer.cs">
+      <DependentUpon>CFormViewCameraExpand.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SubView\FormKeyBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +261,9 @@
     <EmbeddedResource Include="GUI\Form\Config\CFormConfigOption.resx">
       <DependentUpon>CFormConfigOption.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form\Main\CFormMainTwoCam.resx">
+      <DependentUpon>CFormMainTwoCam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Main\CFormMenu.resx">
       <DependentUpon>CFormMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\Setup\CFormSetupTeach.resx">
       <DependentUpon>CFormSetupTeach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SubView\CFormDisplay.resx">
+      <DependentUpon>CFormDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SubView\CFormViewCameraExpand.resx">
+      <DependentUpon>CFormViewCameraExpand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SubView\FormKeyBoard.resx">
       <DependentUpon>FormKeyBoard.cs</DependentUpon>

@@ -204,7 +204,7 @@ namespace AlignVision
                 objButton[i].BackColor = Color.White;
                 objButton[i].FlatStyle = FlatStyle.Flat;
                 objButton[i].Click += eventButton;
-                objButton[i].Location = new Point(i * iButtonWidth, 0);
+                objButton[i].Location = new Point(i * iButtonWidth + 9, 0);             // thay doi vi tri button, 9 la khoang cach tu button dau tien den mep ben trai
             }
         }
 
