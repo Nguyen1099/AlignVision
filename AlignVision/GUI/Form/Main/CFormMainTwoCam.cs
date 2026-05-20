@@ -57,6 +57,17 @@ namespace AlignVision
             }
             return result;
         }
+        private void btnExpand1_Click(object sender, EventArgs e)
+        {
+            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_1);
+            objFormViewCameraExpand.ShowDialog();
+
+        }
+        private void btnExpand2_Click(object sender, EventArgs e)
+        {
+            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_2);
+            objFormViewCameraExpand.ShowDialog();
+        }
 
         public void SetFormDockStyle(Form objForm, Panel objPanel)
         {
@@ -78,7 +89,6 @@ namespace AlignVision
         {
             this.Visible = bVisible;
         }
-
 
     }
 }

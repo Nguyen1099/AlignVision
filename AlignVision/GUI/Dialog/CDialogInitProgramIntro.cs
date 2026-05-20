@@ -25,7 +25,7 @@ namespace AlignVision
 
             lblProgress.Text = strText;
             this.Refresh();
-            Application.DoEvents();
+            //Application.DoEvents();
             Thread.Sleep(200);
         }
     }

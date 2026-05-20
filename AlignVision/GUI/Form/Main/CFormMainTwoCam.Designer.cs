@@ -62,14 +62,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1650, 702);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1650, 787);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pnlCam2
             // 
             this.pnlCam2.Location = new System.Drawing.Point(828, 58);
             this.pnlCam2.Name = "pnlCam2";
-            this.pnlCam2.Size = new System.Drawing.Size(819, 641);
+            this.pnlCam2.Size = new System.Drawing.Size(819, 726);
             this.pnlCam2.TabIndex = 126;
             // 
             // tableLayoutPanel3
@@ -110,6 +110,7 @@
             this.btnExpand2.SymbolSize = 45;
             this.btnExpand2.TabIndex = 122;
             this.btnExpand2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnExpand2.Click += new System.EventHandler(this.btnExpand2_Click);
             // 
             // btnTitleMain2
             // 
@@ -127,7 +128,7 @@
             // 
             this.pnlCam1.Location = new System.Drawing.Point(3, 58);
             this.pnlCam1.Name = "pnlCam1";
-            this.pnlCam1.Size = new System.Drawing.Size(819, 641);
+            this.pnlCam1.Size = new System.Drawing.Size(819, 726);
             this.pnlCam1.TabIndex = 125;
             // 
             // tableLayoutPanel2
@@ -168,6 +169,7 @@
             this.btnExpand1.SymbolSize = 45;
             this.btnExpand1.TabIndex = 122;
             this.btnExpand1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnExpand1.Click += new System.EventHandler(this.btnExpand1_Click);
             // 
             // btnTitleMain1
             // 
@@ -186,10 +188,10 @@
             this.GridViewPanelAlignDataListA.AllowUserToAddRows = false;
             this.GridViewPanelAlignDataListA.AllowUserToDeleteRows = false;
             this.GridViewPanelAlignDataListA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewPanelAlignDataListA.Location = new System.Drawing.Point(6, 711);
+            this.GridViewPanelAlignDataListA.Location = new System.Drawing.Point(6, 796);
             this.GridViewPanelAlignDataListA.Name = "GridViewPanelAlignDataListA";
             this.GridViewPanelAlignDataListA.RowTemplate.Height = 23;
-            this.GridViewPanelAlignDataListA.Size = new System.Drawing.Size(820, 311);
+            this.GridViewPanelAlignDataListA.Size = new System.Drawing.Size(820, 224);
             this.GridViewPanelAlignDataListA.TabIndex = 180;
             // 
             // GridViewPanelAlignDataListB
@@ -197,10 +199,10 @@
             this.GridViewPanelAlignDataListB.AllowUserToAddRows = false;
             this.GridViewPanelAlignDataListB.AllowUserToDeleteRows = false;
             this.GridViewPanelAlignDataListB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewPanelAlignDataListB.Location = new System.Drawing.Point(832, 711);
+            this.GridViewPanelAlignDataListB.Location = new System.Drawing.Point(832, 796);
             this.GridViewPanelAlignDataListB.Name = "GridViewPanelAlignDataListB";
             this.GridViewPanelAlignDataListB.RowTemplate.Height = 23;
-            this.GridViewPanelAlignDataListB.Size = new System.Drawing.Size(820, 309);
+            this.GridViewPanelAlignDataListB.Size = new System.Drawing.Size(820, 224);
             this.GridViewPanelAlignDataListB.TabIndex = 181;
             // 
             // CFormMainTwoCam

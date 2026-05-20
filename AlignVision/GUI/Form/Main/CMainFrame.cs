@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,8 +19,6 @@ namespace AlignVision
         private CFormCommon m_objMenu;
         private CFormCommon m_objCurrentForm;
 
-        private CDialogInitProgramIntro View_Intro;
-
         public CMainFrame()
         {
             Size = new Size(1920, 1080);
@@ -31,16 +30,23 @@ namespace AlignVision
         {
             bool result = false;
             m_objDocument = new CDocument();
+
             if (false == m_objDocument.Initialize())
             {
+                m_objDocument.View_Intro.Close();
                 throw new ArgumentException("Fail to Initialize Document Class");
             }
 
 
             if (true == InitializeForm())
             {
+                m_objDocument.View_Intro.setStatus("Initialize Form Completed", 90);
                 result = true;
             }
+
+            m_objDocument.View_Intro.setStatus("Initialize Completed", 100);
+            m_objDocument.View_Intro.Close();
+
             return result;
         }
         public bool InitializeForm()
