@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLogin = new Sunny.UI.UIButton();
             this.btnMinimize = new Sunny.UI.UISymbolButton();
             this.btnExit = new Sunny.UI.UISymbolButton();
@@ -42,6 +43,7 @@
             this.btnRecipeName = new System.Windows.Forms.Button();
             this.btnTitle = new System.Windows.Forms.Button();
             this.lblControlConect = new Sunny.UI.UILabel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.samsunglogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,7 @@
             this.btnMinimize.SymbolSize = 40;
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
@@ -228,6 +231,10 @@
             this.lblControlConect.Text = "Control: Connect";
             this.lblControlConect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // CFormTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -252,6 +259,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "CFormTitle";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CFormTitle_FormClosed);
+            this.Load += new System.EventHandler(this.CFormTitle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.samsunglogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -274,5 +283,6 @@
         private System.Windows.Forms.Button btnRecipeName;
         private System.Windows.Forms.Button btnTitle;
         private Sunny.UI.UILabel lblControlConect;
+        private System.Windows.Forms.Timer timer;
     }
 }

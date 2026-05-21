@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AlignVision
 {
     public class CDocument
     {
         public CDialogInitProgramIntro View_Intro;
+
+        public CConfig m_objConfig;
 
         /// <summary>
         /// Quản lý form hiện thị hình ảnh
@@ -24,6 +28,14 @@ namespace AlignVision
             View_Intro = new CDialogInitProgramIntro();
             View_Intro.Show();
 
+            // Khởi tạo cấu hình
+            m_objConfig = new CConfig();
+            if (m_objConfig.Initialize() == false)
+            {
+                throw new Exception();
+            }
+            View_Intro.setStatus("Initialize Config", 10);
+
             // Khởi tạo form hiển thị hình ảnh
             {
                 m_objFormDisplay = new Dictionary<CDefine.enumCamera, CFormDisplay>();
@@ -31,9 +43,10 @@ namespace AlignVision
                 {
                     m_objFormDisplay[index] = new CFormDisplay();
                 }
-                View_Intro.setStatus("Initialize CFormDisplay", 10);
+                View_Intro.setStatus("Initialize CFormDisplay", 20);
             }
-            View_Intro.setStatus("Initialize CFormDisplay", 20);
+
+
             View_Intro.setStatus("Initialize CFormDisplay", 30);
             View_Intro.setStatus("Initialize CFormDisplay", 40);
             View_Intro.setStatus("Initialize CFormDisplay", 50);
@@ -46,5 +59,29 @@ namespace AlignVision
             return result;
 
         }
+
+        public CMainFrame GetMainFrame()
+        {
+            CMainFrame cMainFrame = null;
+            try
+            {
+                FormCollection openForms = Application.OpenForms;
+                int count = openForms.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    cMainFrame = openForms[i] as CMainFrame;
+                    if (null != cMainFrame)
+                    {
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.StackTrace);
+            }
+            return cMainFrame;
+        }
+
     }
 }

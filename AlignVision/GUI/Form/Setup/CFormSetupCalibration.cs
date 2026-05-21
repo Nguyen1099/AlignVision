@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace AlignVision
 {
-    public partial class CFormSetupCalibration : Form
+    public partial class CFormSetupCalibration : CFormCommon, CFormInterface
     {
-        public CFormSetupCalibration()
+        private CDocument m_objDocument;
+        public CFormSetupCalibration(CDocument objDocument)
         {
+            m_objDocument = objDocument;
             InitializeComponent();
         }
+        public bool SetChangeLanguage()
+        {
+            return true;
+        }
+        public void SetTimer(bool bTimer)
+        {
+        }
+        public void SetVisible(bool bVisible)
+        {
+            this.Visible = bVisible;
+        }
+
     }
 }

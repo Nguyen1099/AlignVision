@@ -50,7 +50,7 @@
             this.btnBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBase.Location = new System.Drawing.Point(12, 6);
             this.btnBase.Name = "btnBase";
-            this.btnBase.Size = new System.Drawing.Size(70, 28);
+            this.btnBase.Size = new System.Drawing.Size(142, 28);
             this.btnBase.TabIndex = 0;
             this.btnBase.Text = "Base";
             this.btnBase.UseVisualStyleBackColor = true;
@@ -62,6 +62,11 @@
             this.panelFormView.Name = "panelFormView";
             this.panelFormView.Size = new System.Drawing.Size(1656, 983);
             this.panelFormView.TabIndex = 1;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 200;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // CFormSetup
             // 
@@ -75,6 +80,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "CFormConfig";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CFormSetup_FormClosed);
+            this.Load += new System.EventHandler(this.CFormSetup_Load);
             this.panelFormMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

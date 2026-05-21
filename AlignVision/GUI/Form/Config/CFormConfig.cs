@@ -72,6 +72,8 @@ namespace AlignVision
             m_stForm = new structureForm[iMenuCount];
             SetChangeForm(CDefine.FormViewConfig.FORM_VIEW_CONFIG_OPTION);
 
+            timer.Interval = 100;
+            timer.Enabled = true;
             result = true;
             return result;
         }
@@ -197,6 +199,8 @@ namespace AlignVision
         }
         public void SetTimer(bool bTimer)
         {
+            m_stForm[(int)m_eCurrentForm].m_IForm.SetTimer(bTimer);
+
         }
         public void SetVisible(bool bVisible)
         {
@@ -205,6 +209,22 @@ namespace AlignVision
             {
                 //m_objDocument.GetMainFrame().SetCurrentForm(this);
                 m_stForm[(int)m_eCurrentForm].m_IForm.SetVisible(bVisible);
+            }
+
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            for (int iLoopMenu = 0; iLoopMenu < (int)CDefine.FormViewConfig.FORM_VIEW_CONFIG_FINAL; iLoopMenu++)
+            {
+                if (iLoopMenu == (int)m_eCurrentForm)
+                {
+                    m_btnMenu[iLoopMenu].BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    m_btnMenu[iLoopMenu].BackColor = Color.White;
+                }
             }
 
         }

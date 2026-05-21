@@ -17,6 +17,12 @@ namespace AlignVision
 
         public const string DEF_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.fff";
 
+        public const string DEF_ALIGN_RECIPE_PATH = "D:\\AlignRecipe";
+
+        public const string DEF_ALIGN_REPORT_LOG_PATH = "D:\\AlignReport\\Logs";
+
+        public const string DEF_ALIGN_REPORT_IMAGE_PATH = "D:\\AlignReport\\Images";
+
         #region Form
         public enum FormView
         {
@@ -37,10 +43,9 @@ namespace AlignVision
 
         public enum FormViewSetup
         {
-            FORM_VIEW_SETUP_SETTING_CAMERA = 0, 
+            FORM_VIEW_SETUP_TEACH = 0, 
+            FORM_VIEW_SETUP_SETTING_CAMERA, 
             FORM_VIEW_SETUP_CALIBRATION, 
-            FORM_VIEW_SETUP_TEACH, 
-            //FORM_VIEW_SIMULATION, 
             FORM_VIEW_SETUP_FINAL
         };
 
@@ -51,6 +56,59 @@ namespace AlignVision
         };
 
         #endregion
+        #region System Parameter
+        public enum enumSimulationMode
+        {
+            SIMULATION_MODE_OFF = 0,
+            SIMULATION_MODE_ON,
+            SIMULATION_MODE_FINAL
+        }
+
+        public enum enumUserAuthorityLevel
+        {
+            USER_AUTHORITY_LEVEL_OPERATOR = 0,
+            USER_AUTHORITY_LEVEL_ENGINEER,
+            USER_AUTHORITY_LEVEL_MASTER,
+            USER_AUTHORITY_LEVEL_FINAL
+        }
+
+        public enum enumLanguage
+        {
+            LANGUAGE_KOREA = 0,
+            LANGUAGE_CHINA,
+            LANGUAGE_ENGLISH,
+            LANGUAGE_VIETNAM,
+            LANGUAGE_FINAL
+        }
+
+        public enum enumRunMode
+        {
+            RUN_MODE_STOP = 0,
+            RUN_MODE_START,
+            RUN_MODE_FINAL
+        }
+
+        #endregion
+        #region Light Controller
+        public enum enumLightControllerType
+        {
+            LLIGHT = 0,
+            VCC,
+            LIGHT_CONTROLLER_FINAL
+        }
+        public enum enumLightChannel
+        {
+            LIGHT_MAIN_ALIGN_1_1 = 0,
+            LIGHT_MAIN_ALIGN_1_2,
+            //LIGHT_MAIN_ALIGN_2_1,
+            //LIGHT_MAIN_ALIGN_2_2
+        }
+        public enum enumLightController
+        {
+            LIGHT_CONTROLLER_MAIN = 0,
+        }
+        #endregion
+
         #region Camera Parameter
         public enum enumCamera
         {

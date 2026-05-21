@@ -66,6 +66,10 @@ namespace AlignVision
 
             m_stForm = new structureForm[(int)CDefine.FormViewMain.FORM_VIEW_MAIN_FINAL];
             SetChangeForm(CDefine.FormViewMain.FORM_VIEW_MAIN);
+
+            timer.Interval = 100;
+            timer.Enabled = true;
+
             result = true;
             return result;
         }
@@ -117,6 +121,7 @@ namespace AlignVision
         }
         public void SetTimer(bool bTimer)
         {
+            m_stForm[(int)m_eCurrentForm].m_IForm.SetTimer(bTimer);
         }
         public void SetVisible(bool bVisible)
         {

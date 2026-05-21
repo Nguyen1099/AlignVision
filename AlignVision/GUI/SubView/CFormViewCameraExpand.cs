@@ -32,6 +32,7 @@ namespace AlignVision
         public void Initialize(CDefine.enumCamera eCamera)
         {
             m_objFormDisplay.Initialize(eCamera, m_objDocument);
+            btnTitleMain.Text = string.Format("Camera {0}", (int)eCamera + 1);
             SetFormDockStyle(m_objFormDisplay, pnlDisplay);
         }
 

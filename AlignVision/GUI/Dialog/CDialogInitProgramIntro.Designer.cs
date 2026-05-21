@@ -56,7 +56,7 @@
             this.lblProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblProgress.Location = new System.Drawing.Point(12, 390);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(115, 23);
+            this.lblProgress.Size = new System.Drawing.Size(320, 23);
             this.lblProgress.TabIndex = 2;
             this.lblProgress.Text = "uiLabel1";
             // 
