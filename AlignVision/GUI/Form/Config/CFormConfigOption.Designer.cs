@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSelectedPPID = new Sunny.UI.UIButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLoad = new Sunny.UI.UISymbolButton();
             this.btnSave = new Sunny.UI.UISymbolButton();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewRecipeList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -182,6 +184,7 @@
             this.btnDeleteRcp.TabStop = false;
             this.btnDeleteRcp.Text = "Delete";
             this.btnDeleteRcp.UseVisualStyleBackColor = false;
+            this.btnDeleteRcp.Click += new System.EventHandler(this.btnDeleteRcp_Click);
             // 
             // btnCreateRcp
             // 
@@ -198,6 +201,7 @@
             this.btnCreateRcp.TabStop = false;
             this.btnCreateRcp.Text = "Create";
             this.btnCreateRcp.UseVisualStyleBackColor = false;
+            this.btnCreateRcp.Click += new System.EventHandler(this.btnCreateRcp_Click);
             // 
             // btnLoadRrp
             // 
@@ -214,6 +218,7 @@
             this.btnLoadRrp.TabStop = false;
             this.btnLoadRrp.Text = "Load";
             this.btnLoadRrp.UseVisualStyleBackColor = false;
+            this.btnLoadRrp.Click += new System.EventHandler(this.btnLoadRrp_Click);
             // 
             // btnSaveRcp
             // 
@@ -230,6 +235,7 @@
             this.btnSaveRcp.TabStop = false;
             this.btnSaveRcp.Text = "Save";
             this.btnSaveRcp.UseVisualStyleBackColor = false;
+            this.btnSaveRcp.Click += new System.EventHandler(this.btnSaveRcp_Click);
             // 
             // btnCreateIndex
             // 
@@ -240,6 +246,7 @@
             this.btnCreateIndex.Size = new System.Drawing.Size(194, 46);
             this.btnCreateIndex.TabIndex = 2203;
             this.btnCreateIndex.UseVisualStyleBackColor = false;
+            this.btnCreateIndex.Click += new System.EventHandler(this.btnCreateIndex_Click);
             // 
             // GridViewRecipeList
             // 
@@ -259,6 +266,7 @@
             this.btnCreateName.Size = new System.Drawing.Size(194, 46);
             this.btnCreateName.TabIndex = 2205;
             this.btnCreateName.UseVisualStyleBackColor = false;
+            this.btnCreateName.Click += new System.EventHandler(this.btnCreateName_Click);
             // 
             // groupBox1
             // 
@@ -983,6 +991,7 @@
             this.btnLoad.TabIndex = 1;
             this.btnLoad.Text = "LOAD";
             this.btnLoad.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -1003,6 +1012,11 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "SAVE";
             this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // CFormConfigOption
             // 
@@ -1021,6 +1035,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "CFormConfigOption";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CFormConfigOption_FormClosed);
+            this.Load += new System.EventHandler(this.CFormConfigOption_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewRecipeList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1104,5 +1120,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Sunny.UI.UISymbolButton btnLoad;
         private Sunny.UI.UISymbolButton btnSave;
+        private System.Windows.Forms.Timer timer;
     }
 }

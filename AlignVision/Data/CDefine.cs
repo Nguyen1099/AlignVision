@@ -26,9 +26,9 @@ namespace AlignVision
         #region Form
         public enum FormView
         {
-            FORM_VIEW_MAIN = 0, 
-            FORM_VIEW_SETUP, 
-            FORM_VIEW_CONFIG, 
+            FORM_VIEW_MAIN = 0,
+            FORM_VIEW_SETUP,
+            FORM_VIEW_CONFIG,
             //FORM_VIEW_IO, 
             //FORM_VIEW_REPORT, 
             //FORM_VIEW_RESET, 
@@ -37,15 +37,15 @@ namespace AlignVision
 
         public enum FormViewMain
         {
-            FORM_VIEW_MAIN = 0, 
+            FORM_VIEW_MAIN = 0,
             FORM_VIEW_MAIN_FINAL
         };
 
         public enum FormViewSetup
         {
-            FORM_VIEW_SETUP_TEACH = 0, 
-            FORM_VIEW_SETUP_SETTING_CAMERA, 
-            FORM_VIEW_SETUP_CALIBRATION, 
+            FORM_VIEW_SETUP_TEACH = 0,
+            FORM_VIEW_SETUP_SETTING_CAMERA,
+            FORM_VIEW_SETUP_CALIBRATION,
             FORM_VIEW_SETUP_FINAL
         };
 
@@ -88,6 +88,19 @@ namespace AlignVision
             RUN_MODE_FINAL
         }
 
+        public enum enumImageSaveType
+        {
+            TYPE_SAVE_ALL = 0,
+            TYPE_SAVE_OK,
+            TYPE_SAVE_NG
+        };
+
+        public enum enumImageFormatType
+        {
+            TYPE_BMP = 0,
+            TYPE_JPG
+        };
+
         #endregion
         #region Light Controller
         public enum enumLightControllerType
@@ -103,12 +116,11 @@ namespace AlignVision
             //LIGHT_MAIN_ALIGN_2_1,
             //LIGHT_MAIN_ALIGN_2_2
         }
-        public enum enumLightController
-        {
-            LIGHT_CONTROLLER_MAIN = 0,
-        }
+        //public enum enumLightController
+        //{
+        //    LIGHT_CONTROLLER_MAIN = 0,
+        //}
         #endregion
-
         #region Camera Parameter
         public enum enumCamera
         {

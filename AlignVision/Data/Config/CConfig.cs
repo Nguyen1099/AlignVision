@@ -26,6 +26,8 @@ namespace AlignVision
         /// </summary>
         private string m_strCurrentPath = string.Empty;
 
+        private string m_strRecipePath = string.Empty;
+
         public bool Initialize()
         {
             bool result = false;
@@ -35,11 +37,17 @@ namespace AlignVision
 
             m_strCurrentPath = Directory.GetCurrentDirectory();
             ClassINI objINI = new ClassINI(string.Format(@"{0}\{1}", m_strCurrentPath, CDefine.DEF_VISION_CONFIG_INI));
+            m_strRecipePath = string.Format(@"{0}\{1}", CDefine.DEF_ALIGN_RECIPE_PATH, objINI.GetString("SYSTEM", "strRecipe", "1000"));
+            CreatFolder(m_strRecipePath);
 
             var configInitializeSetList = new List<ConfigInitializeSet>()
             {
-                new ConfigInitializeSet(() => LoadSystemParameter(), () => SaveSystemParameter()),
+                new ConfigInitializeSet(() => LoadSystemParameter(), () => SaveSystemParameter()),        
+                new ConfigInitializeSet(() => LoadOptionParameter(), () => SaveOptionParameter()),
                 new ConfigInitializeSet(() => LoadDeviceParameter(), () => SaveDeviceParameter()),
+
+                new ConfigInitializeSet(() => LoadCameraParameter(), () => SaveCameraParameter()),
+                new ConfigInitializeSet(() => LoadLightControllerParameter(), () => SaveLightControllerParameter()),
             };
 
             foreach (var item in configInitializeSetList)

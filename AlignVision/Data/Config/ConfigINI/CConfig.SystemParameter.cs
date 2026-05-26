@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,13 @@ namespace AlignVision
 
 			public string strRecipe;
 
-			public CDefine.enumLightControllerType eLightControllerType;
+			public string strRecipePath; 
+
+            public string strImagePath; 
+
+            public CDefine.enumLightControllerType eLightControllerType;
+
+			public CDefine.enumLanguage eLanguage;
 
 			public CSystemParameter()
 			{
@@ -29,8 +36,11 @@ namespace AlignVision
 				strUserID = "";
 				strUserPassword = "";
                 strRecipe = "";
-				eLightControllerType = CDefine.enumLightControllerType.LLIGHT;
-			}
+				strRecipePath = CDefine.DEF_ALIGN_RECIPE_PATH;
+                strImagePath = CDefine.DEF_ALIGN_REPORT_IMAGE_PATH;
+                eLightControllerType = CDefine.enumLightControllerType.LLIGHT;
+                eLanguage = CDefine.enumLanguage.LANGUAGE_ENGLISH;
+            }
 
 			public object Clone()
 			{
@@ -39,7 +49,10 @@ namespace AlignVision
 				cSystemParameter.strUserID = strUserID;
 				cSystemParameter.strUserPassword = strUserPassword;
 				cSystemParameter.strRecipe = strRecipe;
-				cSystemParameter.eLightControllerType = eLightControllerType;
+				cSystemParameter.strRecipePath = strRecipePath;
+				cSystemParameter.strImagePath = strImagePath;
+                cSystemParameter.eLightControllerType = eLightControllerType;
+				cSystemParameter.eLanguage = eLanguage;
 				return cSystemParameter;
 			}
 		}
@@ -57,9 +70,12 @@ namespace AlignVision
 			m_objSystemParameter.eSimulationMode = (CDefine.enumSimulationMode)classINI.GetInt32("SYSTEM", "eSimulationMode", (int)CDefine.enumSimulationMode.SIMULATION_MODE_ON);
 			m_objSystemParameter.strUserPassword = classINI.GetString(section, "strUserPassword", "1234");
 			m_objSystemParameter.strRecipe = classINI.GetString(section, "strRecipe", "1000");
-			m_objSystemParameter.eLightControllerType = (CDefine.enumLightControllerType)classINI.GetInt32("SYSTEM", "eLightControllerType", (int)CDefine.enumLightControllerType.LLIGHT);
-			
-			result = true;
+			//m_objSystemParameter.strRecipePath = classINI.GetString(section, "strRecipePath", CDefine.DEF_ALIGN_RECIPE_PATH);
+            //m_objSystemParameter.strImagePath = classINI.GetString(section, "strImagePath", CDefine.DEF_ALIGN_REPORT_IMAGE_PATH);
+            m_objSystemParameter.eLightControllerType = (CDefine.enumLightControllerType)classINI.GetInt32("SYSTEM", "eLightControllerType", (int)CDefine.enumLightControllerType.LLIGHT);
+            m_objSystemParameter.eLanguage = (CDefine.enumLanguage)classINI.GetInt32("SYSTEM", "eLanguage", (int)CDefine.enumLanguage.LANGUAGE_ENGLISH);
+
+            result = true;
 			return result;
 		}
 		public bool SaveSystemParameter(CSystemParameter objSystemParameter)
@@ -72,9 +88,12 @@ namespace AlignVision
 			classINI.WriteValue(section, "eSimulationMode", (int)objSystemParameter.eSimulationMode);
 			classINI.WriteValue(section, "strUserPassword", objSystemParameter.strUserPassword);
 			classINI.WriteValue(section, "strRecipe", objSystemParameter.strRecipe);
-			classINI.WriteValue(section, "eLightControllerType", (int)objSystemParameter.eLightControllerType);
-			
-			result = true;
+            classINI.WriteValue(section, "strRecipePath", objSystemParameter.strRecipePath);
+            classINI.WriteValue(section, "strImagePath", objSystemParameter.strImagePath);
+            classINI.WriteValue(section, "eLightControllerType", (int)objSystemParameter.eLightControllerType);
+			classINI.WriteValue(section, "eLanguage", (int)objSystemParameter.eLanguage);
+
+            result = true;
 			return result;
 		}
 		private bool SaveSystemParameter()
@@ -87,9 +106,12 @@ namespace AlignVision
 			classINI.WriteValue(section, "eSimulationMode", (int)m_objSystemParameter.eSimulationMode);
 			classINI.WriteValue(section, "strUserPassword", m_objSystemParameter.strUserPassword);
 			classINI.WriteValue(section, "strRecipe", m_objSystemParameter.strRecipe);
-			classINI.WriteValue(section, "eLightControllerType", (int)m_objSystemParameter.eLightControllerType);
+            classINI.WriteValue(section, "strRecipePath", m_objSystemParameter.strRecipePath);
+            classINI.WriteValue(section, "strImagePath", m_objSystemParameter.strImagePath);
+            classINI.WriteValue(section, "eLightControllerType", (int)m_objSystemParameter.eLightControllerType);
+			classINI.WriteValue(section, "eLanguage", (int)m_objSystemParameter.eLanguage);
 
-			result = true;
+            result = true;
 			return result;
 		}
 
