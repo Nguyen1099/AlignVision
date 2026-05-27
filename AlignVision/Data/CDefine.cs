@@ -95,12 +95,6 @@ namespace AlignVision
             TYPE_SAVE_NG
         };
 
-        public enum enumImageFormatType
-        {
-            TYPE_BMP = 0,
-            TYPE_JPG
-        };
-
         #endregion
         #region Light Controller
         public enum enumLightControllerType

@@ -20,14 +20,14 @@ namespace AlignVision
             public CDefine.enumImageSaveType eImageSaveType;
 
             /// <summary>
-            /// Image format type
-            /// </summary>
-            public CDefine.enumImageFormatType eImageFormatType;
-
-            /// <summary>
             /// Image storage period (days)
             /// </summary>
             public int iPeriodImage;
+
+            /// <summary>
+            /// Database storage period (days)
+            /// </summary>
+            public int iPeriodDatabase;
 
             /// <summary>
             /// Image save drive volume setting
@@ -60,8 +60,8 @@ namespace AlignVision
                 bImageSave = false;
                 bImageGraphicSave = false;
                 eImageSaveType = CDefine.enumImageSaveType.TYPE_SAVE_ALL;
-                eImageFormatType = CDefine.enumImageFormatType.TYPE_JPG;
                 iPeriodImage = 0;
+                iPeriodDatabase = 0;
                 dImageSaveDriveVolume = 0;
                 iBackupCount = 0;
                 iBackupDay = 0;
@@ -77,8 +77,8 @@ namespace AlignVision
                 cOptionParameter.bImageSave = bImageSave;
                 cOptionParameter.bImageGraphicSave = bImageGraphicSave;
                 cOptionParameter.eImageSaveType = eImageSaveType;
-                cOptionParameter.eImageFormatType = eImageFormatType;
                 cOptionParameter.iPeriodImage = iPeriodImage;
+                cOptionParameter.iPeriodDatabase = iPeriodDatabase;
                 cOptionParameter.iBackupCount = iBackupCount;
                 cOptionParameter.iBackupDay = iBackupDay;
                 cOptionParameter.bLinkPlcRecipe = bLinkPlcRecipe;
@@ -103,8 +103,8 @@ namespace AlignVision
             m_objOptionParameter.bImageSave             = classINI.GetBool(section, "bImageSave", false);
             m_objOptionParameter.bImageGraphicSave      = classINI.GetBool(section, "bImageGraphicSave", false);
             m_objOptionParameter.eImageSaveType         = (CDefine.enumImageSaveType)classINI.GetInt32(section, "eImageSaveType", (int)CDefine.enumImageSaveType.TYPE_SAVE_ALL);
-            m_objOptionParameter.eImageFormatType       = (CDefine.enumImageFormatType)classINI.GetInt32(section, "eImageFormatType", (int)CDefine.enumImageFormatType.TYPE_JPG);
             m_objOptionParameter.iPeriodImage           = classINI.GetInt32(section, "iPeriodImage", 30);
+            m_objOptionParameter.iPeriodDatabase        = classINI.GetInt32(section, "iPeriodDatabase", 30);
             m_objOptionParameter.dImageSaveDriveVolume  = classINI.GetInt32(section, "dImageSaveDriveVolume", 80);
             m_objOptionParameter.iBackupCount           = classINI.GetInt32(section, "iBackupCount", 30);
             m_objOptionParameter.iBackupDay             = classINI.GetInt32(section, "iBackupDay", 3);
@@ -126,8 +126,8 @@ namespace AlignVision
             classINI.WriteValue(section, "bImageSave", objOptionParameter.bImageSave);
             classINI.WriteValue(section, "bImageGraphicSave", objOptionParameter.bImageGraphicSave);
             classINI.WriteValue(section, "eImageSaveType", (int)objOptionParameter.eImageSaveType);
-            classINI.WriteValue(section, "eImageFormatType", (int)objOptionParameter.eImageFormatType);
             classINI.WriteValue(section, "iPeriodImage", objOptionParameter.iPeriodImage);
+            classINI.WriteValue(section, "iPeriodDatabase", objOptionParameter.iPeriodDatabase);
             classINI.WriteValue(section, "dImageSaveDriveVolume", objOptionParameter.dImageSaveDriveVolume);
             classINI.WriteValue(section, "iBackupCount", objOptionParameter.iBackupCount);
             classINI.WriteValue(section, "iBackupDay", objOptionParameter.iBackupDay);
@@ -149,8 +149,8 @@ namespace AlignVision
             classINI.WriteValue(section, "bImageSave", m_objOptionParameter.bImageSave);
             classINI.WriteValue(section, "bImageGraphicSave", m_objOptionParameter.bImageGraphicSave);
             classINI.WriteValue(section, "eImageSaveType", (int)m_objOptionParameter.eImageSaveType);
-            classINI.WriteValue(section, "eImageFormatType", (int)m_objOptionParameter.eImageFormatType);
             classINI.WriteValue(section, "iPeriodImage", m_objOptionParameter.iPeriodImage);
+            classINI.WriteValue(section, "iPeriodDatabase", m_objOptionParameter.iPeriodDatabase);
             classINI.WriteValue(section, "dImageSaveDriveVolume", m_objOptionParameter.dImageSaveDriveVolume);
             classINI.WriteValue(section, "iBackupCount", m_objOptionParameter.iBackupCount);
             classINI.WriteValue(section, "iBackupDay", m_objOptionParameter.iBackupDay);

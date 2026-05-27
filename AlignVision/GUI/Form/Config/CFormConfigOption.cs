@@ -16,9 +16,6 @@ namespace AlignVision
     {
         private CDocument m_objDocument;
 
-        private COptionParameter m_objOptionParameter;
-
-
         public CFormConfigOption(CDocument objDocument)
         {
             m_objDocument = objDocument;
@@ -41,8 +38,6 @@ namespace AlignVision
         {
             bool bReturn = false;
 
-            m_objOptionParameter = m_objDocument.m_objConfig.GetOptionParameter();
-
             // 중심선 색상 콤보 박스 추가
             this.comboBoxCenterLineColor.Items.Clear();
             foreach (CogColorConstants eItem in Enum.GetValues(typeof(CogColorConstants)))
@@ -53,13 +48,14 @@ namespace AlignVision
                 }
                 this.comboBoxCenterLineColor.Items.Add(eItem.ToString());
             }
-            this.comboBoxCenterLineColor.SelectedIndex = m_objOptionParameter.iCenterLineColorIndex;
+            this.comboBoxCenterLineColor.SelectedIndex = m_objDocument.m_objConfig.GetOptionParameter().iCenterLineColorIndex;
 
-            SetDisplayHardWareInfor();
+            // Hiện thị thông tin camera, light, controll pc trên form
+            GetDisplayHardWareInfor();
 
-            //SetDisplayAlignOption();
+            //GetDisplayAlignOption();
 
-            SetDisplaySaveImage();
+            GetOptionData();
 
 
 
@@ -78,13 +74,35 @@ namespace AlignVision
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            if (DialogResult.Yes != m_objDocument.SetMessage("Do you wanna Load ?"))
+            {
+                return;
+            }
+            m_objDocument.m_objConfig.LoadOptionParameter();
+            GetOptionData();
+            m_objDocument.SetMessage("Load Complete");
+
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (DialogResult.Yes != m_objDocument.SetMessage("Do you want to save the changes?"))
+            {
+                return;
+            }
+
+            COptionParameter m_objOptionParameter = new COptionParameter();
+            SetDisplaySaveImage(m_objOptionParameter);
+            m_objDocument.m_objConfig.SaveOptionParameter(m_objOptionParameter);
+
+
+            //SetDisplayAlignOption();
+            m_objDocument.SetMessage("Save Complete");
+
 
         }
+
 
         private void btnSaveRcp_Click(object sender, EventArgs e)
         {
@@ -130,77 +148,49 @@ namespace AlignVision
 
         private void timer_Tick(object sender, EventArgs e)
         {
+             if (m_objDocument.GetRunMode() == CDefine.enumRunMode.RUN_MODE_START)
             {
-                if (checkBoxUseSaveAll.Checked == true)
-                {
-                    checkBoxUseSaveNG.Checked = false;
-                    checkBoxUseSaveOK.Checked = false;
-
-                }
-                else if (checkBoxUseSaveNG.Checked == true)
-                {
-                    checkBoxUseSaveAll.Checked = false;
-                    checkBoxUseSaveOK.Checked = false;
-                }
-                else if (checkBoxUseSaveOK.Checked == true)
-                {
-                    checkBoxUseSaveAll.Checked = false;
-                    checkBoxUseSaveNG.Checked = false;
-                }
+                btnSave.Enabled = false;
             }
         }
 
         /// <summary>
         /// Thong tin luu hinh anh duoc hien thi tren form
         /// </summary>
-        private void SetDisplaySaveImage()
+        private void GetOptionData()
         {
-            checkBoxUseImageSave.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageSave;
-            checkBoxUseGraphicSave.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageGraphicSave;
+            checkBoxOriginImage.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageSave;
+            checkBoxResultImage.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageGraphicSave;
             numericImageSavePeriod.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().iPeriodImage;
 
             switch (m_objDocument.m_objConfig.GetOptionParameter().eImageSaveType)
             {
                 case CDefine.enumImageSaveType.TYPE_SAVE_ALL:
-                    checkBoxUseSaveAll.Checked = true;
-                    checkBoxUseSaveNG.Checked = false;
-                    checkBoxUseSaveOK.Checked = false;
+                    checkBoxUseSaveALL.Checked = true;
                     break;
                 case CDefine.enumImageSaveType.TYPE_SAVE_NG:
-                    checkBoxUseSaveNG.Checked = true;      
-                    checkBoxUseSaveAll.Checked = false;
-                    checkBoxUseSaveOK.Checked = false;
+                    checkBoxUseSaveNG.Checked = true;
                     break;
                 case CDefine.enumImageSaveType.TYPE_SAVE_OK:
                     checkBoxUseSaveOK.Checked = true;
-                    checkBoxUseSaveAll.Checked = false;
-                    checkBoxUseSaveNG.Checked = false;
                     break;
                 default:
                     break;
             }
 
-            // Kieu luu hinh anh
-            switch (m_objDocument.m_objConfig.GetOptionParameter().eImageFormatType)
-            {
-                case CDefine.enumImageFormatType.TYPE_BMP:
-                    checkBoxUseImageTypeBMP.Checked = true;
-                    checkBoxUseImageTypeJPG.Checked = false;
-                    break;
-                case CDefine.enumImageFormatType.TYPE_JPG:
-                    checkBoxUseImageTypeBMP.Checked = false;
-                    checkBoxUseImageTypeJPG.Checked = true;
-                    break;
-                default:
-                    break;
-            }
-
+            numericImageSaveDriveVolume.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().dImageSaveDriveVolume;
+            numericAutoBackupDay.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().iBackupDay;
+            numericAutoBackupCount.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().iBackupCount;
+            numericReportSavePeriod.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().iPeriodDatabase;
+            checkBoxUseLinkPLCRecipe.Checked = m_objDocument.m_objConfig.GetOptionParameter().bLinkPlcRecipe;
+            checkBoxUseCenterLine.Checked = m_objDocument.m_objConfig.GetOptionParameter().bUseCenterLine;
+            comboBoxCenterLineColor.SelectedIndex = m_objDocument.m_objConfig.GetOptionParameter().iCenterLineColorIndex;
         }
 
         /// <summary>
-        /// Thoong tin phan cung thiet bi duoc hien thi tren form
+        /// Thong tin phan cung thiet bi duoc hien thi tren form
         /// </summary>
-        private void SetDisplayHardWareInfor()
+        private void GetDisplayHardWareInfor()
         {
             // Controller IP
             lblIPControl.Text = $"Controller: {m_objDocument.m_objConfig.GetDeviceParameter().strControllerIP}";
@@ -219,7 +209,7 @@ namespace AlignVision
                     case CDefine.enumCamera.CAMERA_ALIGN_2:
                         lblCamera2.Text = strCameraInfo;
                         break;
-                    //case CDefine.enumCamera.CAMERA_ALIGN_3:
+                    //case CDefine.enumCamera.CAMERA_ALIGN_3:          // Camera 3,4 khong su dung nen khong hien thi thong tin
                     //    lblCamera3.Text = strCameraInfo;
                     //    break;
                     //case CDefine.enumCamera.CAMERA_ALIGN_4:
@@ -227,7 +217,7 @@ namespace AlignVision
                     //    break;
                     default:
                         break;
-                }
+                }                                                                                           
             }
             lblCamera3.Text = "";
             lblCamera4.Text = "";
@@ -255,9 +245,41 @@ namespace AlignVision
             numericImageSaveDriveVolume.Value = (decimal)m_objDocument.m_objConfig.GetOptionParameter().dImageSaveDriveVolume;
         }
 
-        private void SetDisplayAlignOption()
+        private void GetDisplayAlignOption()
         {
            
         }
+
+        /// <summary>
+        /// Lấy thông tin từ form và lưu vào cấu hình liên quan đến việc lưu hình ảnh
+        /// </summary>
+        private void SetDisplaySaveImage(COptionParameter m_objOptionParameter)
+        {
+            m_objOptionParameter.bImageSave = checkBoxOriginImage.Checked;
+            m_objOptionParameter.bImageGraphicSave = checkBoxResultImage.Checked;
+            m_objOptionParameter.iPeriodImage = (int)numericImageSavePeriod.Value;
+
+            if (checkBoxUseSaveALL.Checked)
+            {
+                m_objOptionParameter.eImageSaveType = CDefine.enumImageSaveType.TYPE_SAVE_ALL;
+            }
+            else if (checkBoxUseSaveNG.Checked)
+            {
+                m_objOptionParameter.eImageSaveType = CDefine.enumImageSaveType.TYPE_SAVE_NG;
+            }
+            else if (checkBoxUseSaveOK.Checked)
+            {
+                m_objOptionParameter.eImageSaveType = CDefine.enumImageSaveType.TYPE_SAVE_OK;
+            }
+
+            m_objOptionParameter.dImageSaveDriveVolume = (int)numericImageSaveDriveVolume.Value;
+            m_objOptionParameter.iBackupDay = (int)numericAutoBackupDay.Value;
+            m_objOptionParameter.iBackupCount = (int)numericAutoBackupCount.Value;
+            m_objOptionParameter.iPeriodDatabase = (int)numericReportSavePeriod.Value;
+            m_objOptionParameter.bLinkPlcRecipe = checkBoxUseLinkPLCRecipe.Checked;
+            m_objOptionParameter.bUseCenterLine = checkBoxUseCenterLine.Checked;
+            m_objOptionParameter.iCenterLineColorIndex = comboBoxCenterLineColor.SelectedIndex;
+        }
+
     }
 }

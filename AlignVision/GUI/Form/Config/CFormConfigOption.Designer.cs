@@ -66,13 +66,11 @@
             this.lblTItleDriveImageSavePeriod = new System.Windows.Forms.Label();
             this.numericImageSaveDriveVolume = new System.Windows.Forms.NumericUpDown();
             this.groupBoxImageSave = new System.Windows.Forms.GroupBox();
-            this.checkBoxUseImageSave = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseGraphicSave = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseSaveNG = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseSaveOK = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseImageTypeJPG = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseImageTypeBMP = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseSaveAll = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseSaveALL = new System.Windows.Forms.RadioButton();
+            this.checkBoxOriginImage = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseSaveNG = new System.Windows.Forms.RadioButton();
+            this.checkBoxResultImage = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseSaveOK = new System.Windows.Forms.RadioButton();
             this.lblTitleImageSavePeriod = new System.Windows.Forms.Label();
             this.numericImageSavePeriod = new System.Windows.Forms.NumericUpDown();
             this.groupBoxOperation = new System.Windows.Forms.GroupBox();
@@ -616,13 +614,11 @@
             // 
             // groupBoxImageSave
             // 
-            this.groupBoxImageSave.Controls.Add(this.checkBoxUseImageSave);
-            this.groupBoxImageSave.Controls.Add(this.checkBoxUseGraphicSave);
+            this.groupBoxImageSave.Controls.Add(this.checkBoxUseSaveALL);
+            this.groupBoxImageSave.Controls.Add(this.checkBoxOriginImage);
             this.groupBoxImageSave.Controls.Add(this.checkBoxUseSaveNG);
+            this.groupBoxImageSave.Controls.Add(this.checkBoxResultImage);
             this.groupBoxImageSave.Controls.Add(this.checkBoxUseSaveOK);
-            this.groupBoxImageSave.Controls.Add(this.checkBoxUseImageTypeJPG);
-            this.groupBoxImageSave.Controls.Add(this.checkBoxUseImageTypeBMP);
-            this.groupBoxImageSave.Controls.Add(this.checkBoxUseSaveAll);
             this.groupBoxImageSave.Controls.Add(this.lblTitleImageSavePeriod);
             this.groupBoxImageSave.Controls.Add(this.numericImageSavePeriod);
             this.groupBoxImageSave.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Bold);
@@ -633,101 +629,77 @@
             this.groupBoxImageSave.TabStop = false;
             this.groupBoxImageSave.Text = "Save image";
             // 
-            // checkBoxUseImageSave
+            // checkBoxUseSaveALL
             // 
-            this.checkBoxUseImageSave.AutoSize = true;
-            this.checkBoxUseImageSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseImageSave.Location = new System.Drawing.Point(9, 27);
-            this.checkBoxUseImageSave.Name = "checkBoxUseImageSave";
-            this.checkBoxUseImageSave.Size = new System.Drawing.Size(117, 20);
-            this.checkBoxUseImageSave.TabIndex = 174;
-            this.checkBoxUseImageSave.Text = "IMAGE SAVE";
-            this.checkBoxUseImageSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxUseImageSave.UseVisualStyleBackColor = true;
+            this.checkBoxUseSaveALL.AutoSize = true;
+            this.checkBoxUseSaveALL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.checkBoxUseSaveALL.Location = new System.Drawing.Point(247, 52);
+            this.checkBoxUseSaveALL.Name = "checkBoxUseSaveALL";
+            this.checkBoxUseSaveALL.Size = new System.Drawing.Size(83, 20);
+            this.checkBoxUseSaveALL.TabIndex = 2222;
+            this.checkBoxUseSaveALL.TabStop = true;
+            this.checkBoxUseSaveALL.Text = "Save All";
+            this.checkBoxUseSaveALL.UseVisualStyleBackColor = true;
             // 
-            // checkBoxUseGraphicSave
+            // checkBoxOriginImage
             // 
-            this.checkBoxUseGraphicSave.AutoSize = true;
-            this.checkBoxUseGraphicSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseGraphicSave.Location = new System.Drawing.Point(159, 27);
-            this.checkBoxUseGraphicSave.Name = "checkBoxUseGraphicSave";
-            this.checkBoxUseGraphicSave.Size = new System.Drawing.Size(137, 20);
-            this.checkBoxUseGraphicSave.TabIndex = 174;
-            this.checkBoxUseGraphicSave.Text = "GRAPHIC SAVE";
-            this.checkBoxUseGraphicSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxUseGraphicSave.UseVisualStyleBackColor = true;
+            this.checkBoxOriginImage.AutoSize = true;
+            this.checkBoxOriginImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.checkBoxOriginImage.Location = new System.Drawing.Point(9, 27);
+            this.checkBoxOriginImage.Name = "checkBoxOriginImage";
+            this.checkBoxOriginImage.Size = new System.Drawing.Size(154, 20);
+            this.checkBoxOriginImage.TabIndex = 174;
+            this.checkBoxOriginImage.Text = "Save Origin Image";
+            this.checkBoxOriginImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxOriginImage.UseVisualStyleBackColor = true;
             // 
             // checkBoxUseSaveNG
             // 
             this.checkBoxUseSaveNG.AutoSize = true;
-            this.checkBoxUseSaveNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseSaveNG.Location = new System.Drawing.Point(202, 56);
+            this.checkBoxUseSaveNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.checkBoxUseSaveNG.Location = new System.Drawing.Point(133, 53);
             this.checkBoxUseSaveNG.Name = "checkBoxUseSaveNG";
-            this.checkBoxUseSaveNG.Size = new System.Drawing.Size(92, 20);
-            this.checkBoxUseSaveNG.TabIndex = 172;
-            this.checkBoxUseSaveNG.Text = "SAVE NG";
-            this.checkBoxUseSaveNG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUseSaveNG.Size = new System.Drawing.Size(87, 20);
+            this.checkBoxUseSaveNG.TabIndex = 2222;
+            this.checkBoxUseSaveNG.TabStop = true;
+            this.checkBoxUseSaveNG.Text = "Save NG";
             this.checkBoxUseSaveNG.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxResultImage
+            // 
+            this.checkBoxResultImage.AutoSize = true;
+            this.checkBoxResultImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.checkBoxResultImage.Location = new System.Drawing.Point(179, 26);
+            this.checkBoxResultImage.Name = "checkBoxResultImage";
+            this.checkBoxResultImage.Size = new System.Drawing.Size(157, 20);
+            this.checkBoxResultImage.TabIndex = 174;
+            this.checkBoxResultImage.Text = "Save Result Image";
+            this.checkBoxResultImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxResultImage.UseVisualStyleBackColor = true;
             // 
             // checkBoxUseSaveOK
             // 
             this.checkBoxUseSaveOK.AutoSize = true;
-            this.checkBoxUseSaveOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseSaveOK.Location = new System.Drawing.Point(108, 56);
+            this.checkBoxUseSaveOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.checkBoxUseSaveOK.Location = new System.Drawing.Point(9, 53);
             this.checkBoxUseSaveOK.Name = "checkBoxUseSaveOK";
-            this.checkBoxUseSaveOK.Size = new System.Drawing.Size(90, 20);
-            this.checkBoxUseSaveOK.TabIndex = 172;
-            this.checkBoxUseSaveOK.Text = "SAVE OK";
-            this.checkBoxUseSaveOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUseSaveOK.Size = new System.Drawing.Size(85, 20);
+            this.checkBoxUseSaveOK.TabIndex = 2222;
+            this.checkBoxUseSaveOK.TabStop = true;
+            this.checkBoxUseSaveOK.Text = "Save OK";
             this.checkBoxUseSaveOK.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseImageTypeJPG
-            // 
-            this.checkBoxUseImageTypeJPG.AutoSize = true;
-            this.checkBoxUseImageTypeJPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseImageTypeJPG.Location = new System.Drawing.Point(108, 83);
-            this.checkBoxUseImageTypeJPG.Name = "checkBoxUseImageTypeJPG";
-            this.checkBoxUseImageTypeJPG.Size = new System.Drawing.Size(55, 20);
-            this.checkBoxUseImageTypeJPG.TabIndex = 172;
-            this.checkBoxUseImageTypeJPG.Text = "JPG";
-            this.checkBoxUseImageTypeJPG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxUseImageTypeJPG.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseImageTypeBMP
-            // 
-            this.checkBoxUseImageTypeBMP.AutoSize = true;
-            this.checkBoxUseImageTypeBMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseImageTypeBMP.Location = new System.Drawing.Point(9, 86);
-            this.checkBoxUseImageTypeBMP.Name = "checkBoxUseImageTypeBMP";
-            this.checkBoxUseImageTypeBMP.Size = new System.Drawing.Size(58, 20);
-            this.checkBoxUseImageTypeBMP.TabIndex = 172;
-            this.checkBoxUseImageTypeBMP.Text = "BMP";
-            this.checkBoxUseImageTypeBMP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxUseImageTypeBMP.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseSaveAll
-            // 
-            this.checkBoxUseSaveAll.AutoSize = true;
-            this.checkBoxUseSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBoxUseSaveAll.Location = new System.Drawing.Point(9, 56);
-            this.checkBoxUseSaveAll.Name = "checkBoxUseSaveAll";
-            this.checkBoxUseSaveAll.Size = new System.Drawing.Size(96, 20);
-            this.checkBoxUseSaveAll.TabIndex = 172;
-            this.checkBoxUseSaveAll.Text = "SAVE ALL";
-            this.checkBoxUseSaveAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxUseSaveAll.UseVisualStyleBackColor = true;
             // 
             // lblTitleImageSavePeriod
             // 
             this.lblTitleImageSavePeriod.BackColor = System.Drawing.SystemColors.Control;
             this.lblTitleImageSavePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTitleImageSavePeriod.Location = new System.Drawing.Point(6, 124);
+            this.lblTitleImageSavePeriod.Location = new System.Drawing.Point(6, 123);
             this.lblTitleImageSavePeriod.Margin = new System.Windows.Forms.Padding(3);
             this.lblTitleImageSavePeriod.Name = "lblTitleImageSavePeriod";
-            this.lblTitleImageSavePeriod.Size = new System.Drawing.Size(179, 23);
+            this.lblTitleImageSavePeriod.Size = new System.Drawing.Size(218, 23);
             this.lblTitleImageSavePeriod.TabIndex = 171;
-            this.lblTitleImageSavePeriod.Text = "IMAGE SAVE PERIOD";
-            this.lblTitleImageSavePeriod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitleImageSavePeriod.Text = "IMAGE SAVE PERIOD (Day)";
+            this.lblTitleImageSavePeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // numericImageSavePeriod
             // 
@@ -939,7 +911,7 @@
             this.numericReportSavePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numericReportSavePeriod.Location = new System.Drawing.Point(233, 84);
             this.numericReportSavePeriod.Maximum = new decimal(new int[] {
-            1000,
+            365,
             0,
             0,
             0});
@@ -1095,13 +1067,8 @@
         private System.Windows.Forms.Label lblTItleDriveImageSavePeriod;
         private System.Windows.Forms.NumericUpDown numericImageSaveDriveVolume;
         private System.Windows.Forms.GroupBox groupBoxImageSave;
-        private System.Windows.Forms.CheckBox checkBoxUseImageSave;
-        private System.Windows.Forms.CheckBox checkBoxUseGraphicSave;
-        private System.Windows.Forms.CheckBox checkBoxUseSaveNG;
-        private System.Windows.Forms.CheckBox checkBoxUseSaveOK;
-        private System.Windows.Forms.CheckBox checkBoxUseImageTypeJPG;
-        private System.Windows.Forms.CheckBox checkBoxUseImageTypeBMP;
-        private System.Windows.Forms.CheckBox checkBoxUseSaveAll;
+        private System.Windows.Forms.CheckBox checkBoxOriginImage;
+        private System.Windows.Forms.CheckBox checkBoxResultImage;
         private System.Windows.Forms.Label lblTitleImageSavePeriod;
         private System.Windows.Forms.NumericUpDown numericImageSavePeriod;
         private System.Windows.Forms.GroupBox groupBoxOperation;
@@ -1121,5 +1088,8 @@
         private Sunny.UI.UISymbolButton btnLoad;
         private Sunny.UI.UISymbolButton btnSave;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.RadioButton checkBoxUseSaveALL;
+        private System.Windows.Forms.RadioButton checkBoxUseSaveNG;
+        private System.Windows.Forms.RadioButton checkBoxUseSaveOK;
     }
 }

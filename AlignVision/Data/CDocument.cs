@@ -15,6 +15,8 @@ namespace AlignVision
 
         public CConfig m_objConfig;
 
+        private CDefine.enumRunMode m_eRunMode;
+
         /// <summary>
         /// Quản lý form hiện thị hình ảnh
         /// </summary>
@@ -59,6 +61,17 @@ namespace AlignVision
             return result;
 
         }
+
+        public CDefine.enumRunMode GetRunMode() => m_eRunMode;
+
+        public void SetRunMode(CDefine.enumRunMode eRunMode) => m_eRunMode = eRunMode;
+
+        public DialogResult SetMessage(string strMessage)
+        {
+            CDialogMessage cDialogMessage = new CDialogMessage(this, strMessage);
+            return cDialogMessage.ShowDialog();
+        }
+
 
         public CMainFrame GetMainFrame()
         {
