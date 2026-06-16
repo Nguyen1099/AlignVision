@@ -107,9 +107,10 @@
             // 
             // btnSelectedPPID
             // 
+            this.btnSelectedPPID.BackColor = System.Drawing.SystemColors.Window;
             this.btnSelectedPPID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectedPPID.Enabled = false;
-            this.btnSelectedPPID.FillColor = System.Drawing.SystemColors.Control;
+            this.btnSelectedPPID.FillColor = System.Drawing.SystemColors.Window;
             this.btnSelectedPPID.FillDisableColor = System.Drawing.SystemColors.Control;
             this.btnSelectedPPID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnSelectedPPID.ForeColor = System.Drawing.Color.Black;
@@ -254,6 +255,7 @@
             this.GridViewRecipeList.RowTemplate.Height = 23;
             this.GridViewRecipeList.Size = new System.Drawing.Size(339, 523);
             this.GridViewRecipeList.TabIndex = 2204;
+            this.GridViewRecipeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewRecipeList_CellClick);
             // 
             // btnCreateName
             // 
@@ -584,7 +586,7 @@
             // 
             // numericImageSaveDriveVolume
             // 
-            this.numericImageSaveDriveVolume.BackColor = System.Drawing.SystemColors.Control;
+            this.numericImageSaveDriveVolume.BackColor = System.Drawing.SystemColors.Window;
             this.numericImageSaveDriveVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numericImageSaveDriveVolume.Increment = new decimal(new int[] {
             5,

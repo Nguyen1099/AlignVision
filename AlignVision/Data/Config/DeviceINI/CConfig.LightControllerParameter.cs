@@ -81,7 +81,7 @@ namespace AlignVision
             string strSystemPath = string.Format(@"{0:S}\{1:S}", m_strCurrentPath, CDefine.DEF_VISION_CONFIG_INI);
             ClassINI classINI = new ClassINI(strSystemPath);
 
-            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_DEVICE_INI);
+            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_RECIPE_INI);
             ClassINI classINIRecipe = new ClassINI(strRecipePath);
 
             string sectionName = "LIGHT_CONTROLLER";
@@ -110,7 +110,7 @@ namespace AlignVision
             string strSystemPath = string.Format(@"{0:S}\{1:S}", m_strCurrentPath, CDefine.DEF_VISION_CONFIG_INI);
             ClassINI classINI = new ClassINI(strSystemPath);
 
-            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_DEVICE_INI);
+            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_RECIPE_INI);
             ClassINI classINIRecipe = new ClassINI(strRecipePath);
 
             string sectionName = "LIGHT_CONTROLLER";
@@ -140,7 +140,7 @@ namespace AlignVision
             string strSystemPath = string.Format(@"{0:S}\{1:S}", m_strCurrentPath, CDefine.DEF_VISION_CONFIG_INI);
             ClassINI classINI = new ClassINI(strSystemPath);
 
-            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_DEVICE_INI);
+            string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_RECIPE_INI);
             ClassINI classINIRecipe = new ClassINI(strRecipePath);
 
             string sectionName = "LIGHT_CONTROLLER";

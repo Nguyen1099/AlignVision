@@ -135,6 +135,8 @@ namespace AlignVision
             classINI.WriteValue(section, "bUseCenterLine", objOptionParameter.bUseCenterLine);
             classINI.WriteValue(section, "iCenterLineColorIndex", objOptionParameter.iCenterLineColorIndex);
             classINI.WriteValue(section, "iManualMarkWaitTime", objOptionParameter.iManualMarkWaitTime);
+
+            m_objOptionParameter = objOptionParameter;
             result = true;
             return result;
         }

@@ -15,6 +15,8 @@ namespace AlignVision
 
         public CConfig m_objConfig;
 
+        public CRecipeManagement m_objRecipeManagement;
+
         private CDefine.enumRunMode m_eRunMode;
 
         /// <summary>
@@ -38,6 +40,14 @@ namespace AlignVision
             }
             View_Intro.setStatus("Initialize Config", 10);
 
+            // Khởi tạo quản lý recipe
+            m_objRecipeManagement = new CRecipeManagement(this);
+            if (m_objRecipeManagement.Initialize() == false)
+            {
+                throw new Exception();
+            }
+            View_Intro.setStatus("Initialize CRecipeManagement", 20);
+
             // Khởi tạo form hiển thị hình ảnh
             {
                 m_objFormDisplay = new Dictionary<CDefine.enumCamera, CFormDisplay>();
@@ -45,11 +55,9 @@ namespace AlignVision
                 {
                     m_objFormDisplay[index] = new CFormDisplay();
                 }
-                View_Intro.setStatus("Initialize CFormDisplay", 20);
+                View_Intro.setStatus("Initialize CFormDisplay", 30);
             }
 
-
-            View_Intro.setStatus("Initialize CFormDisplay", 30);
             View_Intro.setStatus("Initialize CFormDisplay", 40);
             View_Intro.setStatus("Initialize CFormDisplay", 50);
             View_Intro.setStatus("Initialize CFormDisplay", 60);

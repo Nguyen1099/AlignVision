@@ -13,7 +13,7 @@ namespace AlignVision
 
         public const string DEF_VISION_CAMERA_INI = "VisionCamera.ini";
 
-        public const string DEF_VISION_DEVICE_INI = "VisionDevice.ini";
+        public const string DEF_VISION_RECIPE_INI = "VisionRecipe.ini";
 
         public const string DEF_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.fff";
 

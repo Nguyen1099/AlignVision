@@ -18,15 +18,20 @@ namespace AlignVision
         {
             InitializeComponent();
         }
+        private void CDialogInitProgramIntro_Load(object sender, EventArgs e)
+        {
+            uiRichTextBox.Clear();
+        }
 
         public void setStatus(string strText, int nProgress)
         {
             uiProcessBar.Value = nProgress;
-
             lblProgress.Text = strText;
+            uiRichTextBox.AppendText(strText + " successful" + Environment.NewLine);
             this.Refresh();
             //Application.DoEvents();
             Thread.Sleep(200);
         }
+
     }
 }

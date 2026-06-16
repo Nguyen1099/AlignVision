@@ -42,7 +42,8 @@ namespace AlignVision
 
             var configInitializeSetList = new List<ConfigInitializeSet>()
             {
-                new ConfigInitializeSet(() => LoadSystemParameter(), () => SaveSystemParameter()),        
+                new ConfigInitializeSet(() => LoadSystemParameter(), () => SaveSystemParameter()), 
+                new ConfigInitializeSet(() => LoadRecipeParameter(), () => SaveRecipeParameter()),
                 new ConfigInitializeSet(() => LoadOptionParameter(), () => SaveOptionParameter()),
                 new ConfigInitializeSet(() => LoadDeviceParameter(), () => SaveDeviceParameter()),
 

@@ -105,10 +105,12 @@
     <Compile Include="Data\ClassINI.cs" />
     <Compile Include="Data\Config\CConfig.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.DeviceParameter.cs" />
+    <Compile Include="Data\Config\ConfigINI\CConfig.RecipeInformation.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.OptionParameter.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.SystemParameter.cs" />
     <Compile Include="Data\Config\DeviceINI\CConfig.CameraParameter.cs" />
     <Compile Include="Data\Config\DeviceINI\CConfig.LightControllerParameter.cs" />
+    <Compile Include="Data\CRecipeManagement.cs" />
     <Compile Include="Data\mmf\manager\CMMFManagerVisionData.cs" />
     <Compile Include="Data\mmf\pages\CMMFPagesVisionData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMData_BoolData.cs" />
@@ -325,6 +327,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -345,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="11111111.ico" />
+    <None Include="Resources\vision.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

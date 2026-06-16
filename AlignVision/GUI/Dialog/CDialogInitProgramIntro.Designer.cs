@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDialogInitProgramIntro));
             this.uiProcessBar = new Sunny.UI.UIProcessBar();
             this.lblProgress = new Sunny.UI.UILabel();
+            this.uiRichTextBox = new Sunny.UI.UIRichTextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // uiProcessBar
@@ -43,7 +46,7 @@
             this.uiProcessBar.Location = new System.Drawing.Point(0, 416);
             this.uiProcessBar.MinimumSize = new System.Drawing.Size(3, 3);
             this.uiProcessBar.Name = "uiProcessBar";
-            this.uiProcessBar.RectColor = System.Drawing.Color.LimeGreen;
+            this.uiProcessBar.RectColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.uiProcessBar.Size = new System.Drawing.Size(600, 34);
             this.uiProcessBar.TabIndex = 0;
             this.uiProcessBar.Text = "aaaaa";
@@ -60,11 +63,40 @@
             this.lblProgress.TabIndex = 2;
             this.lblProgress.Text = "uiLabel1";
             // 
+            // uiRichTextBox
+            // 
+            this.uiRichTextBox.FillColor = System.Drawing.SystemColors.Control;
+            this.uiRichTextBox.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.uiRichTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiRichTextBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRichTextBox.Name = "uiRichTextBox";
+            this.uiRichTextBox.Padding = new System.Windows.Forms.Padding(2);
+            this.uiRichTextBox.RectColor = System.Drawing.Color.Black;
+            this.uiRichTextBox.ShowText = false;
+            this.uiRichTextBox.Size = new System.Drawing.Size(332, 385);
+            this.uiRichTextBox.TabIndex = 3;
+            this.uiRichTextBox.Text = "uiRichTextBox1";
+            this.uiRichTextBox.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.ErrorImage = null;
+            this.pictureBox.Image = global::AlignVision.Properties.Resources.vision;
+            this.pictureBox.InitialImage = null;
+            this.pictureBox.Location = new System.Drawing.Point(329, 0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(271, 385);
+            this.pictureBox.TabIndex = 4;
+            this.pictureBox.TabStop = false;
+            // 
             // CDialogInitProgramIntro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.uiRichTextBox);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.uiProcessBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,6 +107,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intro";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.CDialogInitProgramIntro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,5 +117,7 @@
 
         private Sunny.UI.UIProcessBar uiProcessBar;
         private Sunny.UI.UILabel lblProgress;
+        private Sunny.UI.UIRichTextBox uiRichTextBox;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
