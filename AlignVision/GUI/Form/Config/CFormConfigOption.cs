@@ -138,7 +138,7 @@ namespace AlignVision
                 {
                     for (int i = 0; i < objModelList.Count; i++)
                     {
-                        if (objModelList[i].strBootRecipe != gridviewRecipeList[1, i].Value.ToString())
+                        if (objModelList[i].strRecipe != gridviewRecipeList[1, i].Value.ToString())
                         {
                             flag = false;
                             break;
@@ -165,9 +165,9 @@ namespace AlignVision
                 gridviewRecipeList.Rows.Clear();
                 for (int i = 0; i < objModelList.Count; i++)
                 {
-                    string[] values = { objModelList[i].strIndex, objModelList[i].strBootRecipe };
+                    string[] values = { objModelList[i].strIndex, objModelList[i].strRecipe };
                     gridviewRecipeList.Rows.Add(values);
-                    if (objModelList[i].strBootRecipe == m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe)
+                    if (objModelList[i].strRecipe == m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe)
                     {
                         m_iSelectedRow = i;
                     }
@@ -191,7 +191,7 @@ namespace AlignVision
 
         private void SetRecipeListData(int iRow)
         {
-            if (m_objModelParameterList[iRow].strBootRecipe == m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe)
+            if (m_objModelParameterList[iRow].strRecipe == m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe)
             {
                 btnDeleteRcp.Enabled = false;
                 btnSaveRcp.Enabled = true;
@@ -251,13 +251,14 @@ namespace AlignVision
             }
             CConfig.CSystemParameter systemParameter = m_objDocument.m_objConfig.GetSystemParameter();
 
-            systemParameter.strBootRecipe = m_objModelParameterList[m_iSelectedRow].strBootRecipe;
+            systemParameter.strBootRecipe = m_objModelParameterList[m_iSelectedRow].strRecipe;
             m_objDocument.m_objConfig.SaveSystemParameter(systemParameter);
             m_objDocument.m_objConfig.LoadRecipeParameter();
             m_objModelParameterList = m_objDocument.m_objRecipeManagement.GetModelParameterList();
             m_objDocument.m_objConfig.LoadLightControllerParameter();
-            //m_objDocument.m_objConfig.LoadVisionParameter();
             m_objDocument.m_objConfig.LoadCameraParameter();
+
+            //m_objDocument.m_objConfig.LoadVisionParameter();
             //m_objDocument.m_objProcessMain.LoadRecipe();
             //m_objDocument.m_objProcessMain.SetCameraConfig();
         }
@@ -268,7 +269,7 @@ namespace AlignVision
             {
                 return;
             }
-            string strBootRecipe = m_objModelParameterList[m_iSelectedRow].strBootRecipe;
+            string strBootRecipe = m_objModelParameterList[m_iSelectedRow].strRecipe;
             string directoryDelete = $@"{CDefine.DEF_ALIGN_RECIPE_PATH}\{strBootRecipe}";
 
             m_objDocument.m_objRecipeManagement.SetDirectoryDelete(directoryDelete);

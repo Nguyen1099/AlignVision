@@ -87,6 +87,7 @@ namespace AlignVision
         private void timer_Tick(object sender, EventArgs e)
         {
             SetUpdateTime();
+            btnRecipeName.Text = m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe;
         }
 
         private void SetUpdateTime()

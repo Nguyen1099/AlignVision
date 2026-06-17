@@ -15,6 +15,8 @@ namespace AlignVision
         private CDocument m_objDocument;
         private CFormView m_objView;
 
+        private string m_ButtonActive = string.Empty;
+
         public CFormMenu(CDocument objDocument)
         {
             m_objDocument = objDocument;
@@ -40,10 +42,12 @@ namespace AlignVision
 
             CMainFrame cMainFrame = Owner as CMainFrame;
             m_objView = cMainFrame.GetFormView() as CFormView;
+            m_ButtonActive = "btnMain";
             SetFormDockStyle(new FormStatusPC(), panelResourceInfo);
 
             timer.Interval = 100;
-            timer.Enabled = true;
+            timer.Start();
+
             result = true;
             return result;
         }
@@ -60,22 +64,25 @@ namespace AlignVision
 
         private void btnMain_Click(object sender, EventArgs e)
         {
+            m_ButtonActive = "btnMain";
             m_objView.SetChangeForm(CDefine.FormView.FORM_VIEW_MAIN);
         }
 
         private void btnSetup_Click(object sender, EventArgs e)
         {
+            m_ButtonActive = "btnSetup"; 
             m_objView.SetChangeForm(CDefine.FormView.FORM_VIEW_SETUP);
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
+            m_ButtonActive = "btnConfig";
             m_objView.SetChangeForm(CDefine.FormView.FORM_VIEW_CONFIG);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-
+            m_ButtonActive = "btnReport";
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
@@ -103,11 +110,44 @@ namespace AlignVision
         }
         public void SetTimer(bool bTimer)
         {
+            timer.Enabled = bTimer;
         }
         public void SetVisible(bool bVisible)
         {
             this.Visible = bVisible;
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+             switch (m_ButtonActive)
+            {
+                case "btnMain":
+                    btnMain.FillColor = m_colorOn;
+                    btnSetup.FillColor = m_colorControl;
+                    btnConfig.FillColor = m_colorControl;
+                    btnReport.FillColor = m_colorControl;
+                    break;
+                case "btnSetup":
+                    btnMain.FillColor = m_colorControl;
+                    btnSetup.FillColor = m_colorOn;
+                    btnConfig.FillColor = m_colorControl;
+                    btnReport.FillColor = m_colorControl;
+                    break;
+                case "btnConfig":
+                    btnMain.FillColor = m_colorControl;
+                    btnSetup.FillColor = m_colorControl;
+                    btnConfig.FillColor = m_colorOn;
+                    btnReport.FillColor = m_colorControl;
+                    break;
+                case "btnReport":
+                    btnMain.FillColor = m_colorControl;
+                    btnSetup.FillColor = m_colorControl;
+                    btnConfig.FillColor = m_colorControl;
+                    btnReport.FillColor = m_colorOn;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

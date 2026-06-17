@@ -55,6 +55,7 @@
             // lblProgress
             // 
             this.lblProgress.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblProgress.Location = new System.Drawing.Point(12, 390);
@@ -95,9 +96,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.uiRichTextBox);
-            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.uiProcessBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

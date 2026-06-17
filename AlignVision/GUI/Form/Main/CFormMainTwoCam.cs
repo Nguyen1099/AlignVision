@@ -28,10 +28,11 @@ namespace AlignVision
         public bool Initialize()
         {
             bool result = false;
-            if (InitializeForm())
+            if (InitializeForm() == false)
             {
-                result = true;
+                throw new Exception("Failed to initialize CFormMainTwoCam.");
             }
+            result = true;
             return result;
         }
 
@@ -55,6 +56,7 @@ namespace AlignVision
                 m_objDocument.m_objFormDisplay[iCamera].Initialize(iCamera, m_objDocument);
                 SetFormDockStyle(m_objDocument.m_objFormDisplay[iCamera], panels[(int)iCamera]);
             }
+            result = true;
             return result;
         }
         private void btnExpand1_Click(object sender, EventArgs e)
@@ -84,6 +86,7 @@ namespace AlignVision
         }
         public void SetTimer(bool bTimer)
         {
+            timer.Enabled = bTimer;
         }
         public void SetVisible(bool bVisible)
         {

@@ -98,7 +98,7 @@ namespace AlignVision
             for (int j = 0; j < countChannel; j++)
             {
                 string text = "CHANNEL_" + (CDefine.enumLightChannel)j;
-                m_objLightControllerParameter.iIntensity[j] = classINIRecipe.GetInt32(sectionName, "iIntensity_" + text, 100);
+                m_objLightControllerParameter.iIntensity[j] = classINIRecipe.GetInt32(sectionName, "iIntensity" + text, 100);
             }
 
             result = true;

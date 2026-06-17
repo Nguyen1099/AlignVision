@@ -102,10 +102,11 @@
             this.btnMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMain.FillColor = System.Drawing.SystemColors.Control;
-            this.btnMain.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnMain.FillHoverColor = System.Drawing.Color.Silver;
             this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnMain.ForeColor = System.Drawing.Color.Black;
             this.btnMain.ForeHoverColor = System.Drawing.Color.DimGray;
+            this.btnMain.ForeSelectedColor = System.Drawing.Color.Silver;
             this.btnMain.Location = new System.Drawing.Point(3, 3);
             this.btnMain.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnMain.Name = "btnMain";
@@ -114,7 +115,7 @@
             this.btnMain.Size = new System.Drawing.Size(250, 42);
             this.btnMain.Symbol = 559530;
             this.btnMain.SymbolColor = System.Drawing.Color.Black;
-            this.btnMain.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnMain.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnMain.SymbolOffset = new System.Drawing.Point(-50, 0);
             this.btnMain.TabIndex = 93;
             this.btnMain.Text = "MAIN";
@@ -126,7 +127,7 @@
             this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfig.FillColor = System.Drawing.SystemColors.Control;
-            this.btnConfig.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnConfig.FillHoverColor = System.Drawing.Color.Silver;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.Black;
             this.btnConfig.ForeHoverColor = System.Drawing.Color.DimGray;
@@ -138,7 +139,7 @@
             this.btnConfig.Size = new System.Drawing.Size(250, 42);
             this.btnConfig.Symbol = 557566;
             this.btnConfig.SymbolColor = System.Drawing.Color.Black;
-            this.btnConfig.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnConfig.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnConfig.SymbolOffset = new System.Drawing.Point(-40, 0);
             this.btnConfig.TabIndex = 94;
             this.btnConfig.Text = "CONFIG";
@@ -150,7 +151,7 @@
             this.btnSetup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSetup.FillColor = System.Drawing.SystemColors.Control;
-            this.btnSetup.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnSetup.FillHoverColor = System.Drawing.Color.Silver;
             this.btnSetup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSetup.ForeColor = System.Drawing.Color.Black;
             this.btnSetup.ForeHoverColor = System.Drawing.Color.DimGray;
@@ -162,7 +163,7 @@
             this.btnSetup.Size = new System.Drawing.Size(250, 42);
             this.btnSetup.Symbol = 559576;
             this.btnSetup.SymbolColor = System.Drawing.Color.Black;
-            this.btnSetup.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnSetup.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnSetup.SymbolOffset = new System.Drawing.Point(-44, 0);
             this.btnSetup.TabIndex = 95;
             this.btnSetup.Text = "SETUP";
@@ -196,7 +197,7 @@
             this.btnIOTest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIOTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnIOTest.FillColor = System.Drawing.SystemColors.Control;
-            this.btnIOTest.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnIOTest.FillHoverColor = System.Drawing.Color.Silver;
             this.btnIOTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnIOTest.ForeColor = System.Drawing.Color.Black;
             this.btnIOTest.ForeHoverColor = System.Drawing.Color.DimGray;
@@ -208,7 +209,7 @@
             this.btnIOTest.Size = new System.Drawing.Size(250, 42);
             this.btnIOTest.Symbol = 61528;
             this.btnIOTest.SymbolColor = System.Drawing.Color.Black;
-            this.btnIOTest.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnIOTest.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnIOTest.SymbolOffset = new System.Drawing.Point(-47, 0);
             this.btnIOTest.TabIndex = 98;
             this.btnIOTest.Text = "IO Test";
@@ -220,7 +221,7 @@
             this.btnLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLanguage.FillColor = System.Drawing.SystemColors.Control;
-            this.btnLanguage.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnLanguage.FillHoverColor = System.Drawing.Color.Silver;
             this.btnLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnLanguage.ForeColor = System.Drawing.Color.Black;
             this.btnLanguage.ForeHoverColor = System.Drawing.Color.DimGray;
@@ -232,7 +233,7 @@
             this.btnLanguage.Size = new System.Drawing.Size(250, 42);
             this.btnLanguage.Symbol = 559540;
             this.btnLanguage.SymbolColor = System.Drawing.Color.Black;
-            this.btnLanguage.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnLanguage.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnLanguage.SymbolOffset = new System.Drawing.Point(-27, 0);
             this.btnLanguage.TabIndex = 97;
             this.btnLanguage.Text = "LANGUAGE";
@@ -244,7 +245,7 @@
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnReport.FillColor = System.Drawing.SystemColors.Control;
-            this.btnReport.FillHoverColor = System.Drawing.SystemColors.Control;
+            this.btnReport.FillHoverColor = System.Drawing.Color.Silver;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReport.ForeColor = System.Drawing.Color.Black;
             this.btnReport.ForeHoverColor = System.Drawing.Color.DimGray;
@@ -256,12 +257,16 @@
             this.btnReport.Size = new System.Drawing.Size(250, 42);
             this.btnReport.Symbol = 57580;
             this.btnReport.SymbolColor = System.Drawing.Color.Black;
-            this.btnReport.SymbolHoverColor = System.Drawing.Color.DimGray;
+            this.btnReport.SymbolHoverColor = System.Drawing.Color.Black;
             this.btnReport.SymbolOffset = new System.Drawing.Point(-39, 0);
             this.btnReport.TabIndex = 96;
             this.btnReport.Text = "REPORT";
             this.btnReport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // CFormMenu
             // 

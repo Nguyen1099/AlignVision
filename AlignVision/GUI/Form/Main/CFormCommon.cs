@@ -28,6 +28,8 @@ namespace AlignVision
 
         protected Color m_colorOff = Color.FromArgb(255, 192, 192);
 
+        protected Color m_colorControl = Color.FromArgb(240, 240, 240);
+
         protected Color m_objBlue = Color.Blue;
 
         /// <summary>

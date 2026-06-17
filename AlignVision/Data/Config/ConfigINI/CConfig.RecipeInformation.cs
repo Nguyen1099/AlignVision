@@ -8,7 +8,7 @@ namespace AlignVision
     {
         public class CRecipeInformation : ICloneable
         {
-            public string strBootRecipe;
+            public string strRecipe;
 
             public string strIndex;
 
@@ -16,7 +16,7 @@ namespace AlignVision
 
             public CRecipeInformation()
             {
-                strBootRecipe = "";
+                strRecipe = "";
                 strIndex = "";
                 UpdateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
@@ -24,7 +24,7 @@ namespace AlignVision
             public object Clone()
             {
                 CRecipeInformation cRecipeInformation = new CRecipeInformation();
-                cRecipeInformation.strBootRecipe = strBootRecipe;
+                cRecipeInformation.strRecipe = strRecipe;
                 cRecipeInformation.strIndex = strIndex;
                 cRecipeInformation.UpdateTime = UpdateTime;
                 return cRecipeInformation;
@@ -42,7 +42,7 @@ namespace AlignVision
             ClassINI classINI = new ClassINI(strPath);
 
             CRecipeInformation objModelParameter = new CRecipeInformation();
-            objModelParameter.strBootRecipe = strRecipeName;
+            objModelParameter.strRecipe = strRecipeName;
             objModelParameter.strIndex = classINI.GetString("MODEL", "strIndex", "1");
             objModelParameter.UpdateTime = classINI.GetString("MODEL", "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -64,8 +64,8 @@ namespace AlignVision
             }
 
             ClassINI classINI = new ClassINI(path);
-            string strSection = "RECIPE";
-            m_objRecipeParameter.strBootRecipe = classINI.GetString(strSection, "strBootRecipe", m_objSystemParameter.strBootRecipe);
+            string strSection = "MODEL";
+            m_objRecipeParameter.strRecipe = classINI.GetString(strSection, "strRecipe", m_objSystemParameter.strBootRecipe);
             m_objRecipeParameter.strIndex = classINI.GetString(strSection, "strIndex", "1");
             m_objRecipeParameter.UpdateTime = classINI.GetString(strSection, "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -89,7 +89,7 @@ namespace AlignVision
 
             ClassINI classINI = new ClassINI(path);
 
-            classINI.WriteValue("MODEL", "strBootRecipe", m_objRecipeParameter.strBootRecipe);
+            classINI.WriteValue("MODEL", "strRecipe", m_objRecipeParameter.strRecipe);
             classINI.WriteValue("MODEL", "strIndex", m_objRecipeParameter.strIndex);
             classINI.WriteValue("MODEL", "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -109,7 +109,7 @@ namespace AlignVision
 
             ClassINI classINI = new ClassINI(path);
 
-            classINI.WriteValue("MODEL", "strBootRecipe", objRecipeParameter.strBootRecipe);
+            classINI.WriteValue("MODEL", "strRecipe", objRecipeParameter.strRecipe);
             classINI.WriteValue("MODEL", "strIndex", objRecipeParameter.strIndex);
             classINI.WriteValue("MODEL", "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             m_objRecipeParameter = objRecipeParameter;

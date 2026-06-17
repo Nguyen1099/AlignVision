@@ -16,6 +16,10 @@ namespace AlignVision
 
                 public double dExposureTime;
 
+                public double dGamma;
+
+                public double dDigitalShift;
+
                 public double dFrameRate;
             }
 
@@ -43,6 +47,8 @@ namespace AlignVision
                 cCameraParameter.objCameraConfig.bReverseY = objCameraConfig.bReverseY;
                 cCameraParameter.objCameraConfig.dGain = objCameraConfig.dGain;
                 cCameraParameter.objCameraConfig.dExposureTime = objCameraConfig.dExposureTime;
+                cCameraParameter.objCameraConfig.dGamma = objCameraConfig.dGamma;
+                cCameraParameter.objCameraConfig.dDigitalShift = objCameraConfig.dDigitalShift;
                 cCameraParameter.objCameraConfig.dFrameRate = objCameraConfig.dFrameRate;
                 return cCameraParameter;
             }
@@ -78,6 +84,8 @@ namespace AlignVision
                 m_objCameraParameter[i].objCameraConfig.bReverseY = classINIRecipe.GetBool(sectionName, "bReverseY", bValue: false);
                 m_objCameraParameter[i].objCameraConfig.dExposureTime = classINIRecipe.GetDouble(sectionName, "dExposureTime", 10000.0);
                 m_objCameraParameter[i].objCameraConfig.dGain = classINIRecipe.GetDouble(sectionName, "dGain", 1.0);
+                m_objCameraParameter[i].objCameraConfig.dGamma = classINIRecipe.GetDouble(sectionName, "dGamma", 0.0);
+                m_objCameraParameter[i].objCameraConfig.dDigitalShift = classINIRecipe.GetDouble(sectionName, "dDigitalShift", 0.0);
                 m_objCameraParameter[i].objCameraConfig.dFrameRate = classINIRecipe.GetDouble(sectionName, "dFrameRate", 10.0);
             }
             result = true;
@@ -106,6 +114,8 @@ namespace AlignVision
                 classINIRecipe.WriteValue(sectionName, "bReverseY", m_objCameraParameter[i].objCameraConfig.bReverseY);
                 classINIRecipe.WriteValue(sectionName, "dExposureTime", m_objCameraParameter[i].objCameraConfig.dExposureTime);
                 classINIRecipe.WriteValue(sectionName, "dGain", m_objCameraParameter[i].objCameraConfig.dGain);
+                classINIRecipe.WriteValue(sectionName, "dGamma", m_objCameraParameter[i].objCameraConfig.dGamma);
+                classINIRecipe.WriteValue(sectionName, "dDigitalShift", m_objCameraParameter[i].objCameraConfig.dDigitalShift);
                 classINIRecipe.WriteValue(sectionName, "dFrameRate", m_objCameraParameter[i].objCameraConfig.dFrameRate);
             }
             result = true;
@@ -132,6 +142,8 @@ namespace AlignVision
             classINIRecipe.WriteValue(sectionName, "bReverseY", objCameraParameter.objCameraConfig.bReverseY);
             classINIRecipe.WriteValue(sectionName, "dExposureTime", objCameraParameter.objCameraConfig.dExposureTime);
             classINIRecipe.WriteValue(sectionName, "dGain", objCameraParameter.objCameraConfig.dGain);
+            classINIRecipe.WriteValue(sectionName, "dGamma", objCameraParameter.objCameraConfig.dGamma);
+            classINIRecipe.WriteValue(sectionName, "dDigitalShift", objCameraParameter.objCameraConfig.dDigitalShift);  
             classINIRecipe.WriteValue(sectionName, "dFrameRate", objCameraParameter.objCameraConfig.dFrameRate);
             m_objCameraParameter[(int)eCamera] = (CCameraParameter)objCameraParameter.Clone();
 

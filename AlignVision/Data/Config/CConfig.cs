@@ -37,7 +37,7 @@ namespace AlignVision
 
             m_strCurrentPath = Directory.GetCurrentDirectory();
             ClassINI objINI = new ClassINI(string.Format(@"{0}\{1}", m_strCurrentPath, CDefine.DEF_VISION_CONFIG_INI));
-            m_strRecipePath = string.Format(@"{0}\{1}", CDefine.DEF_ALIGN_RECIPE_PATH, objINI.GetString("SYSTEM", "strRecipe", "1000"));
+            m_strRecipePath = string.Format(@"{0}\{1}", CDefine.DEF_ALIGN_RECIPE_PATH, objINI.GetString("SYSTEM", "strBootRecipe", "1000"));
             CreatFolder(m_strRecipePath);
 
             var configInitializeSetList = new List<ConfigInitializeSet>()

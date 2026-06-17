@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Cognex.VisionPro.Display;
+
 namespace AlignVision
 {
     public partial class CFormDisplay : Form
@@ -40,6 +42,11 @@ namespace AlignVision
 
             result = true;
             return result;
+        }
+
+        public CogDisplay getCogDisplay()
+        {
+            return cogDisplay;
         }
     }
 }
