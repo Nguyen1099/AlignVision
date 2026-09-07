@@ -129,6 +129,13 @@
     <Compile Include="Data\mmf\visiondefine\MMData_ShortData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMData_StringData.cs" />
     <Compile Include="Data\mmf\visiondefine\MMVisionData_PageBase.cs" />
+    <Compile Include="Device\Communication\CDeviceCommunication.cs" />
+    <Compile Include="Device\Communication\CDeviceCommunicationAbstract.cs" />
+    <Compile Include="Device\Communication\CDeviceCommunicationSocketClient.cs" />
+    <Compile Include="Device\Communication\CDeviceCommunicationSocketServer.cs" />
+    <Compile Include="Device\Communication\CDeviceCommunicationVirtual.cs" />
+    <Compile Include="Device\Communication\LogEventArgs.cs" />
+    <Compile Include="Device\Communication\StateObject.cs" />
     <Compile Include="GUI\CFormInterface.cs" />
     <Compile Include="GUI\Dialog\CDialogChangePassword.cs">
       <SubType>Form</SubType>
@@ -351,9 +358,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Device\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="11111111.ico" />
     <None Include="Resources\vision.png" />

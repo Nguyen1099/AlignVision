@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,10 +20,24 @@ namespace AlignVision
 
         private CDefine.enumRunMode m_eRunMode;
 
+        private static CDocument m_objDocument;
+
         /// <summary>
         /// Quản lý form hiện thị hình ảnh
         /// </summary>
         public Dictionary<CDefine.enumCamera, CFormDisplay> m_objFormDisplay;
+
+        public static CDocument GetDocument
+        {
+            get
+            {
+                if (null == m_objDocument)
+                {
+                    m_objDocument = new CDocument();
+                }
+                return m_objDocument;
+            }
+        }
 
 
         public bool Initialize()
@@ -103,6 +118,35 @@ namespace AlignVision
             }
             return cMainFrame;
         }
+
+        public static void Exception(Exception ex, string comment = "")
+        {
+            StringBuilder sb = new StringBuilder();
+            StackTrace trace = new StackTrace(ex, true);
+            CDocument objDocument = CDocument.GetDocument;
+            if (null != objDocument)
+            {
+                sb.Append(comment).AppendLine();
+                int count = 0;
+                if (trace.FrameCount != 0)
+                {
+                    foreach (StackFrame sf in trace.GetFrames())
+                    {
+                        count++;
+                        sb.AppendFormat(
+                            "[Depth:{0}, Line:{1}, Method:{2}, File:{3}]",
+                            count,
+                            sf.GetFileLineNumber(),
+                            sf.GetMethod().Name,
+                            Path.GetFileName(sf.GetFileName())
+                            ).AppendLine();
+                    }
+                }
+                sb.AppendFormat("[Message:{0}]", ex.Message);
+                //objDocument.SetUpdateLog(CDefine.enumLogType.LOG_EXCEPTION, sb.ToString());
+            }
+        }
+
 
     }
 }
