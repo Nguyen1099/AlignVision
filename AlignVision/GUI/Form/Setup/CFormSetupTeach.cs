@@ -60,18 +60,18 @@ namespace AlignVision
 
         private void Initialize()
         {
+            m_strCurrentModelID = "";
+            m_strNewModelID = "";
+            m_eCameraIndex = CDefine.enumCamera.CAMERA_ALIGN_1;
+            m_eStageIndex = CDefine.enumStage.STAGE_MAIN_ALIGN_1; 
+            SetChangeCameraIndex(CDefine.enumCamera.CAMERA_ALIGN_1);
+
             m_objStageParameterList = new Dictionary<CDefine.enumStage, CConfig.CStageParameter>();
             foreach (CDefine.enumStage eStage in Enum.GetValues(typeof(CDefine.enumStage)))
             {
                 m_objStageParameterList[eStage] = m_objDocument.m_objConfig.GetStageParameter(eStage).Clone() as CConfig.CStageParameter;
             }
 
-            m_strCurrentModelID = "";
-            m_strNewModelID = "";
-            m_iCameraIndex = new List<int>();
-            m_eCameraIndex = CDefine.enumCamera.CAMERA_ALIGN_1;
-            m_eStageIndex = CDefine.enumStage.STAGE_MAIN_ALIGN_1; 
-            SetChangeCameraIndex(CDefine.enumCamera.CAMERA_ALIGN_1);
 
             cogDisplayStatusBar_Camera.Display = cogDisplayCamera;
             cogDisplayStatusBar_Result.Display = cogDisplayResult;
@@ -140,12 +140,15 @@ namespace AlignVision
         /// </summary>
         private void SetChangeCameraIndex(CDefine.enumCamera enumCamera)
         {
-            comboBoxAlignToolType.SelectedIndex = (int)enumCamera;
+
         }
 
-        private void SetSubToolType()
+        /// <summary>
+        /// Các tham số cần được load khi thay đổi stage
+        /// </summary>
+        /// <param name="enumStage"></param>
+        private void SetChangeStageIndex(CDefine.enumStage enumStage)
         {
-            throw new NotImplementedException();
         }
 
         private void BtnGrabImage_Click(object sender, EventArgs e)
@@ -168,6 +171,17 @@ namespace AlignVision
                 cogDisplayCamera.Image = m_objCogImageInput;
             }
 
+        }
+
+        private void btnStage1_Click(object sender, EventArgs e)
+        {
+            m_eStageIndex = CDefine.enumStage.STAGE_MAIN_ALIGN_1;
+
+        }
+
+        private void btnStage2_Click(object sender, EventArgs e)
+        {
+            m_eStageIndex = CDefine.enumStage.STAGE_MAIN_ALIGN_2;
         }
 
         private void BtnGrabCamera_Click(object sender, EventArgs e)
@@ -240,6 +254,21 @@ namespace AlignVision
                     break;
             }
 
+            switch(m_eStageIndex)
+            {
+                case CDefine.enumStage.STAGE_MAIN_ALIGN_1:
+                    btnStage1.BackColor = m_colorOn;
+                    btnStage2.BackColor = Color.White;
+                    break;
+                case CDefine.enumStage.STAGE_MAIN_ALIGN_2:
+                    btnStage1.BackColor = Color.White;
+                    btnStage2.BackColor = m_colorOn;
+                    break;
+                default:
+                    break;
+            }
+
         }
+
     }
 }

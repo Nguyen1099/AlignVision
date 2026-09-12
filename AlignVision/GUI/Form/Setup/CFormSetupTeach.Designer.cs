@@ -65,6 +65,9 @@
             this.groupAlignSetting = new System.Windows.Forms.GroupBox();
             this.btnAlignSetting = new System.Windows.Forms.Button();
             this.comboBoxAlignToolType = new Sunny.UI.UIComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnStage1 = new System.Windows.Forms.Button();
+            this.btnStage2 = new System.Windows.Forms.Button();
             this.panelSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToolList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cogDisplayCamera)).BeginInit();
@@ -73,6 +76,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupAlignSetting.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSetting
@@ -288,9 +292,9 @@
             // 
             this.BtnMasterPositionDisplay.BackColor = System.Drawing.Color.White;
             this.BtnMasterPositionDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BtnMasterPositionDisplay.Location = new System.Drawing.Point(642, 31);
+            this.BtnMasterPositionDisplay.Location = new System.Drawing.Point(988, 727);
             this.BtnMasterPositionDisplay.Name = "BtnMasterPositionDisplay";
-            this.BtnMasterPositionDisplay.Size = new System.Drawing.Size(1011, 46);
+            this.BtnMasterPositionDisplay.Size = new System.Drawing.Size(665, 65);
             this.BtnMasterPositionDisplay.TabIndex = 164;
             this.BtnMasterPositionDisplay.Text = "[ MASTER ]";
             this.BtnMasterPositionDisplay.UseVisualStyleBackColor = true;
@@ -356,7 +360,7 @@
             this.groupBoxOperation.Controls.Add(this.BtnGrabCamera);
             this.groupBoxOperation.Controls.Add(this.BtnLoadImage);
             this.groupBoxOperation.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxOperation.Location = new System.Drawing.Point(2, 1);
+            this.groupBoxOperation.Location = new System.Drawing.Point(838, 0);
             this.groupBoxOperation.Name = "groupBoxOperation";
             this.groupBoxOperation.Size = new System.Drawing.Size(634, 86);
             this.groupBoxOperation.TabIndex = 2224;
@@ -524,11 +528,50 @@
             this.comboBoxAlignToolType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.comboBoxAlignToolType.Watermark = "";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnStage1);
+            this.groupBox1.Controls.Add(this.btnStage2);
+            this.groupBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(423, 86);
+            this.groupBox1.TabIndex = 2225;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "STAGE INDEX";
+            // 
+            // btnStage1
+            // 
+            this.btnStage1.BackColor = System.Drawing.Color.White;
+            this.btnStage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStage1.Location = new System.Drawing.Point(2, 30);
+            this.btnStage1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStage1.Name = "btnStage1";
+            this.btnStage1.Size = new System.Drawing.Size(207, 50);
+            this.btnStage1.TabIndex = 167;
+            this.btnStage1.Text = "STAGE 1";
+            this.btnStage1.UseVisualStyleBackColor = true;
+            this.btnStage1.Click += new System.EventHandler(this.btnStage1_Click);
+            // 
+            // btnStage2
+            // 
+            this.btnStage2.BackColor = System.Drawing.Color.White;
+            this.btnStage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStage2.Location = new System.Drawing.Point(213, 30);
+            this.btnStage2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStage2.Name = "btnStage2";
+            this.btnStage2.Size = new System.Drawing.Size(207, 50);
+            this.btnStage2.TabIndex = 165;
+            this.btnStage2.Text = "STAGE 2";
+            this.btnStage2.UseVisualStyleBackColor = true;
+            this.btnStage2.Click += new System.EventHandler(this.btnStage2_Click);
+            // 
             // CFormSetupTeach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1656, 983);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxAlignToolType);
             this.Controls.Add(this.groupAlignSetting);
             this.Controls.Add(this.btnOpenToolBlock);
@@ -561,6 +604,7 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupAlignSetting.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -602,5 +646,8 @@
         private System.Windows.Forms.Button btnAlignSetting;
         private Sunny.UI.UIComboBox comboBoxAlignToolType;
         private System.Windows.Forms.Button btnChooseTool;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnStage1;
+        private System.Windows.Forms.Button btnStage2;
     }
 }

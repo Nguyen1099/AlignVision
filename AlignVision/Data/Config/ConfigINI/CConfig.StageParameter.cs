@@ -12,9 +12,10 @@ namespace AlignVision
         public class CStageParameter : ICloneable
         {
             /// <summary>
-            /// Loại căn chỉnh
+            /// Loại tool khi sử dụng (pattern / findline)
             /// </summary>
             public CDefine.enumAlignToolType eAlignToolType;
+
             /// <summary>
             /// Tham số căn chỉnh
             /// </summary>
@@ -59,7 +60,6 @@ namespace AlignVision
             public CStageParameter()
             {
                 this.eAlignToolType = CDefine.enumAlignToolType.PATTERN_ONLY;
-
                 this.dWeightX = 0.0;
                 this.dWeightY = 0.0;
                 this.dWeightT = 0.0;
@@ -75,6 +75,7 @@ namespace AlignVision
             public object Clone()
             {
                 CStageParameter obj = new CStageParameter();
+                obj.eAlignToolType = this.eAlignToolType;
                 obj.dWeightX = this.dWeightX;
                 obj.dWeightY = this.dWeightY;
                 obj.dWeightT = this.dWeightT;
@@ -113,18 +114,18 @@ namespace AlignVision
                 }
 
                 string strSection = ((CDefine.enumStage)iLoopCount).ToString();
-                m_objStageParameter[iLoopCount].eAlignToolType = (CDefine.enumAlignToolType)classINIRecipe.GetInt32(strSection, "eAlignType", (int)CDefine.enumAlignToolType.PATTERN_ONLY);
 
+                m_objStageParameter[iLoopCount].eAlignToolType = (CDefine.enumAlignToolType)classINIRecipe.GetInt32(strSection, "eAlignType", (int)CDefine.enumAlignToolType.PATTERN_ONLY);
                 // tham số căn chỉnh
-                //m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignLimit = classINIRecipe.GetBool(strSection, "objAlignParameter.bUseAlignLimit", false);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitX = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitX", 5.0);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitY = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitY", 5.0);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitT", 5.0);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceX = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceX", 0.005);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceY = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceY", 0.005);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceT", 0.005);
-                //m_objStageParameter[iLoopCount].objAlignParameter.dAlignDivisionToleranceT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignDivisionToleranceT", 0.005);
-                //m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignX = classINIRecipe.GetBool(strSection, "objAlignParameter.bUseAlignX", false);
+                m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignLimit = classINIRecipe.GetBool(strSection, "objAlignParameter.bUseAlignLimit", false);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitX = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitX", 5.0);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitY = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitY", 5.0);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignLimitT", 5.0);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceX = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceX", 0.005);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceY = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceY", 0.005);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignToleranceT", 0.005);
+                m_objStageParameter[iLoopCount].objAlignParameter.dAlignDivisionToleranceT = classINIRecipe.GetDouble(strSection, "objAlignParameter.dAlignDivisionToleranceT", 0.005);
+                m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignX = classINIRecipe.GetBool(strSection, "objAlignParameter.bUseAlignX", false);
 
                 m_objStageParameter[iLoopCount].dWeightX = classINIRecipe.GetDouble(strSection, "dWeightX", 1.0);
                 m_objStageParameter[iLoopCount].dWeightY = classINIRecipe.GetDouble(strSection, "dWeightY", 1.0);
@@ -165,17 +166,16 @@ namespace AlignVision
                 string strSection = ((CDefine.enumStage)iLoopCount).ToString();
 
                 classINIRecipe.WriteValue(strSection, "eAlignType", (int)m_objStageParameter[iLoopCount].eAlignToolType);
-
                 // Align parameter
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignLimit", m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignLimit);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitX", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitX);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitY", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitY);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitT);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceX", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceX);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceY", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceY);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceT);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignDivisionToleranceT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignDivisionToleranceT);
-                //classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignX", m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignX);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignLimit", m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignLimit);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitX", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitX);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitY", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitY);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignLimitT);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceX", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceX);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceY", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceY);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignToleranceT);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignDivisionToleranceT", m_objStageParameter[iLoopCount].objAlignParameter.dAlignDivisionToleranceT);
+                classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignX", m_objStageParameter[iLoopCount].objAlignParameter.bUseAlignX);
 
                 // Calibration
                 classINIRecipe.WriteValue(strSection, "dWeightX", m_objStageParameter[iLoopCount].dWeightX);
@@ -216,17 +216,17 @@ namespace AlignVision
             string strSection = ((CDefine.enumStage)iStageIndex).ToString();
             var varParameterOrigin = m_objStageParameter[iStageIndex];
 
-
+            classINIRecipe.WriteValue(strSection, "eAlignType", (int)objStageParameter.eAlignToolType);
             // Align parameter
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignLimit", objStageParameter.objAlignParameter.bUseAlignLimit);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignX", objStageParameter.objAlignParameter.bUseAlignX);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitX", objStageParameter.objAlignParameter.dAlignLimitX);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitY", objStageParameter.objAlignParameter.dAlignLimitY);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitT", objStageParameter.objAlignParameter.dAlignLimitT);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceX", objStageParameter.objAlignParameter.dAlignToleranceX);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceY", objStageParameter.objAlignParameter.dAlignToleranceY);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceT", objStageParameter.objAlignParameter.dAlignToleranceT);
-            //classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignDivisionToleranceT", objStageParameter.objAlignParameter.dAlignDivisionToleranceT);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignLimit", objStageParameter.objAlignParameter.bUseAlignLimit);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.bUseAlignX", objStageParameter.objAlignParameter.bUseAlignX);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitX", objStageParameter.objAlignParameter.dAlignLimitX);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitY", objStageParameter.objAlignParameter.dAlignLimitY);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignLimitT", objStageParameter.objAlignParameter.dAlignLimitT);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceX", objStageParameter.objAlignParameter.dAlignToleranceX);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceY", objStageParameter.objAlignParameter.dAlignToleranceY);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignToleranceT", objStageParameter.objAlignParameter.dAlignToleranceT);
+            classINIRecipe.WriteValue(strSection, "objAlignParameter.dAlignDivisionToleranceT", objStageParameter.objAlignParameter.dAlignDivisionToleranceT);
 
             classINIRecipe.WriteValue(strSection, "dWeightX", objStageParameter.dWeightX);
             classINIRecipe.WriteValue(strSection, "dWeightY", objStageParameter.dWeightY);
@@ -246,7 +246,6 @@ namespace AlignVision
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dLineThickness", objStageParameter.objStageLineSettingParameter.dLineThickness);
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dPositionWidth", objStageParameter.objStageLineSettingParameter.dPositionWidth);
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dPositionHeight", objStageParameter.objStageLineSettingParameter.dPositionHeight);
-
             m_objStageParameter[iStageIndex] = (CStageParameter)objStageParameter.Clone();
 
             bReturn = true;
