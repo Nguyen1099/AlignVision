@@ -80,7 +80,7 @@ namespace AlignVision
         public bool Send(string strData)
         {
             bool bResult = false;
-            if (false == m_objCommunication.SocketSend(strData))
+            if (false == m_objCommunication.SendData(strData))
             {
                 return bResult;
             }
@@ -96,7 +96,7 @@ namespace AlignVision
         public bool Send(byte[] byteData)
         {
             bool bResult = false;
-            if (false == m_objCommunication.SocketSend(byteData))
+            if (false == m_objCommunication.SendData(byteData))
             {
                 return bResult;
             }

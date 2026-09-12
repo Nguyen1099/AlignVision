@@ -16,6 +16,8 @@ namespace AlignVision
     {
         private CDocument m_objDocument;
 
+        private CogImage8Grey[] m_objImage8Gray;
+
         private enum enumCameraIndex
         {
             CAMERA_1 = 0,
@@ -57,6 +59,7 @@ namespace AlignVision
             bool result = false;
 
             m_eCameraIndex = enumCameraIndex.CAMERA_1;
+            m_objImage8Gray = new CogImage8Grey[Enum.GetNames(typeof(CDefine.enumCamera)).Length];
             // Khởi tạo form hiển thị hình ảnh
             {
                 m_objFormDisplay = new Dictionary<CDefine.enumCamera, CFormDisplay>();
@@ -66,6 +69,7 @@ namespace AlignVision
                 }
             }
 
+            // Cập nhật dữ liệu khi đổi recipe
             GetParameterRecipe();
 
             // Lấy dữ liệu từ các parameter để hiển thị lên form
@@ -117,13 +121,13 @@ namespace AlignVision
 
         private void btnExpand1_Click(object sender, EventArgs e)
         {
-            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_1);
+            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_1, m_objImage8Gray[(int)CDefine.enumCamera.CAMERA_ALIGN_1]);
             objFormViewCameraExpand.ShowDialog();
         }
 
         private void btnExpand2_Click(object sender, EventArgs e)
         {
-            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_2);
+            CFormViewCameraExpand objFormViewCameraExpand = new CFormViewCameraExpand(m_objDocument, CDefine.enumCamera.CAMERA_ALIGN_2, m_objImage8Gray[(int)CDefine.enumCamera.CAMERA_ALIGN_2]);
             objFormViewCameraExpand.ShowDialog();
         }
 
@@ -139,7 +143,7 @@ namespace AlignVision
             {
                 image.Open(openFile.FileName, CogImageFileModeConstants.Read);
                 CogImage8Grey m_objCogImageInput = (CogImage8Grey)image[0];
-
+                m_objImage8Gray[(int)CDefine.enumCamera.CAMERA_ALIGN_1] = m_objCogImageInput;
                 m_objFormDisplay[CDefine.enumCamera.CAMERA_ALIGN_1].getCogDisplay().Image = m_objCogImageInput;
             }
         }
@@ -156,7 +160,7 @@ namespace AlignVision
             {
                 image.Open(openFile.FileName, CogImageFileModeConstants.Read);
                 CogImage8Grey m_objCogImageInput = (CogImage8Grey)image[0];
-
+                m_objImage8Gray[(int)CDefine.enumCamera.CAMERA_ALIGN_2] = m_objCogImageInput;
                 m_objFormDisplay[CDefine.enumCamera.CAMERA_ALIGN_2].getCogDisplay().Image = m_objCogImageInput;
             }
         }

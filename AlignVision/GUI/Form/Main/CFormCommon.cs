@@ -8,6 +8,8 @@ namespace AlignVision
 {
     public partial class CFormCommon : Form
     {
+
+        private static CFormCommon m_pFormCommon = null;
         protected Color m_colorRed = Color.FromArgb(255, 192, 192);
 
         protected Color m_colorGreen = Color.FromArgb(192, 255, 192);
@@ -209,6 +211,19 @@ namespace AlignVision
                 objButton[i].Location = new Point(i * iButtonWidth + 9, 0);             // thay doi vi tri button, 9 la khoang cach tu button dau tien den mep ben trai
             }
         }
+
+        public static CFormCommon GetFormCommon
+        {
+            get
+            {
+                if (null == m_pFormCommon)
+                {
+                    m_pFormCommon = new CFormCommon();
+                }
+                return m_pFormCommon;
+            }
+        }
+
 
     }
 }

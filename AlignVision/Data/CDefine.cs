@@ -107,13 +107,7 @@ namespace AlignVision
         {
             LIGHT_MAIN_ALIGN_1_1 = 0,
             LIGHT_MAIN_ALIGN_1_2,
-            //LIGHT_MAIN_ALIGN_2_1,
-            //LIGHT_MAIN_ALIGN_2_2
         }
-        //public enum enumLightController
-        //{
-        //    LIGHT_CONTROLLER_MAIN = 0,
-        //}
         #endregion
         #region Camera Parameter
         public enum enumCamera
@@ -128,6 +122,24 @@ namespace AlignVision
         }
 
         #endregion
+
+        public enum enumAlignToolType
+        {
+            PATTERN_ONLY = 0,
+			LINE_ONLY,
+        }
+
+        /// <summary>
+        /// Loại kết quả
+        /// </summary>
+        public enum enumPatternResultType
+        {
+            // Tuần tự tìm kiếm mẫu theo thứ tự 0(từ trên xuống dưới)
+            SEQUENTIAL_SEARCH = 0,
+            //Cập nhật điểm số cao nhất
+            SCORE_SEARCH,
+        }
+
 
     }
 }

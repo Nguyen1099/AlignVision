@@ -90,6 +90,18 @@
             this.btnLoad = new Sunny.UI.UISymbolButton();
             this.btnSave = new Sunny.UI.UISymbolButton();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblTitleLightDelay = new System.Windows.Forms.Label();
+            this.checkBoxUseRetryAferMarkNG = new System.Windows.Forms.CheckBox();
+            this.lblTitleGrabDelay = new System.Windows.Forms.Label();
+            this.numericLightDelay = new System.Windows.Forms.NumericUpDown();
+            this.numericGrabDelay = new System.Windows.Forms.NumericUpDown();
+            this.numericGrabDelayRetry = new System.Windows.Forms.NumericUpDown();
+            this.numericMarkRetryCount = new System.Windows.Forms.NumericUpDown();
+            this.lblTitleGrabDelayRetry = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericAlignRetryCount = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxUseRetryAlign = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewRecipeList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,6 +115,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericReportSavePeriod)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLightDelay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericGrabDelay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericGrabDelayRetry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMarkRetryCount)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlignRetryCount)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectedPPID
@@ -747,7 +765,7 @@
             this.groupBoxOperation.Size = new System.Drawing.Size(339, 299);
             this.groupBoxOperation.TabIndex = 2220;
             this.groupBoxOperation.TabStop = false;
-            this.groupBoxOperation.Text = "OPERATION";
+            this.groupBoxOperation.Text = "Operation";
             // 
             // comboBoxCenterLineColor
             // 
@@ -992,11 +1010,205 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lblTitleLightDelay
+            // 
+            this.lblTitleLightDelay.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTitleLightDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitleLightDelay.Location = new System.Drawing.Point(6, 51);
+            this.lblTitleLightDelay.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTitleLightDelay.Name = "lblTitleLightDelay";
+            this.lblTitleLightDelay.Size = new System.Drawing.Size(216, 23);
+            this.lblTitleLightDelay.TabIndex = 171;
+            this.lblTitleLightDelay.Text = "Ligth Delay (ms)";
+            this.lblTitleLightDelay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // checkBoxUseRetryAferMarkNG
+            // 
+            this.checkBoxUseRetryAferMarkNG.AutoSize = true;
+            this.checkBoxUseRetryAferMarkNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.checkBoxUseRetryAferMarkNG.Location = new System.Drawing.Point(9, 110);
+            this.checkBoxUseRetryAferMarkNG.Name = "checkBoxUseRetryAferMarkNG";
+            this.checkBoxUseRetryAferMarkNG.Size = new System.Drawing.Size(137, 20);
+            this.checkBoxUseRetryAferMarkNG.TabIndex = 172;
+            this.checkBoxUseRetryAferMarkNG.Text = "Retry (Mark NG)";
+            this.checkBoxUseRetryAferMarkNG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUseRetryAferMarkNG.UseVisualStyleBackColor = true;
+            // 
+            // lblTitleGrabDelay
+            // 
+            this.lblTitleGrabDelay.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTitleGrabDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitleGrabDelay.Location = new System.Drawing.Point(6, 23);
+            this.lblTitleGrabDelay.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTitleGrabDelay.Name = "lblTitleGrabDelay";
+            this.lblTitleGrabDelay.Size = new System.Drawing.Size(216, 23);
+            this.lblTitleGrabDelay.TabIndex = 171;
+            this.lblTitleGrabDelay.Text = "Grab Delay (ms)";
+            this.lblTitleGrabDelay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericLightDelay
+            // 
+            this.numericLightDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numericLightDelay.Location = new System.Drawing.Point(228, 52);
+            this.numericLightDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericLightDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericLightDelay.Name = "numericLightDelay";
+            this.numericLightDelay.Size = new System.Drawing.Size(105, 22);
+            this.numericLightDelay.TabIndex = 170;
+            this.numericLightDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericLightDelay.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericGrabDelay
+            // 
+            this.numericGrabDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numericGrabDelay.Location = new System.Drawing.Point(228, 24);
+            this.numericGrabDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericGrabDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericGrabDelay.Name = "numericGrabDelay";
+            this.numericGrabDelay.Size = new System.Drawing.Size(105, 22);
+            this.numericGrabDelay.TabIndex = 170;
+            this.numericGrabDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericGrabDelay.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericGrabDelayRetry
+            // 
+            this.numericGrabDelayRetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numericGrabDelayRetry.Location = new System.Drawing.Point(228, 136);
+            this.numericGrabDelayRetry.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericGrabDelayRetry.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericGrabDelayRetry.Name = "numericGrabDelayRetry";
+            this.numericGrabDelayRetry.Size = new System.Drawing.Size(105, 22);
+            this.numericGrabDelayRetry.TabIndex = 170;
+            this.numericGrabDelayRetry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericGrabDelayRetry.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericMarkRetryCount
+            // 
+            this.numericMarkRetryCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numericMarkRetryCount.Location = new System.Drawing.Point(228, 108);
+            this.numericMarkRetryCount.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericMarkRetryCount.Name = "numericMarkRetryCount";
+            this.numericMarkRetryCount.Size = new System.Drawing.Size(105, 22);
+            this.numericMarkRetryCount.TabIndex = 170;
+            this.numericMarkRetryCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericMarkRetryCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblTitleGrabDelayRetry
+            // 
+            this.lblTitleGrabDelayRetry.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTitleGrabDelayRetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitleGrabDelayRetry.Location = new System.Drawing.Point(6, 135);
+            this.lblTitleGrabDelayRetry.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTitleGrabDelayRetry.Name = "lblTitleGrabDelayRetry";
+            this.lblTitleGrabDelayRetry.Size = new System.Drawing.Size(216, 23);
+            this.lblTitleGrabDelayRetry.TabIndex = 171;
+            this.lblTitleGrabDelayRetry.Text = "Retry grab delay (ms)";
+            this.lblTitleGrabDelayRetry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.numericAlignRetryCount);
+            this.groupBox3.Controls.Add(this.lblTitleLightDelay);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.checkBoxUseRetryAlign);
+            this.groupBox3.Controls.Add(this.checkBoxUseRetryAferMarkNG);
+            this.groupBox3.Controls.Add(this.lblTitleGrabDelay);
+            this.groupBox3.Controls.Add(this.lblTitleGrabDelayRetry);
+            this.groupBox3.Controls.Add(this.numericLightDelay);
+            this.groupBox3.Controls.Add(this.numericMarkRetryCount);
+            this.groupBox3.Controls.Add(this.numericGrabDelay);
+            this.groupBox3.Controls.Add(this.numericGrabDelayRetry);
+            this.groupBox3.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(854, 39);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(341, 167);
+            this.groupBox3.TabIndex = 2219;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Align option";
+            // 
+            // numericAlignRetryCount
+            // 
+            this.numericAlignRetryCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numericAlignRetryCount.Location = new System.Drawing.Point(228, 80);
+            this.numericAlignRetryCount.Name = "numericAlignRetryCount";
+            this.numericAlignRetryCount.Size = new System.Drawing.Size(105, 22);
+            this.numericAlignRetryCount.TabIndex = 2222;
+            this.numericAlignRetryCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(452, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 23);
+            this.label4.TabIndex = 176;
+            this.label4.Text = "%";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBoxUseRetryAlign
+            // 
+            this.checkBoxUseRetryAlign.AutoSize = true;
+            this.checkBoxUseRetryAlign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.checkBoxUseRetryAlign.Location = new System.Drawing.Point(9, 82);
+            this.checkBoxUseRetryAlign.Name = "checkBoxUseRetryAlign";
+            this.checkBoxUseRetryAlign.Size = new System.Drawing.Size(182, 20);
+            this.checkBoxUseRetryAlign.TabIndex = 177;
+            this.checkBoxUseRetryAlign.Text = "Retry Align (Value NG)";
+            this.checkBoxUseRetryAlign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUseRetryAlign.UseVisualStyleBackColor = true;
+            // 
             // CFormConfigOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1656, 983);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBoxOperation);
             this.Controls.Add(this.groupBoxImageSave);
@@ -1026,6 +1238,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAutoBackupDay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericReportSavePeriod)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericLightDelay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericGrabDelay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericGrabDelayRetry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMarkRetryCount)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlignRetryCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1093,5 +1312,17 @@
         private System.Windows.Forms.RadioButton checkBoxUseSaveALL;
         private System.Windows.Forms.RadioButton checkBoxUseSaveNG;
         private System.Windows.Forms.RadioButton checkBoxUseSaveOK;
+        private System.Windows.Forms.Label lblTitleLightDelay;
+        private System.Windows.Forms.CheckBox checkBoxUseRetryAferMarkNG;
+        private System.Windows.Forms.Label lblTitleGrabDelay;
+        private System.Windows.Forms.NumericUpDown numericLightDelay;
+        private System.Windows.Forms.NumericUpDown numericGrabDelay;
+        private System.Windows.Forms.NumericUpDown numericGrabDelayRetry;
+        private System.Windows.Forms.NumericUpDown numericMarkRetryCount;
+        private System.Windows.Forms.Label lblTitleGrabDelayRetry;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericAlignRetryCount;
+        private System.Windows.Forms.CheckBox checkBoxUseRetryAlign;
     }
 }

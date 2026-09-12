@@ -41,6 +41,10 @@
             this.GridViewPanelAlignDataListA = new System.Windows.Forms.DataGridView();
             this.GridViewPanelAlignDataListB = new System.Windows.Forms.DataGridView();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnTrigger1 = new Sunny.UI.UISymbolButton();
+            this.btnLoadImage1 = new Sunny.UI.UISymbolButton();
+            this.btnTrigger2 = new Sunny.UI.UISymbolButton();
+            this.btnLoadImage2 = new Sunny.UI.UISymbolButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -74,36 +78,40 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.38339F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.616606F));
-            this.tableLayoutPanel3.Controls.Add(this.btnExpand2, 1, 0);
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 99.99999F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btnLoadImage2, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnTrigger2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnTitleMain2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnExpand2, 3, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(828, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(819, 49);
             this.tableLayoutPanel3.TabIndex = 124;
             // 
             // btnExpand2
             // 
             this.btnExpand2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpand2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExpand2.FillColor = System.Drawing.SystemColors.Control;
             this.btnExpand2.FillHoverColor = System.Drawing.Color.Silver;
             this.btnExpand2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnExpand2.ForeColor = System.Drawing.Color.Black;
             this.btnExpand2.ForeHoverColor = System.Drawing.Color.Black;
             this.btnExpand2.ForePressColor = System.Drawing.SystemColors.Window;
-            this.btnExpand2.Location = new System.Drawing.Point(776, 3);
+            this.btnExpand2.Location = new System.Drawing.Point(772, 3);
             this.btnExpand2.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnExpand2.Name = "btnExpand2";
             this.btnExpand2.RectColor = System.Drawing.Color.Black;
             this.btnExpand2.RectHoverColor = System.Drawing.Color.Black;
             this.btnExpand2.RectPressColor = System.Drawing.Color.Black;
             this.btnExpand2.RectSelectedColor = System.Drawing.Color.Black;
-            this.btnExpand2.Size = new System.Drawing.Size(40, 43);
+            this.btnExpand2.Size = new System.Drawing.Size(44, 43);
             this.btnExpand2.Symbol = 48;
             this.btnExpand2.SymbolColor = System.Drawing.Color.Black;
             this.btnExpand2.SymbolHoverColor = System.Drawing.Color.Black;
@@ -119,7 +127,7 @@
             this.btnTitleMain2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTitleMain2.Location = new System.Drawing.Point(3, 3);
             this.btnTitleMain2.Name = "btnTitleMain2";
-            this.btnTitleMain2.Size = new System.Drawing.Size(767, 40);
+            this.btnTitleMain2.Size = new System.Drawing.Size(663, 40);
             this.btnTitleMain2.TabIndex = 121;
             this.btnTitleMain2.Text = "Cam2";
             this.btnTitleMain2.UseVisualStyleBackColor = true;
@@ -133,36 +141,40 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.38339F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.616606F));
-            this.tableLayoutPanel2.Controls.Add(this.btnExpand1, 1, 0);
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLoadImage1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTrigger1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnTitleMain1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnExpand1, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(819, 49);
             this.tableLayoutPanel2.TabIndex = 123;
             // 
             // btnExpand1
             // 
             this.btnExpand1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpand1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExpand1.FillColor = System.Drawing.SystemColors.Control;
             this.btnExpand1.FillHoverColor = System.Drawing.Color.Silver;
             this.btnExpand1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnExpand1.ForeColor = System.Drawing.Color.Black;
             this.btnExpand1.ForeHoverColor = System.Drawing.Color.Black;
             this.btnExpand1.ForePressColor = System.Drawing.SystemColors.Window;
-            this.btnExpand1.Location = new System.Drawing.Point(776, 3);
+            this.btnExpand1.Location = new System.Drawing.Point(772, 3);
             this.btnExpand1.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnExpand1.Name = "btnExpand1";
             this.btnExpand1.RectColor = System.Drawing.Color.Black;
             this.btnExpand1.RectHoverColor = System.Drawing.Color.Black;
             this.btnExpand1.RectPressColor = System.Drawing.Color.Black;
             this.btnExpand1.RectSelectedColor = System.Drawing.Color.Black;
-            this.btnExpand1.Size = new System.Drawing.Size(40, 43);
+            this.btnExpand1.Size = new System.Drawing.Size(44, 43);
             this.btnExpand1.Symbol = 48;
             this.btnExpand1.SymbolColor = System.Drawing.Color.Black;
             this.btnExpand1.SymbolHoverColor = System.Drawing.Color.Black;
@@ -178,7 +190,7 @@
             this.btnTitleMain1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTitleMain1.Location = new System.Drawing.Point(3, 3);
             this.btnTitleMain1.Name = "btnTitleMain1";
-            this.btnTitleMain1.Size = new System.Drawing.Size(767, 40);
+            this.btnTitleMain1.Size = new System.Drawing.Size(663, 40);
             this.btnTitleMain1.TabIndex = 121;
             this.btnTitleMain1.Text = "Cam1";
             this.btnTitleMain1.UseVisualStyleBackColor = true;
@@ -204,6 +216,110 @@
             this.GridViewPanelAlignDataListB.RowTemplate.Height = 23;
             this.GridViewPanelAlignDataListB.Size = new System.Drawing.Size(820, 224);
             this.GridViewPanelAlignDataListB.TabIndex = 181;
+            // 
+            // btnTrigger1
+            // 
+            this.btnTrigger1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrigger1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTrigger1.FillColor = System.Drawing.SystemColors.Control;
+            this.btnTrigger1.FillHoverColor = System.Drawing.Color.Silver;
+            this.btnTrigger1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnTrigger1.ForeColor = System.Drawing.Color.Black;
+            this.btnTrigger1.ForeHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger1.ForePressColor = System.Drawing.SystemColors.Window;
+            this.btnTrigger1.Location = new System.Drawing.Point(672, 3);
+            this.btnTrigger1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnTrigger1.Name = "btnTrigger1";
+            this.btnTrigger1.RectColor = System.Drawing.Color.Black;
+            this.btnTrigger1.RectHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger1.RectPressColor = System.Drawing.Color.Black;
+            this.btnTrigger1.RectSelectedColor = System.Drawing.Color.Black;
+            this.btnTrigger1.Size = new System.Drawing.Size(44, 43);
+            this.btnTrigger1.Symbol = 559915;
+            this.btnTrigger1.SymbolColor = System.Drawing.Color.Black;
+            this.btnTrigger1.SymbolHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger1.SymbolSize = 45;
+            this.btnTrigger1.TabIndex = 123;
+            this.btnTrigger1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnTrigger1.Click += new System.EventHandler(this.btnTrigger1_Click);
+            // 
+            // btnLoadImage1
+            // 
+            this.btnLoadImage1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadImage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadImage1.FillColor = System.Drawing.SystemColors.Control;
+            this.btnLoadImage1.FillHoverColor = System.Drawing.Color.Silver;
+            this.btnLoadImage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnLoadImage1.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.ForeHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.ForePressColor = System.Drawing.SystemColors.Window;
+            this.btnLoadImage1.Location = new System.Drawing.Point(722, 3);
+            this.btnLoadImage1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLoadImage1.Name = "btnLoadImage1";
+            this.btnLoadImage1.RectColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.RectHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.RectPressColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.RectSelectedColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.Size = new System.Drawing.Size(44, 43);
+            this.btnLoadImage1.Symbol = 61564;
+            this.btnLoadImage1.SymbolColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.SymbolHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage1.SymbolSize = 45;
+            this.btnLoadImage1.TabIndex = 124;
+            this.btnLoadImage1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLoadImage1.Click += new System.EventHandler(this.btnLoadImage1_Click);
+            // 
+            // btnTrigger2
+            // 
+            this.btnTrigger2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrigger2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTrigger2.FillColor = System.Drawing.SystemColors.Control;
+            this.btnTrigger2.FillHoverColor = System.Drawing.Color.Silver;
+            this.btnTrigger2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnTrigger2.ForeColor = System.Drawing.Color.Black;
+            this.btnTrigger2.ForeHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger2.ForePressColor = System.Drawing.SystemColors.Window;
+            this.btnTrigger2.Location = new System.Drawing.Point(672, 3);
+            this.btnTrigger2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnTrigger2.Name = "btnTrigger2";
+            this.btnTrigger2.RectColor = System.Drawing.Color.Black;
+            this.btnTrigger2.RectHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger2.RectPressColor = System.Drawing.Color.Black;
+            this.btnTrigger2.RectSelectedColor = System.Drawing.Color.Black;
+            this.btnTrigger2.Size = new System.Drawing.Size(44, 43);
+            this.btnTrigger2.Symbol = 559915;
+            this.btnTrigger2.SymbolColor = System.Drawing.Color.Black;
+            this.btnTrigger2.SymbolHoverColor = System.Drawing.Color.Black;
+            this.btnTrigger2.SymbolSize = 45;
+            this.btnTrigger2.TabIndex = 123;
+            this.btnTrigger2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnTrigger2.Click += new System.EventHandler(this.btnTrigger2_Click);
+            // 
+            // btnLoadImage2
+            // 
+            this.btnLoadImage2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadImage2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadImage2.FillColor = System.Drawing.SystemColors.Control;
+            this.btnLoadImage2.FillHoverColor = System.Drawing.Color.Silver;
+            this.btnLoadImage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnLoadImage2.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.ForeHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.ForePressColor = System.Drawing.SystemColors.Window;
+            this.btnLoadImage2.Location = new System.Drawing.Point(722, 3);
+            this.btnLoadImage2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLoadImage2.Name = "btnLoadImage2";
+            this.btnLoadImage2.RectColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.RectHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.RectPressColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.RectSelectedColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.Size = new System.Drawing.Size(44, 43);
+            this.btnLoadImage2.Symbol = 61564;
+            this.btnLoadImage2.SymbolColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.SymbolHoverColor = System.Drawing.Color.Black;
+            this.btnLoadImage2.SymbolSize = 45;
+            this.btnLoadImage2.TabIndex = 124;
+            this.btnLoadImage2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLoadImage2.Click += new System.EventHandler(this.btnLoadImage2_Click);
             // 
             // CFormMainTwoCam
             // 
@@ -243,5 +359,9 @@
         private System.Windows.Forms.DataGridView GridViewPanelAlignDataListA;
         private System.Windows.Forms.DataGridView GridViewPanelAlignDataListB;
         private System.Windows.Forms.Timer timer;
+        private Sunny.UI.UISymbolButton btnLoadImage2;
+        private Sunny.UI.UISymbolButton btnTrigger2;
+        private Sunny.UI.UISymbolButton btnLoadImage1;
+        private Sunny.UI.UISymbolButton btnTrigger1;
     }
 }

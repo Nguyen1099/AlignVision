@@ -76,7 +76,7 @@ namespace AlignVision
         /// </summary>
         /// <param name="strData"></param>
         /// <returns></returns>
-        public override bool SocketSend(string strData)
+        public override bool SendData(string strData)
         {
             bool bReturn = false;
             if (m_objSocket == null || m_bIsConnected == false)
@@ -127,7 +127,7 @@ namespace AlignVision
         /// </summary>
         /// <param name="byteData"></param>
         /// <returns></returns>
-        public override bool SocketSend(byte[] byteData)
+        public override bool SendData(byte[] byteData)
         {
             bool bReturn = false;
             if (m_objSocket == null || m_bIsConnected == false)

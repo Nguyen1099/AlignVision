@@ -1,15 +1,8 @@
 ﻿using Cognex.VisionPro;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static AlignVision.CConfig;
 
 namespace AlignVision
 {
@@ -18,6 +11,8 @@ namespace AlignVision
         private CDocument m_objDocument;
 
         private List<CConfig.CRecipeInformation> m_objModelParameterList;
+
+        private CConfig.CAlignOptionParameter m_objAlignOptionParameter;
 
         private int m_iSelectedRow;
 
@@ -30,7 +25,6 @@ namespace AlignVision
         private void CFormConfigOption_Load(object sender, EventArgs e)
         {
             Initialize();
-
         }
 
         private void CFormConfigOption_FormClosed(object sender, FormClosedEventArgs e)
@@ -43,6 +37,19 @@ namespace AlignVision
         {
             bool bReturn = false;
 
+            m_objAlignOptionParameter = m_objDocument.m_objConfig.GetAlignOptionParameter();
+
+            if (InitializeForm() == false)
+            {
+                throw new Exception("Failed to initialize CFormConfigOption.");
+            }
+            bReturn = true;
+            return bReturn;
+        }
+
+        private bool InitializeForm()
+        {
+            bool bReturn = false;
             // Tên bảng
             string[] strColumnName = { "Index", "Name" };
             if (false == InitializeGridView(GridViewRecipeList, strColumnName))
@@ -62,11 +69,11 @@ namespace AlignVision
             this.comboBoxCenterLineColor.SelectedIndex = m_objDocument.m_objConfig.GetOptionParameter().iCenterLineColorIndex;
 
             // Hiện thị thông tin camera, light, controll pc trên form
-            GetDisplayHardWareInfor();
+            SetDisplayHardWareInfor();
+            // Hiện thị dữ liệu trên form
+            SetDisplayAlignOption();
 
-            //GetDisplayAlignOption();
-
-            GetOptionData();
+            SetOptionData();
             SetChangeLanguage();
             timer.Interval = 100;
             timer.Enabled = false;
@@ -187,8 +194,6 @@ namespace AlignVision
             }
 
         }
-
-
         private void SetRecipeListData(int iRow)
         {
             if (m_objModelParameterList[iRow].strRecipe == m_objDocument.m_objConfig.GetSystemParameter().strBootRecipe)
@@ -202,17 +207,18 @@ namespace AlignVision
                 btnSaveRcp.Enabled = false;
             }
         }
-
-
-
         private void btnLoad_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes != m_objDocument.SetMessage("Do you wanna Load ?"))
             {
                 return;
             }
+
+            // Load data cũ từ bộ nhớ
             m_objDocument.m_objConfig.LoadOptionParameter();
-            GetOptionData();
+            m_objDocument.m_objConfig.LoadAlignOptionParameter();
+            SetOptionData();
+            SetDisplayAlignOption();
             m_objDocument.SetMessage("Load Complete");
         }
 
@@ -223,11 +229,12 @@ namespace AlignVision
                 return;
             }
 
-            COptionParameter m_objOptionParameter = new COptionParameter();
-            SetDisplaySaveImage(m_objOptionParameter);
+            CConfig.COptionParameter m_objOptionParameter = new CConfig.COptionParameter();
+            GetDisplaySaveImage(m_objOptionParameter);
             m_objDocument.m_objConfig.SaveOptionParameter(m_objOptionParameter);
 
-            //SetDisplayAlignOption();
+            GetDisplayAlignOption();
+            m_objDocument.m_objConfig.SaveAlignOptionParameter(m_objAlignOptionParameter);
             m_objDocument.SetMessage("Save Complete");
         }
 
@@ -254,9 +261,14 @@ namespace AlignVision
             systemParameter.strBootRecipe = m_objModelParameterList[m_iSelectedRow].strRecipe;
             m_objDocument.m_objConfig.SaveSystemParameter(systemParameter);
             m_objDocument.m_objConfig.LoadRecipeParameter();
+
             m_objModelParameterList = m_objDocument.m_objRecipeManagement.GetModelParameterList();
             m_objDocument.m_objConfig.LoadLightControllerParameter();
             m_objDocument.m_objConfig.LoadCameraParameter();
+
+            m_objDocument.m_objConfig.LoadAlignOptionParameter();
+            m_objAlignOptionParameter = m_objDocument.m_objConfig.GetAlignOptionParameter();
+            SetDisplayAlignOption();
 
             //m_objDocument.m_objConfig.LoadVisionParameter();
             //m_objDocument.m_objProcessMain.LoadRecipe();
@@ -352,7 +364,8 @@ namespace AlignVision
             {
                 //Sửa lỗi ngăn không cho cập nhật xảy ra khi quay lại tab khác sau khi thực hiện thay đổi.
                 m_objModelParameterList = m_objDocument.m_objRecipeManagement.GetModelParameterList();
-
+                SetOptionData();
+                SetDisplayAlignOption();
                 m_objDocument.GetMainFrame().SetCurrentForm(this);
             }
         }
@@ -376,7 +389,7 @@ namespace AlignVision
         /// <summary>
         /// Thong tin luu hinh anh duoc hien thi tren form
         /// </summary>
-        private void GetOptionData()
+        private void SetOptionData()
         {
             checkBoxOriginImage.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageSave;
             checkBoxResultImage.Checked = m_objDocument.m_objConfig.GetOptionParameter().bImageGraphicSave;
@@ -409,7 +422,7 @@ namespace AlignVision
         /// <summary>
         /// Thong tin phan cung thiet bi duoc hien thi tren form
         /// </summary>
-        private void GetDisplayHardWareInfor()
+        private void SetDisplayHardWareInfor()
         {
             // Controller IP
             lblIPControl.Text = $"Controller: {m_objDocument.m_objConfig.GetDeviceParameter().strControllerIP}";
@@ -442,7 +455,7 @@ namespace AlignVision
             lblCamera4.Text = "";
 
             // Light Controller IP
-            if (m_objDocument.m_objConfig.GetLightControllerParameter().eType == CLightControllerParameter.enumType.TYPE_SOCKET)
+            if (m_objDocument.m_objConfig.GetLightControllerParameter().eType == CConfig.CLightControllerParameter.enumType.TYPE_SOCKET)
             {
                 lblPortLight1.Text = $"Light Controller IP: {m_objDocument.m_objConfig.GetLightControllerParameter().strSocketIPAddress}";
                 lblBaudrateLight1.Text = $"Port: {m_objDocument.m_objConfig.GetLightControllerParameter().iSocketPortNumber}";
@@ -467,7 +480,7 @@ namespace AlignVision
         /// <summary>
         /// Lấy thông tin từ form và lưu vào cấu hình liên quan đến việc lưu hình ảnh
         /// </summary>
-        private void SetDisplaySaveImage(COptionParameter m_objOptionParameter)
+        private void GetDisplaySaveImage(CConfig.COptionParameter m_objOptionParameter)
         {
             m_objOptionParameter.bImageSave = checkBoxOriginImage.Checked;
             m_objOptionParameter.bImageGraphicSave = checkBoxResultImage.Checked;
@@ -493,6 +506,34 @@ namespace AlignVision
             m_objOptionParameter.bLinkPlcRecipe = checkBoxUseLinkPLCRecipe.Checked;
             m_objOptionParameter.bUseCenterLine = checkBoxUseCenterLine.Checked;
             m_objOptionParameter.iCenterLineColorIndex = comboBoxCenterLineColor.SelectedIndex;
+        }
+
+        /// <summary>
+        /// Ghi dữ liệu vào form
+        /// </summary>
+        private void SetDisplayAlignOption()
+        {
+            numericGrabDelay.Value             = (decimal)m_objAlignOptionParameter.iDelayTimeTrigger;
+            numericLightDelay.Value            = (decimal)m_objAlignOptionParameter.iDelayTimeLight;
+            checkBoxUseRetryAlign.Checked      = m_objAlignOptionParameter.bUseRetryAlign;
+            numericAlignRetryCount.Value       = m_objAlignOptionParameter.iAlignRetryCount;
+            checkBoxUseRetryAferMarkNG.Checked = m_objAlignOptionParameter.bUseRetryAfterMarkNG;
+            numericMarkRetryCount.Value        = m_objAlignOptionParameter.iMarkRetryCount;
+            numericGrabDelayRetry.Value        = (decimal)m_objAlignOptionParameter.iDelayTimeTriggerRetry;
+        }
+
+        /// <summary>
+        /// Lấy dữ liệu từ form và lưu vào cấu hình liên quan đến việc align
+        /// </summary>
+        private void GetDisplayAlignOption()
+        {
+            m_objAlignOptionParameter.iDelayTimeTrigger      = (int)numericGrabDelay.Value;
+            m_objAlignOptionParameter.iDelayTimeLight        = (int)numericLightDelay.Value;
+            m_objAlignOptionParameter.bUseRetryAlign         = checkBoxUseRetryAlign.Checked;
+            m_objAlignOptionParameter.iAlignRetryCount       = (int)numericAlignRetryCount.Value;
+            m_objAlignOptionParameter.iMarkRetryCount        = (int)numericMarkRetryCount.Value;
+            m_objAlignOptionParameter.bUseRetryAfterMarkNG   = checkBoxUseRetryAferMarkNG.Checked;
+            m_objAlignOptionParameter.iDelayTimeTriggerRetry = (int)numericGrabDelayRetry.Value;
         }
 
     }

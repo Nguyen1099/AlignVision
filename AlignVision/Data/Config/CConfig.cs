@@ -46,6 +46,8 @@ namespace AlignVision
                 new ConfigInitializeSet(() => LoadRecipeParameter(), () => SaveRecipeParameter()),
                 new ConfigInitializeSet(() => LoadOptionParameter(), () => SaveOptionParameter()),
                 new ConfigInitializeSet(() => LoadDeviceParameter(), () => SaveDeviceParameter()),
+                new ConfigInitializeSet(() => LoadStageParameter(), () => SaveStageParameter()),
+                new ConfigInitializeSet(() => LoadAlignOptionParameter(), () => SaveALignOptionParameter()),
 
                 new ConfigInitializeSet(() => LoadCameraParameter(), () => SaveCameraParameter()),
                 new ConfigInitializeSet(() => LoadLightControllerParameter(), () => SaveLightControllerParameter()),

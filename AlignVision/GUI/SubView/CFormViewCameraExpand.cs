@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cognex.VisionPro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,14 @@ namespace AlignVision
         private CFormDisplay m_objFormDisplay;
         private CDocument m_objDocument;
         private CDefine.enumCamera m_eCamera;
+        private CogImage8Grey m_objImage8Gray;
 
-        public CFormViewCameraExpand(CDocument objDocument, CDefine.enumCamera eCamera)
+        public CFormViewCameraExpand(CDocument objDocument, CDefine.enumCamera eCamera, CogImage8Grey objImage8Gray)
         {
             InitializeComponent();
             m_objDocument = objDocument;
             m_eCamera = eCamera;
+            m_objImage8Gray = objImage8Gray;
         }
 
         private void CFormViewCameraExpand_Load(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace AlignVision
         {
             m_objFormDisplay.Initialize(eCamera, m_objDocument);
             btnTitleMain.Text = string.Format("Camera {0}", (int)eCamera + 1);
+            m_objFormDisplay.getCogDisplay().Image = m_objImage8Gray;
             SetFormDockStyle(m_objFormDisplay, pnlDisplay);
         }
 

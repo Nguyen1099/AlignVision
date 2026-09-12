@@ -146,14 +146,14 @@ namespace AlignVision
         /// </summary>
         /// <param name="strData"></param>
         /// <returns></returns>
-        public abstract bool SocketSend(string strData);
+        public abstract bool SendData(string strData);
 
         /// <summary>
         /// Gui dữ liệu byte
         /// </summary>
         /// <param name="byteData"></param>
         /// <returns></returns>
-        public abstract bool SocketSend(byte[] byteData);
+        public abstract bool SendData(byte[] byteData);
 
         /// <summary>
         /// Kiểm tra kết nối socket
