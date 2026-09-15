@@ -31,8 +31,8 @@ namespace AlignVision
             }
         }
 
-        private CRecipeInformation m_objRecipeParameter = new CRecipeInformation();
-        public CRecipeInformation GetRecipeParameter(string strRecipeName = null)
+        private CRecipeInformation m_objRecipeInformation = new CRecipeInformation();
+        public CRecipeInformation GetRecipeInformation(string strRecipeName = null)
         {
             if (strRecipeName == null)
             {
@@ -53,7 +53,7 @@ namespace AlignVision
         /// Load dữ liệu recipe
         /// </summary>
         /// <returns></returns>
-        public bool LoadRecipeParameter(string strRecipeName = null)
+        public bool LoadRecipeInformation(string strRecipeName = null)
         {
             bool result = false;
 
@@ -65,9 +65,9 @@ namespace AlignVision
 
             ClassINI classINI = new ClassINI(path);
             string strSection = "MODEL";
-            m_objRecipeParameter.strRecipe = classINI.GetString(strSection, "strRecipe", m_objSystemParameter.strBootRecipe);
-            m_objRecipeParameter.strIndex = classINI.GetString(strSection, "strIndex", "1");
-            m_objRecipeParameter.UpdateTime = classINI.GetString(strSection, "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            m_objRecipeInformation.strRecipe = classINI.GetString(strSection, "strRecipe", m_objSystemParameter.strBootRecipe);
+            m_objRecipeInformation.strIndex = classINI.GetString(strSection, "strIndex", "1");
+            m_objRecipeInformation.UpdateTime = classINI.GetString(strSection, "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             result = true;
             return result;
@@ -77,7 +77,7 @@ namespace AlignVision
         ///  Lưu dữ liệu recipe
         /// </summary>
         /// <returns></returns>
-        private bool SaveRecipeParameter(string strRecipeName = null)
+        private bool SaveRecipeInformation(string strRecipeName = null)
         {
             bool result = false;
 
@@ -89,15 +89,15 @@ namespace AlignVision
 
             ClassINI classINI = new ClassINI(path);
 
-            classINI.WriteValue("MODEL", "strRecipe", m_objRecipeParameter.strRecipe);
-            classINI.WriteValue("MODEL", "strIndex", m_objRecipeParameter.strIndex);
+            classINI.WriteValue("MODEL", "strRecipe", m_objRecipeInformation.strRecipe);
+            classINI.WriteValue("MODEL", "strIndex", m_objRecipeInformation.strIndex);
             classINI.WriteValue("MODEL", "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             result = true;
             return result;
         }
 
-        public bool SaveRecipeParameter(CRecipeInformation objRecipeParameter, string strRecipeName = null)
+        public bool SaveRecipeInformation(CRecipeInformation objRecipeParameter, string strRecipeName = null)
         {
             bool result = false;
 
@@ -112,7 +112,7 @@ namespace AlignVision
             classINI.WriteValue("MODEL", "strRecipe", objRecipeParameter.strRecipe);
             classINI.WriteValue("MODEL", "strIndex", objRecipeParameter.strIndex);
             classINI.WriteValue("MODEL", "UpdateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            m_objRecipeParameter = objRecipeParameter;
+            m_objRecipeInformation = objRecipeParameter;
 
             result = true;
             return result;

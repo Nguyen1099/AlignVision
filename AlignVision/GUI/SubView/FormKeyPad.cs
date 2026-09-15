@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -223,7 +223,6 @@ namespace AlignVision
 
         private void BtnKeyPadChar0_Click(object sender, EventArgs e)
         {
-            bool flag = false;
             if (!m_strInputData.Equals("0"))
             {
                 if (m_strInputData == $"{m_dOriginValue:F3}")

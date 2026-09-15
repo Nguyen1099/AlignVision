@@ -54,7 +54,7 @@ namespace AlignVision
             List<string> directoryList = GetDirectoryList(CDefine.DEF_ALIGN_RECIPE_PATH);
 
             return directoryList
-                   .Select(index => m_objDocument.m_objConfig.GetRecipeParameter(index))      // Lấy thông tin cấu hình từ mỗi thư mục con
+                   .Select(index => m_objDocument.m_objConfig.GetRecipeInformation(index))      // Lấy thông tin cấu hình từ mỗi thư mục con
                    .OrderBy(model => model.strIndex)    // Sắp xếp theo strIndex
                    .ToList();
         }
@@ -133,10 +133,10 @@ namespace AlignVision
         /// <param name="strName"></param>
         public void SetPPIDMatch(string strPPID, string strIndex)
         {
-            var model = m_objDocument.m_objConfig.GetRecipeParameter(strPPID);
+            var model = m_objDocument.m_objConfig.GetRecipeInformation(strPPID);
             model.strIndex = strIndex;
             model.UpdateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            m_objDocument.m_objConfig.SaveRecipeParameter(model, strPPID);
+            m_objDocument.m_objConfig.SaveRecipeInformation(model, strPPID);
         }
 
 

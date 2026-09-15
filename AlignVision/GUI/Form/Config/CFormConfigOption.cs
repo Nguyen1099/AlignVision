@@ -246,7 +246,7 @@ namespace AlignVision
                 return;
             }
             CConfig.CRecipeInformation objRecipeParameter = m_objModelParameterList[m_iSelectedRow];
-            m_objDocument.m_objConfig.SaveRecipeParameter(objRecipeParameter);
+            m_objDocument.m_objConfig.SaveRecipeInformation(objRecipeParameter);
             m_objModelParameterList = m_objDocument.m_objRecipeManagement.GetModelParameterList();
         }
 
@@ -260,7 +260,7 @@ namespace AlignVision
 
             systemParameter.strBootRecipe = m_objModelParameterList[m_iSelectedRow].strRecipe;
             m_objDocument.m_objConfig.SaveSystemParameter(systemParameter);
-            m_objDocument.m_objConfig.LoadRecipeParameter();
+            m_objDocument.m_objConfig.LoadRecipeInformation();
 
             m_objModelParameterList = m_objDocument.m_objRecipeManagement.GetModelParameterList();
             m_objDocument.m_objConfig.LoadLightControllerParameter();

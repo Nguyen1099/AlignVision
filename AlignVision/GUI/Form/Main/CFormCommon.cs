@@ -26,7 +26,7 @@ namespace AlignVision
 
         protected Color m_colorLabelData = Color.FromArgb(255, 255, 255);
 
-        protected Color m_colorOn = Color.FromArgb(192, 255, 192);
+        protected Color m_colorOn = Color.FromArgb(34, 197, 94);
 
         protected Color m_colorOff = Color.FromArgb(255, 192, 192);
 

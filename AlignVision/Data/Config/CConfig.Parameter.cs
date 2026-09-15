@@ -42,6 +42,33 @@ namespace AlignVision
         }
 
         /// <summary>
+        /// Cấu trúc thông tin vị trí Master
+        /// </summary>
+        public struct structureMasterPosition : ICloneable
+        {
+            public double dPositionX;
+            public double dPositionY;
+            public double dPositionT;
+
+            public void Init()
+            {
+                this.dPositionX = 0.0;
+                this.dPositionY = 0.0;
+                this.dPositionT = 0.0;
+            }
+
+            public object Clone()
+            {
+                structureMasterPosition obj = new structureMasterPosition();
+                obj.dPositionX = this.dPositionX;
+                obj.dPositionY = this.dPositionY;
+                obj.dPositionT = this.dPositionT;
+                return obj;
+            }
+        }
+
+
+        /// <summary>
         /// Cấu trúc thông tin giới hạn Align
         /// </summary>
         public struct structureAlignParameter : ICloneable

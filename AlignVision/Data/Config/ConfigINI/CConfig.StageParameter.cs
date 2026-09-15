@@ -32,26 +32,32 @@ namespace AlignVision
             public double dWeightY;
             public double dWeightT;
             public double dAlignMethod;
+
             /// <summary>
             /// Khoảng cách di chuyển tối đa để hiệu chuẩn, nhập +- mm dựa trên tâm màn hình
             /// </summary>
             public double dCalibrationXYMaxDistance;
+
             /// <summary>
             /// Số lần phân chia khoảng cách di chuyển tối đa (tối đa 11, phải là số lẻ)
             /// </summary>
             public double dCalibrationXYSteps;
+
             /// <summary>
             /// Số bước di chuyển tối đa; do di chuyển theo hình vuông nên là bình phương số phân chia. Ví dụ 5 phân chia -> 25; được tính nội bộ
             /// </summary>
             public double dCalibrationXYMoveValidSteps;
+
             /// <summary>
             /// Góc quay tối đa để hiệu chuẩn, nhập +- độ dựa trên tâm màn hình
             /// </summary>
             public double dCalibrationTMaxRotation;
+
             /// <summary>
             /// Số lần phân chia góc quay tối đa (tối đa 101, phải là số lẻ)
             /// </summary>
             public double dCalibrationTSteps;
+
             /// <summary>
             /// Số bước quay tối đa; vì là di chuyển đơn giản nên số phân chia = số bước. Ví dụ 31 phân chia -> 31; tính nội bộ
             /// </summary>
@@ -203,18 +209,18 @@ namespace AlignVision
         /// <summary>
         /// Save stage parameters to the INI file for a specific stage index
         /// </summary>
-        /// <param name="iStageIndex"></param>
+        /// <param name="eStageIndex"></param>
         /// <param name="objStageParameter"></param>
         /// <returns></returns>
-        public bool SaveStageParameter(int iStageIndex, CStageParameter objStageParameter)
+        public bool SaveStageParameter(CDefine.enumStage eStageIndex, CStageParameter objStageParameter)
         {
             bool bReturn = false;
 
             string strRecipePath = string.Format(@"{0:S}\{1:S}", m_strRecipePath, CDefine.DEF_VISION_RECIPE_INI);
             ClassINI classINIRecipe = new ClassINI(strRecipePath);
 
-            string strSection = ((CDefine.enumStage)iStageIndex).ToString();
-            var varParameterOrigin = m_objStageParameter[iStageIndex];
+            string strSection = eStageIndex.ToString();
+            var varParameterOrigin = m_objStageParameter[(int)eStageIndex];
 
             classINIRecipe.WriteValue(strSection, "eAlignType", (int)objStageParameter.eAlignToolType);
             // Align parameter
@@ -246,7 +252,7 @@ namespace AlignVision
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dLineThickness", objStageParameter.objStageLineSettingParameter.dLineThickness);
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dPositionWidth", objStageParameter.objStageLineSettingParameter.dPositionWidth);
             //classINIRecipe.WriteValue(strSection, "objStageLineSettingParameter.dPositionHeight", objStageParameter.objStageLineSettingParameter.dPositionHeight);
-            m_objStageParameter[iStageIndex] = (CStageParameter)objStageParameter.Clone();
+            m_objStageParameter[(int)eStageIndex] = (CStageParameter)objStageParameter.Clone();
 
             bReturn = true;
             return bReturn;

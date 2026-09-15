@@ -59,6 +59,14 @@
     <Reference Include="Cognex.VisionPro, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
     <Reference Include="Cognex.VisionPro.Blob, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
     <Reference Include="Cognex.VisionPro.Blob.Controls, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.CalibFix, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CalibFix.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix.Controls, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CalibFix.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="Cognex.VisionPro.Caliper, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
     <Reference Include="Cognex.VisionPro.Caliper.Controls, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
     <Reference Include="Cognex.VisionPro.Comm, Version=75.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
@@ -139,6 +147,7 @@
     <Compile Include="Data\Config\ConfigINI\CConfig.DeviceParameter.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.RecipeInformation.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.OptionParameter.cs" />
+    <Compile Include="Data\Config\ConfigINI\CConfig.RecipeParameter.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.StageParameter.cs" />
     <Compile Include="Data\Config\ConfigINI\CConfig.SystemParameter.cs" />
     <Compile Include="Data\Config\DeviceINI\CConfig.CameraParameter.cs" />
@@ -324,6 +333,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisionLibrary\CVisionLibraryToolAlign.cs" />
+    <Compile Include="VisionLibrary\CVisionOneCamOneStage.cs" />
+    <Compile Include="VisionLibrary\CVisionTowCameOneStage.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryAbstract.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryCogBlob.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryCogFindLine.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryCogFixture.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryCogPMAlign.cs" />
+    <Compile Include="VisionLibrary\VisionTool\CVisionLibraryCogToolBlock.cs" />
     <EmbeddedResource Include="GUI\Dialog\CDialogChangePassword.resx">
       <DependentUpon>CDialogChangePassword.cs</DependentUpon>
     </EmbeddedResource>

@@ -58,8 +58,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
+            this.btnLoad = new Sunny.UI.UISymbolButton();
+            this.btnSave = new Sunny.UI.UISymbolButton();
             this.cogDisplayStatusBar_Result = new Cognex.VisionPro.CogDisplayStatusBarV2();
             this.btnOpenToolBlock = new System.Windows.Forms.Button();
             this.groupAlignSetting = new System.Windows.Forms.GroupBox();
@@ -409,8 +409,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.uiSymbolButton1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.uiSymbolButton2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnLoad, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1334, 897);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -418,45 +418,47 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(322, 85);
             this.tableLayoutPanel2.TabIndex = 2226;
             // 
-            // uiSymbolButton1
+            // btnLoad
             // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton1.FillColor = System.Drawing.SystemColors.Control;
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolButton1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.uiSymbolButton1.Location = new System.Drawing.Point(3, 3);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.Radius = 0;
-            this.uiSymbolButton1.RectSize = 2;
-            this.uiSymbolButton1.Size = new System.Drawing.Size(155, 79);
-            this.uiSymbolButton1.Symbol = 361587;
-            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.RoyalBlue;
-            this.uiSymbolButton1.SymbolSize = 50;
-            this.uiSymbolButton1.TabIndex = 1;
-            this.uiSymbolButton1.Text = "LOAD";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoad.FillColor = System.Drawing.SystemColors.Control;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnLoad.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnLoad.Location = new System.Drawing.Point(3, 3);
+            this.btnLoad.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Radius = 0;
+            this.btnLoad.RectSize = 2;
+            this.btnLoad.Size = new System.Drawing.Size(155, 79);
+            this.btnLoad.Symbol = 361587;
+            this.btnLoad.SymbolColor = System.Drawing.Color.RoyalBlue;
+            this.btnLoad.SymbolSize = 50;
+            this.btnLoad.TabIndex = 1;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // uiSymbolButton2
+            // btnSave
             // 
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton2.FillColor = System.Drawing.SystemColors.Control;
-            this.uiSymbolButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolButton2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.uiSymbolButton2.Location = new System.Drawing.Point(164, 3);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.Radius = 0;
-            this.uiSymbolButton2.RectSize = 2;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(155, 79);
-            this.uiSymbolButton2.Symbol = 361465;
-            this.uiSymbolButton2.SymbolColor = System.Drawing.Color.DarkGreen;
-            this.uiSymbolButton2.SymbolSize = 50;
-            this.uiSymbolButton2.TabIndex = 1;
-            this.uiSymbolButton2.Text = "SAVE";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FillColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.Location = new System.Drawing.Point(164, 3);
+            this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Radius = 0;
+            this.btnSave.RectSize = 2;
+            this.btnSave.Size = new System.Drawing.Size(155, 79);
+            this.btnSave.Symbol = 361465;
+            this.btnSave.SymbolColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.SymbolSize = 50;
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cogDisplayStatusBar_Result
             // 
@@ -638,8 +640,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
-        private Sunny.UI.UISymbolButton uiSymbolButton2;
+        private Sunny.UI.UISymbolButton btnLoad;
+        private Sunny.UI.UISymbolButton btnSave;
         private Cognex.VisionPro.CogDisplayStatusBarV2 cogDisplayStatusBar_Result;
         private System.Windows.Forms.Button btnOpenToolBlock;
         private System.Windows.Forms.GroupBox groupAlignSetting;
